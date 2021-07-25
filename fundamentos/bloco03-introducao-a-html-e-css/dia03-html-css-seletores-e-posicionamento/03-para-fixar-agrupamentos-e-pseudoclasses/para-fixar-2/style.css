@@ -1,0 +1,41 @@
+div.first-color:hover { 
+    border: solid 7px #008000;
+}
+
+div.second-color:hover {
+    border: solid 7px #ff0000;  
+}
+
+div.complementary-color:hover {
+    border: solid 7px #0066ff;
+    font-size: 35px;
+}
+
+div.dark-color:hover {
+    border: solid 7px #383838;
+}
+
+div.light-color:hover {
+    border: solid 7px #d6d3d3;
+    color: #d6d3d3;
+}
+
+h3.first {
+    color: #008000;
+}
+h3.second {
+    color: #ff0000;
+}
+h3.complementary {
+    color: #0066ff;
+}
+h3.dark {
+    color: #383838;
+}
+h3.light{
+    color: #d6d3d3;
+}
+
+h3.first, h3.complementary, h3.light {
+    font-style: italic;
+}
