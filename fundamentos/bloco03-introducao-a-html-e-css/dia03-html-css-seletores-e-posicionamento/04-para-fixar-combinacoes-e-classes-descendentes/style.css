@@ -1,0 +1,51 @@
+ol {
+    background-color: #ffff00;
+}
+ol li:nth-child(even){
+    color: #008000;
+}
+ol li:nth-child(odd) {
+    text-transform:uppercase;
+}
+h1, h2, h3 {
+    color: #ff0000;
+}
+h1 i, h2 i, h3 i {
+    font-size: 40px;
+    border: 1px solid #000000;
+}
+
+li {
+    font-size: 20px;
+}
+li i {
+    font-weight:bolder;
+}
+ul.linguages-list li:nth-child(-n+3){
+    color: #0000ff;
+}
+
+li[text-attribute="java*"] {
+    background-color: #ffc0cb;
+}
+
+.list-allies:hover {
+    font-weight: bolder;
+}
+
+.stack:hover {
+    color: #bbc0c4;
+}
+
+.w3:hover {
+    color: #04aa6d;
+}
+.mdn:hover{
+    color: #1b1b1b;
+}
+.dev:hover{
+    color: #cbd0d0;
+}
+.trybe:hover{
+    color: #11a36a;
+}
