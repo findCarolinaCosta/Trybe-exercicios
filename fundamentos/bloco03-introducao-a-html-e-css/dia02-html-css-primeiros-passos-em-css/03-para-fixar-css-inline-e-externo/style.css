@@ -1,0 +1,36 @@
+body{
+    font-size: 16px;
+    line-height: 25px;
+  }
+  h1{
+    font-size: 65px;
+    color: #ffa500;
+    font-family: sans-serif;
+    font-style: italic;
+  }
+  p{
+    font-weight: 600;
+    font-size: 48px;
+    text-decoration: underline;
+  }
+  ul{
+    background-color: #e6e6e6;
+  }
+  span {
+    color: white;
+  }
+  .background {
+    background-color: #696969;
+  }
+  .center-text{
+    text-align: center;
+  }
+  .violet-bg {
+    background-color: #ee82ee;
+  }
+  .black-bg {
+    background-color: #000000;
+  }
+  .pink-bg {
+    background-color: #ff607b;
+  }
