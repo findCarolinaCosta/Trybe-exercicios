@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de currículo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <header class="box">
+      <h1>Criando um formulário de currículo</h1>
+    </header>
+    <form method="GET">
+      <fieldset class="box input-container">
+        <div class="text-input">
+          <label for="full-name">Nome Completo:</label>
+          <input type="text" name="full-name" id="full-name" maxlength="40" required>
+        </div>
+        <div class="text-input">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" maxlength="50" required>
+        </div>
+        <div class="text-input">
+          <label for="cpf">Digite seu CPF:</label>
+          <input type="text" name="cpf" id="cpf" maxlength="11" required>
+        </div>
+        <div class="text-input">
+          <label for="address">Digite seu endereço:</label>
+          <input type="text" name="address" id="address" maxlength="200" required>
+        </div>
+        <div class="text-input">
+          <label for="city">Digite sua cidade:</label>
+          <input type="text" name="city" id="city" maxlength="28" required>
+        </div>
+        <div class="state">
+          <label for="state">Selecione seu estado:</label>
+          <select name="state" id="state" class="state" required></select>
+        </div>
+        <fieldset class="container-habitation">
+          <legend>Selecione um tipo de moradia:</legend>
+
+          <input type="radio" name="type-of-habitation" id="type-of-habitationHome" required>
+          <label for="type-of-habitationHome">Casa</label>
+
+          <input type="radio" name="type-of-habitation" id="type-of-habitationAp" required>
+          <label for="type-of-habitationAp">Apartamento</label>
+        </fieldset>
+      </fieldset>
+      <fieldset>
+        <div>
+
+        </div>
+      </fieldset>
+    </form>
+  </main>
+  <script src='script.js'></script>
+</body>
+
+</html>
