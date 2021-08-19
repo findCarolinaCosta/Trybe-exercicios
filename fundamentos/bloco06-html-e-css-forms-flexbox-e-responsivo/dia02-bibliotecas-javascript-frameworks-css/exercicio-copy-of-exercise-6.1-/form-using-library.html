@@ -6,71 +6,64 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de currículo</title>
-  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <main>
-    <header class="box">
+    <header>
       <h1>Criando um formulário de currículo</h1>
     </header>
-    <form method="GET">
-      <fieldset class="box input-container">
-        <div class="text-input">
-          <label for="full-name">Nome Completo:</label>
-          <input type="text" name="full-name" id="full-name" maxlength="40" required>
-        </div>
-        <div class="text-input">
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" maxlength="50" required>
-        </div>
-        <div class="text-input">
-          <label for="cpf">Digite seu CPF:</label>
-          <input type="text" name="cpf" id="cpf" maxlength="11" required>
-        </div>
-        <div class="text-input">
-          <label for="address">Digite seu endereço:</label>
-          <input type="text" name="address" id="address" maxlength="200" required>
-        </div>
-        <div class="text-input">
-          <label for="city">Digite sua cidade:</label>
-          <input type="text" name="city" id="city" maxlength="28" required>
-        </div>
-        <div class="state">
-          <label for="state">Selecione seu estado:</label>
-          <select name="state" id="state" class="state" required></select>
-        </div>
-        <fieldset class="container-habitation">
-          <legend>Selecione um tipo de moradia:</legend>
-          <div>
-            <input type="radio" name="type-of-habitation" id="type-of-habitationHome" required>
-            <label for="type-of-habitationHome">Casa</label>
-          </div>
-          <div>
-            <input type="radio" name="type-of-habitation" id="type-of-habitationAp" required>
-            <label for="type-of-habitationAp">Apartamento</label>
-          </div>
-        </fieldset>
-      </fieldset>
-      <fieldset class="box input-container">
-        <div class="">
-          <label for="resume-summary">Resumo do currículo:</label>
-          <textarea name="resume-summary" id="resume-summary" maxlength="1000" required></textarea>
-        </div>
-        <div class="text-input">
-          <label for="office">Cargo:</label>
-          <input type="text" name="office" id="office" maxlength="40" required>
-        </div>
-        <div class="text-input">
-          <label for="resume-office">Descrição do cargo:</label>
-          <input type="text" name="resume-office" id="resume-office" maxlength="500" required>
-        </div>
-        <div class="">
-          <label for="">Data de ínicio:</label>
-          <input type="date" name="start-date-office-described" id="start-date-office-described" required>
-        </div>
-      </fieldset>
-      <div class="container-submit">
+    <form>
+      <div>
+        <label for="full-name">Nome Completo:</label>
+        <input type="text" name="full-name" id="full-name" maxlength="40" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" maxlength="50" required>
+      </div>
+      <div>
+        <label for="cpf">Digite seu CPF:</label>
+        <input type="text" name="cpf" id="cpf" maxlength="11" required>
+      </div>
+      <div>
+        <label for="address">Digite seu endereço:</label>
+        <input type="text" name="address" id="address" maxlength="200" required>
+      </div>
+      <div>
+        <label for="city">Digite sua cidade:</label>
+        <input type="text" name="city" id="city" maxlength="28" required>
+      </div>
+      <div>
+        <label for="state">Selecione seu estado:</label>
+        <select name="state" id="state" required></select>
+      </div>
+      <p>Selecione um tipo de moradia:</p>
+      <div>
+        <input type="radio" name="type-of-habitation" id="type-of-habitationHome" required>
+        <label for="type-of-habitationHome">Casa</label>
+      </div>
+      <div>
+        <input type="radio" name="type-of-habitation" id="type-of-habitationAp" required>
+        <label for="type-of-habitationAp">Apartamento</label>
+      </div>
+      <div>
+        <label for="resume-summary">Resumo do currículo:</label>
+        <textarea name="resume-summary" id="resume-summary" maxlength="1000" required></textarea>
+      </div>
+      <div>
+        <label for="office">Cargo:</label>
+        <input type="text" name="office" id="office" maxlength="40" required>
+      </div>
+      <div>
+        <label for="resume-office">Descrição do cargo:</label>
+        <input type="text" name="resume-office" id="resume-office" maxlength="500" required>
+      </div>
+      <div>
+        <label for="">Data de ínicio:</label>
+        <input type="date" name="start-date-office-described" id="start-date-office-described" required>
+      </div>
+      <div>
         <button type="submit">Enviar</button>
       </div>
     </form>
