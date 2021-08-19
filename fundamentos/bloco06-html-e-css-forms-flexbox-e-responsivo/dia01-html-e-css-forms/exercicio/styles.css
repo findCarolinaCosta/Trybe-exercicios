@@ -34,8 +34,35 @@ body {
   width: 100%;
   margin: 10px;
   margin-bottom: 10px;
+  height: 25px
 }
 
 .container-habitation{
   margin: 20px auto;
+}
+
+#resume-summary {
+  display: block;
+  height: 150px;
+  width: 100%;
+  margin-bottom: 20px
+}
+
+.container-submit {
+  text-align: center;
+}
+
+button[type="submit"] {
+  padding: 10px 40px;
+  border: none;
+  border-radius: 4px;
+  background: rgb(71, 71, 71);
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  margin-bottom: 150px;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(255, 75, 111);
+  cursor: pointer;
 }

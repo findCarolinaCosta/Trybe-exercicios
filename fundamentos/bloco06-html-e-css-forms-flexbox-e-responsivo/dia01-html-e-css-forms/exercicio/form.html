@@ -42,19 +42,37 @@
         </div>
         <fieldset class="container-habitation">
           <legend>Selecione um tipo de moradia:</legend>
-
-          <input type="radio" name="type-of-habitation" id="type-of-habitationHome" required>
-          <label for="type-of-habitationHome">Casa</label>
-
-          <input type="radio" name="type-of-habitation" id="type-of-habitationAp" required>
-          <label for="type-of-habitationAp">Apartamento</label>
+          <div>
+            <input type="radio" name="type-of-habitation" id="type-of-habitationHome" required>
+            <label for="type-of-habitationHome">Casa</label>
+          </div>
+          <div>
+            <input type="radio" name="type-of-habitation" id="type-of-habitationAp" required>
+            <label for="type-of-habitationAp">Apartamento</label>
+          </div>
         </fieldset>
       </fieldset>
-      <fieldset>
-        <div>
-
+      <fieldset class="box input-container">
+        <div class="">
+          <label for="resume-summary">Resumo do currículo:</label>
+          <textarea name="resume-summary" id="resume-summary" maxlength="1000" required></textarea>
+        </div>
+        <div class="text-input">
+          <label for="office">Cargo:</label>
+          <input type="text" name="office" id="office" maxlength="40" required>
+        </div>
+        <div class="text-input">
+          <label for="resume-office">Descrição do cargo:</label>
+          <input type="text" name="resume-office" id="resume-office" maxlength="500" required>
+        </div>
+        <div class="">
+          <label for="">Data de ínicio:</label>
+          <input type="date" name="start-date-office-described" id="start-date-office-described" required>
         </div>
       </fieldset>
+      <div class="container-submit">
+        <button type="submit">Enviar</button>
+      </div>
     </form>
   </main>
   <script src='script.js'></script>
