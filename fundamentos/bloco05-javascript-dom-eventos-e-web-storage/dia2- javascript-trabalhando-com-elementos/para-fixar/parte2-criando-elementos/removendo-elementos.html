@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Para fixar - buscando seletores</title>
+</head>
+
+<body>
+    <main id="paiDoPai">
+        <section id="pai">
+            <section id="primeiroFilho"></section>
+            <section id="elementoOndeVoceEsta">
+                <section id="primeiroFilhoDoFilho"></section>
+                <section id="segundoEUltimoFilhoDoFilho"></section>
+            </section>
+            Atenção!
+            <section id="terceiroFilho"></section>
+            <section id="quartoEUltimoFilho"></section>
+        </section>
+    </main>
+    <script>
+        const father = document.getElementById('pai');
+        const manter = ['pai', 'elementoOndeVoceEsta', 'primeiroFilhoDoFilho'];
+        function remove(rmElem) {
+            if (rmElem.nodeType !== 1) rmElem.remove();
+            if (rmElem.childNodes.length > 0) {
+                for (let enquanto = rmElem.childNodes.length - 1; enquanto >= 0; enquanto--) {
+                    let child = rmElem.childNodes[enquanto];
+                    remove(child);
+                }
+            }
+            if (!manter.includes(rmElem.id)) rmElem.remove();
+        }
+
+        remove(father); // fonte: https://github.com/paulohbsimoes/trybe-exercises/blob/master/01-fundamentos/bloco-05-javascript-dom-eventos-e-web-storage/dia-02-javascript-trabalhando-com-elementos/pratica-3.html Entendido !!!!
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Para fixar - buscando seletores</title>
+</head>
+<body>
+<main id="paiDoPai">
+    <section id="pai">
+        <section id="primeiroFilho"></section>
+        <section id="elementoOndeVoceEsta">
+            <section id="primeiroFilhoDoFilho"></section>
+            <section id="segundoEUltimoFilhoDoFilho"></section>
+        </section>
+        Atenção!
+        <section id="terceiroFilho"></section>
+        <section id="quartoEUltimoFilho"></section>
+    </section>
+</main>
+<script>
+    //1
+    let father = document.getElementById("pai");
+    let brother = document.createElement('section');
+    father.appendChild(brother);
+
+    //2
+    let firstChild = document.getElementById("primeiro-filho");
+    let childOfFirstChild = document.createElement("section");
+    firstChild.appendChild(childOfFirstChild);
+
+    //3
+    let firstChildOFfirstChild = document.getElementById("primeiroFilhoDoFilho");
+    let childOffirstChildOFfirstChild = document.createElement("section");
+    firstChildOFfirstChild.appendChild(childOffirstChildOFfirstChild);
+
+    //4
+    let thirdChild = childOffirstChildOFfirstChild;
+    firstChildOFfirstChild.parentElement;
+    childOfFirstChild.parentElement;
+    thirdChild.nextElementSibling;
+    console.log(thirdChild);
+</script>
+</body>
+</html>
