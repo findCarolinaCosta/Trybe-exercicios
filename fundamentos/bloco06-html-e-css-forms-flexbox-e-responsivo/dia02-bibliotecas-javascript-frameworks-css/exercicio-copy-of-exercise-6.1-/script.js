@@ -1,4 +1,4 @@
-const states = document.querySelector('select[class= "state"]');
+const states = document.querySelector('select[id="state"]');
 const allStates = [
   'Acre',
   'Alagoas',

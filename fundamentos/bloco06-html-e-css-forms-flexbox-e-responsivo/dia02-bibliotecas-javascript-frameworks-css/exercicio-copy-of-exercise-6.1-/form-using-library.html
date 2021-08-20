@@ -8,65 +8,84 @@
   <title>Formulário de currículo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <header class="container text-center">
+    <h1>Criando um formulário de currículo</h1>
+  </header>
   <main>
-    <header class="text-center">
-      <h1>Criando um formulário de currículo</h1>
-    </header>
     <form class="container" method="GET">
-      <div>
-        <label for="full-name">Nome Completo:</label>
-        <input type="text" name="full-name" id="full-name" maxlength="40" required>
+      <div class="mb-3">
+        <label for="full-name" class="form-label lead">Nome Completo:</label>
+        <input type="text" name="full-name" class="form-control" id="full-name" maxlength="40" required>
       </div>
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" maxlength="50" required>
+
+      <div class="mb-3">
+        <label for="email" class="form-label lead">Email:</label>
+        <input type="email" name="email" class="form-control" id="email" maxlength="50"
+          placeholder="exemple@exemple.com" required>
       </div>
-      <div>
-        <label for="cpf">Digite seu CPF:</label>
-        <input type="text" name="cpf" id="cpf" maxlength="11" required>
+
+      <div class="mb-3">
+        <label for="cpf" class="form-label lead">Digite seu CPF:</label>
+        <input type="number" name="cpf" class="form-control" maxlength="11" id="cpf" required>
       </div>
-      <div>
-        <label for="address">Digite seu endereço:</label>
-        <input type="text" name="address" id="address" maxlength="200" required>
+
+      <div class="mb-3">
+        <label for="address" class="form-label lead">Digite seu endereço:</label>
+        <input type="text" name="address" class="form-control" id="address" maxlength="200" required>
       </div>
-      <div>
-        <label for="city">Digite sua cidade:</label>
-        <input type="text" name="city" id="city" maxlength="28" required>
+
+      <div class="mb-3">
+        <label for="city" class="form-label lead">Digite sua cidade:</label>
+        <input type="text" name="city" class="form-control" id="city" maxlength="28" required>
       </div>
-      <div>
-        <label for="state">Selecione seu estado:</label>
-        <select name="state" id="state" required></select>
+
+      <div class="mb-3">
+        <label for="state" class="form-label lead">Selecione seu estado:</label>
+        <select name="state" class="form-select" id="state" required></select>
       </div>
-      <p>Selecione um tipo de moradia:</p>
-      <div>
-        <input type="radio" name="type-of-habitation" id="type-of-habitationHome" required>
-        <label for="type-of-habitationHome">Casa</label>
+
+      <div class="mb-3">
+        <p class="lead">Selecione um tipo de moradia:</p>
+
+        <div class="form-check">
+          <input type="radio" name="type-of-habitation" class="form-check-input" id="type-of-habitationHome" required>
+          <label for="type-of-habitationHome" class="form-check-label">Casa</label>
+        </div>
+
+        <div class="form-check">
+          <input type="radio" name="type-of-habitation" class="form-check-input" id="type-of-habitationAp" required>
+          <label for="type-of-habitationAp" class="form-check-label">Apartamento</label>
+        </div>
       </div>
+
       <div>
-        <input type="radio" name="type-of-habitation" id="type-of-habitationAp" required>
-        <label for="type-of-habitationAp">Apartamento</label>
+        <label for="resume-summary" class="form-label lead">Resumo do currículo:</label>
+        <textarea name="resume-summary" class="form-control" id="resume-summary" maxlength="1000" rows="5"
+          required></textarea>
       </div>
-      <div>
-        <label for="resume-summary">Resumo do currículo:</label>
-        <textarea name="resume-summary" id="resume-summary" maxlength="1000" required></textarea>
+
+      <div class="mb-3">
+        <label for="office" class="form-label">Cargo:</label>
+        <input type="text" name="office" class="form-control" id="office" maxlength="40" required>
       </div>
-      <div>
-        <label for="office">Cargo:</label>
-        <input type="text" name="office" id="office" maxlength="40" required>
+
+      <div class="mb-3">
+        <label for="resume-office" class="form-label">Descrição do cargo:</label>
+        <input type="text" name="resume-office" class="form-control" id="resume-office" maxlength="500" required>
       </div>
-      <div>
-        <label for="resume-office">Descrição do cargo:</label>
-        <input type="text" name="resume-office" id="resume-office" maxlength="500" required>
+
+      <div class="mb-3">
+        <label for="start-date-office-described" class="form-label lead">Data de ínicio:</label>
+        <input type="date" name="start-date-office-described" class="form-control" id="start-date-office-described"
+          required>
       </div>
-      <div>
-        <label for="">Data de ínicio:</label>
-        <input type="date" name="start-date-office-described" id="start-date-office-described" required>
-      </div>
-      <div>
-        <button type="submit">Enviar</button>
+
+      <div class="d-grid gap-2 col-3 mx-auto">
+        <button class="btn btn-primary btnSubmit" type="submit">Enviar</button>
       </div>
     </form>
   </main>
