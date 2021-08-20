@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 5.2</title>
+  <style>
+    section {
+      border-color: black;
+      border-style: solid;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .main-content {
+      background-color: yellow;
+    }
+
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-content .center-content p {
+      font-style: italic;
+      text-align: center;
+      color: white;
+      font-size: 25px;
+    }
+
+    .main-content .left-content {
+      background-color: green;
+      width: 60%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .main-content .left-content .small-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+
+    .main-content .right-content {
+      background-color: blue;
+      width: 60%;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .main-content .description {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    //Ex 1:
+    let h1 = document.createElement('h1');
+    h1.innerText = 'Exercício 5.2 - JavaScript DOM';
+    document.body.insertBefore(h1, null);
+
+    //Ex 2:
+    let main = document.createElement('main');
+    main.className = 'main-content';
+    let insertMain = document.body.insertBefore(main, null);
+
+    //Ex 3
+    let section = document.createElement('section');
+    section.className = 'center-content';
+    let insertSection = insertMain.insertBefore(section, null);
+
+    //Ex 4 
+    let p = document.createElement('p');
+    p.innerText = 'Trabalhando com elementos'
+    insertSection.insertBefore(p, null);
+
+    //Ex 5
+    let section2 = document.createElement('section');
+    section2.className = 'left-content';
+    let insertSection2 = insertMain.insertBefore(section2, null);
+
+    //Ex 6
+    let section3 = document.createElement('section');
+    section3.className = 'right-content';
+    let insertSection3 = insertMain.insertBefore(section3, null);
+
+    //Ex 7
+    let img = document.createElement('img');
+    img.setAttribute('src', "https://picsum.photos/200");
+    img.className = 'small-image';
+    insertSection2.insertBefore(img, null);
+
+    //Ex 8
+    let ul = document.createElement('ul');
+    let lista = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+    let itemLista = '';
+    for (let item = 0; item < lista.length; item += 1) {
+      var li = document.createElement('li');
+      li.appendChild(document.createTextNode(lista[item]));
+      ul.appendChild(li);
+    }
+    insertSection3.insertBefore(ul, null);
+
+    //Ex 9
+    for (let enquanto = 0; enquanto < 3; enquanto += 1) {
+      let h3 = document.createElement('h3');
+      h3.className = 'description'; // alteração
+      insertMain.appendChild(h3);
+    }
+
+    //Ex 1 - alteracao
+    h1.className = 'title';
+
+    //Ex 3 - remocao
+    insertMain.removeChild(section2);
+
+    //Ex 4 - alteracao
+    insertSection3.style.marginRight = 'auto';
+
+    //Ex 5 - alteracao
+    insertSection.parentElement.style.background = 'green';
+
+    //Ex 6 - remocao
+    for (let enquanto = 0; enquanto < 2; enquanto++) {
+      ul.lastChild.remove()
+    }
+  </script>
+</body>
+
+</html>
