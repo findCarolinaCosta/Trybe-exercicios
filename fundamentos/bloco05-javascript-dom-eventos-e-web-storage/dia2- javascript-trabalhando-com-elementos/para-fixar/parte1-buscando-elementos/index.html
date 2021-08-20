@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <title>Para fixar - buscando seletores</title>
 </head>
+
 <body>
-<main id="paiDoPai">
-    <section id="pai">
-        <section id="primeiroFilho"></section>
-        <section id="elementoOndeVoceEsta">
-            <section id="primeiroFilhoDoFilho"></section>
-            <section id="segundoEUltimoFilhoDoFilho"></section>
+    <main id="paiDoPai">
+        <section id="pai">
+            <section id="primeiroFilho"></section>
+            <section id="elementoOndeVoceEsta">
+                <section id="primeiroFilhoDoFilho"></section>
+                <section id="segundoEUltimoFilhoDoFilho"></section>
+            </section>
+            Atenção!
+            <section id="terceiroFilho"></section>
+            <section id="quartoEUltimoFilho"></section>
         </section>
-        Atenção!
-        <section id="terceiroFilho"></section>
-        <section id="quartoEUltimoFilho"></section>
-    </section>
-</main>
-<script>
-    //1
-    document.getElementById('elementoOndeVoceEsta')
+    </main>
+    <script>
+        //1
+        document.getElementById('elementoOndeVoceEsta')
 
-    //2
-    let father = elementoOndeVoceEsta.parentElement;
-    father.style.color = 'violet';
+        //2
+        let father = elementoOndeVoceEsta.parentElement;
+        father.style.color = 'violet';
 
-    //3
-    let firstChild = document.getElementById('elementoOndeVoceEsta').firstChild;
-    firstChild.innerText = 'Texto do primeiro filho do da seção do elementoOndeVoceEsta';
+        //3
+        let firstChild = document.getElementById('elementoOndeVoceEsta').firstChild;
+        firstChild.innerText = 'Texto do primeiro filho do da seção do elementoOndeVoceEsta';
 
-    //4
-    let firstChildByFather = father.firstElementChild;
+        //4
+        father.firstElementChild;
 
-    //5
-    elementoOndeVoceEsta.nextSibling;
+        //5
+        elementoOndeVoceEsta.previousElementSibling;
 
-    //6
-    elementoOndeVoceEsta.nextElementSibling;
+        //6
+        elementoOndeVoceEsta.nextSibling;
 
-    //7
-    father.lastElementChild.previousElementSibling;
-</script>
+        //7
+        elementoOndeVoceEsta.nextElementSibling;
+
+        //8
+        father.lastElementChild.previousElementSibling;
+    </script>
 </body>
+
 </html>
