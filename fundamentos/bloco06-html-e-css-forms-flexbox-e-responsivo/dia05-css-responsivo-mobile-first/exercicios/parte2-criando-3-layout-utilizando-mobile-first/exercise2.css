@@ -79,10 +79,66 @@ footer {
   padding: 20px 50px;
 }
 
+/* Para telas menores que 600px */
 @media screen and (max-width: 600px) {
   body {
-    background-color: rgb(175, 4, 152);
+    background-color: rgb(255, 172, 244);
     color: rgb(46, 46, 46);
+  }
+  
+  header {
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(255, 0, 221);
+    border-bottom: 7px solid rgba(46, 46, 46, 0.397);
+    border-radius: 0 0 25px 25px;
+  }
+
+  .img-book img {
+    width: 95%;
+    align-items: center;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .nav-ul {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  div.h2 {
+    width: 10%;
+    text-align: center;
+    color: rgb(133, 4, 255);
+  }
+
+  div.container-header header p {
+    font-size: x-large;
+    color: rgb(72, 0, 139);
+  }
+
+  .capter-title {
+    color: rgb(133, 4, 255);
+  }
+
+  p.first-letter::first-letter {
+    font-size: 64px;
+    font-weight: bold;
+  }
+
+  article.main-content p {
+    font-size: 16px;
+  } 
+
+  footer {
+    background-color: rgb(255, 0, 221);
+    border-top: 2px solid rgba(46, 46, 46, 0.397);
+  }
+
+  footer .container-footer p {
+    font-size: 10px;
   }
 }
 
