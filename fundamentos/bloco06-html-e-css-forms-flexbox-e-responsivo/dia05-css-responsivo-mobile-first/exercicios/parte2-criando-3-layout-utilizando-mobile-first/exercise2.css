@@ -4,3 +4,10 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: rgb(175, 4, 152);
+    color: rgb(255, 255, 255);
+  }
+}
