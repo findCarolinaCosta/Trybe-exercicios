@@ -18,3 +18,10 @@ html {
     color: rgb(46, 46, 46);
   }
 }
+
+@media screen and (min-width: 1023px) {
+  body {
+    background-color: rgb(231, 231, 231);
+    color: rgb(46, 46, 46);
+  }
+}
