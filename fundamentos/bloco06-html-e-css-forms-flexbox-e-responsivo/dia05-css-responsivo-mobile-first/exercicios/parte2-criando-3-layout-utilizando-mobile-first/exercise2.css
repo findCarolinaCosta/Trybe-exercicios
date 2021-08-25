@@ -5,10 +5,84 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 50px;
+  top: 0;
+  width: 100%;
+  background-color: rgb(219, 219, 219);
+  color: rgb(46, 46, 46);
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+}
+
+.img-book img {
+  width: 375px;
+  padding: 3%;
+}
+
+div.container-header nav ul li {
+  padding: 0 15px 0 0;
+}
+
+div.container-header p {
+  font-size: xx-large;
+}
+
+div.nav-ul {
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+div.h2 {
+  width: 300px;
+  text-align: center;
+}
+
+aside.aside-one, aside.aside-two {
+  padding: 5px 5%;
+}
+
+div.container-main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+div.container-infos {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 0 100px;
+}
+
+.main-content {
+  margin: 5px 5%;
+}
+
+footer {
+  background-color: rgb(219, 219, 219);
+  width: 100%;
+  padding: 20px 50px;
+}
+
 @media screen and (max-width: 600px) {
   body {
     background-color: rgb(175, 4, 152);
-    color: rgb(255, 255, 255);
+    color: rgb(46, 46, 46);
   }
 }
 
