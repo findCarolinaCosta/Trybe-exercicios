@@ -92,3 +92,43 @@ console.log(verifyPair(lesson3, 'turno', 'noite'));
 // Output: true,
 console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: false
+
+
+//Bônus
+const getWatchedMath = (obj) => {
+  let watchedNumber = 0;
+  const objArray = Object.keys(obj);
+  for (index in objArray) {
+    if (obj[objArray[index]].materia === 'Matemática') {
+      watchedNumber += obj[objArray[index]].numeroEstudantes;
+    }
+  }
+  return watchedNumber;
+}
+console.log(getWatchedMath(allLessons));
+
+const getProfessorInfo = (obj, name) => {
+  const allLessons = [];
+  let allStudent = 0;
+  const array = Object.values(obj);
+  for (index in array) {
+    if (array[index].professor === name) {
+      allLessons.push(array[index].materia)
+      allStudent += array[index].numeroEstudantes;
+    }
+  }
+  return { lesson: allLessons, estudates: allStudent };
+}
+const createReport = (allLessons, name) => {
+  const report = {};
+  report.professor = name;
+  Object.assign(report, getProfessorInfo(allLessons, name));
+  return report;
+}
+console.log(createReport(allLessons, 'Maria Clara'));
+/* Output
+{
+  professor: 'Maria Clara',
+  aulas: [ 'Matemática', 'Matemática' ],
+  estudantes: 30
+} */
