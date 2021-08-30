@@ -35,20 +35,27 @@ const order = {
 };
 
 const customerInfo = (order) => {
-  // Adicione abaixo as informações necessárias.
+  const deliveryPerson = order.order.delivery.deliveryPerson;
+  const nomeEntrega = order.name;
+  const telContato = order.phoneNumber;
+  const address = 'address';
+  const rua = order[address].street;
+  const numeroCasa = order[address].number;
+  const complemento = order[address].apartment;
 
+  const orderRuaFlores = `Olá ${deliveryPerson}, entrega para: ${nomeEntrega}, Telefone: ${telContato}, ${rua}, Nº. ${numeroCasa}, AP: ${complemento}`
+  console.log(orderRuaFlores);
 }
 
 customerInfo(order);
 
 const orderModifier = (order) => {
-  // Adicione abaixo as informações necessárias.
-  // Agora você vai fazer alguns exercícios de fixação.
-  //  1- Complete a função customerInfo() para que seu retorno seja similar a "Olá Ana Silveira, entrega para: Rafael Andrade, Telefone: 11-98763-1416, R. Rua das Flores, Nº: 389, AP: 701".
-  //  2 - Note que o parâmetro da função já está sendo passado na chamada da função.
-  //  3 - Complete a função orderModifier() para que seu retorno seja similar a "Olá Luiz Silva, o total do seu pedido de marguerita, pepperoni e Coca-Cola Zero é R$ 50,00."
-  //      Modifique o nome da pessoa compradora.
-  //      Modifique o valor total da compra para R$ 50,00.
+  const newName = order.name = 'Luiz Silva';
+  const pizzas = Object.keys(order.order.pizza);
+  const bebida = order.order.drinks.coke.type;
+  const valor = order.payment['total'] = '50';
+  const infoPedido = `Olá ${newName}, o total do seu pedido de ${pizzas[0]}, ${pizzas[1]} e ${bebida} é R$ ${valor},00`
+  console.log(infoPedido);
 }
 
 orderModifier(order);
