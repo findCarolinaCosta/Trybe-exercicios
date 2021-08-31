@@ -99,10 +99,6 @@ footer {
     align-items: center;
   }
 
-  header nav {
-    display: none;
-  }
-
   .nav-ul {
     font-weight: bold;
     font-size: 16px;
@@ -140,8 +136,10 @@ footer {
   footer .container-footer p {
     font-size: 10px;
   }
+  
 }
 
+/* Telas maiore que */
 @media screen and (max-width: 1023px) and (min-width: 600px) {
   body {
     background-color: rgb(6, 201, 168);
@@ -153,5 +151,8 @@ footer {
   body {
     background-color: rgb(231, 231, 231);
     color: rgb(46, 46, 46);
+  }
+  header ul {
+    display: flex;
   }
 }
