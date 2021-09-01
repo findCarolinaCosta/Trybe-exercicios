@@ -15,5 +15,6 @@ const obj3 = {
   description: 'My Description',
 };
 
-// implemente seus testes aqui
-// 5 - Compare dois objetos para verificar se são idênticos ou não
+assert.deepStrictEqual(obj1, obj2, 'Error: Obj1 não é identico ao obj2');
+assert.deepStrictEqual(obj1, obj3, 'Error: Obj1 não é identico ao obj3'); //não continua após esse primeiro erro.
+assert.deepStrictEqual(obj2, obj3, 'Error: Obj2 não é identico ao obj3');
