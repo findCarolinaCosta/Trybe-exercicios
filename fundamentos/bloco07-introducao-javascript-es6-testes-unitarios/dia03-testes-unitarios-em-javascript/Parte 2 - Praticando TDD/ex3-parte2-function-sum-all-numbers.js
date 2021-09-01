@@ -1,6 +1,12 @@
 const assert = require('assert');
-// escreva a função sumAllNumbers aqui
-// 3 - Escreva a função sumAllNumbers para passar nos testes já implementados.
+
+const sumAllNumbers = (arrays) => {
+  let result = 0;
+  for (const index in arrays) {
+    result += arrays[index];
+  }
+  return result;
+}
 
 const numbers = [9, 23, 10, 3, 8];
 const expected = 53;
