@@ -5,3 +5,4 @@ assert.strictEqual(typeof verify, 'function');
 
 assert.strictEqual(typeof verify, 'function'); // Password should be larger than 8 chars
 assert(!verify('12345678'));
+assert(!verify(null)); // Password should not be null
