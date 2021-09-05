@@ -4,7 +4,18 @@ function getChange(payable, paid) {
   const { length } = coins;
   let remaining = paid - payable;
 
-  // escreva seu código aqui...
+  if (paid < payable) throw new Error('Valor pago não é suficiente');
 
+  for (let index = 0; index < length; index += 1) {
+    const coin = coins[index];
+    const timesCoinFits = Math.floor(remaining / coin);
+
+    if (timesCoinFits >= 1) {
+      for (let j = 0; j < timesCoinFits; j += 1) {
+        change.push(coin);
+        remaining -= coin;
+      }
+    }
+  }
   return change;
 }
