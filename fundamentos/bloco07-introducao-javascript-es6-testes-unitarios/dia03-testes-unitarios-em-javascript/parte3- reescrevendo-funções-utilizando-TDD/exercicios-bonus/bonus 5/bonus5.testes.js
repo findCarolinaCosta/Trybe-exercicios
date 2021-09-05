@@ -1,1 +1,1 @@
-//Create a Password verifications class called “PasswordVerifier”.
+const verify = require('./bonus5-PasswordVerifier');
