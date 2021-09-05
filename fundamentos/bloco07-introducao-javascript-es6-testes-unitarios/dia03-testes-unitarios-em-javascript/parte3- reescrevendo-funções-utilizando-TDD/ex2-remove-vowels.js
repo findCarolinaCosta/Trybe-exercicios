@@ -1,3 +1,5 @@
+const assert = require('assert');
+
 const removeVowels = (word) => {
   const characters = word.split('');
   const results = [];
@@ -21,3 +23,7 @@ const removeVowels = (word) => {
 
 const parameter = 'Dayane';
 const result = 'D1y2n3';
+
+assert.strictEqual(typeof removeVowelsNew, 'function');
+const output = removeVowelsNew(parameter);
+assert.strictEqual(output, result);
