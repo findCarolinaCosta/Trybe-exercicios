@@ -7,3 +7,4 @@ assert.strictEqual(typeof verify, 'function'); // Password should be larger than
 assert(!verify('12345678'));
 assert(!verify(null)); // Password should not be null
 assert(!verify('gandalfthegray')); // Password should have one uppercase letter at least
+assert(!verify('YOUSHALLNOTPASS')); // Password should have one lowercase letter at least
