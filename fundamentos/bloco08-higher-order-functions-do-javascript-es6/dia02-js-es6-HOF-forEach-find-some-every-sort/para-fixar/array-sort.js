@@ -8,7 +8,7 @@ const people = [
   { name: 'Bruna', age: 19 },
 ];
 
-// Adicione se código aqui
+people.sort((personA, personB) => personA.age - personB.age);
 
 console.log(people);
 
