@@ -1,0 +1,158 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 50px;
+  top: 0;
+  width: 100%;
+  background-color: rgb(219, 219, 219);
+  color: rgb(46, 46, 46);
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+}
+
+.img-book img {
+  width: 375px;
+  padding: 3%;
+}
+
+div.container-header nav ul li {
+  padding: 0 15px 0 0;
+}
+
+div.container-header p {
+  font-size: xx-large;
+}
+
+div.nav-ul {
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+div.h2 {
+  width: 300px;
+  text-align: center;
+}
+
+aside.aside-one, aside.aside-two {
+  padding: 5px 5%;
+}
+
+div.container-main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+div.container-infos {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 0 100px;
+}
+
+.main-content {
+  margin: 5px 5%;
+}
+
+footer {
+  background-color: rgb(219, 219, 219);
+  width: 100%;
+  padding: 20px 50px;
+}
+
+/* Para telas menores que 600px */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: rgb(255, 172, 244);
+    color: rgb(46, 46, 46);
+  }
+  
+  header {
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(255, 0, 221);
+    border-bottom: 7px solid rgba(46, 46, 46, 0.397);
+    border-radius: 0 0 25px 25px;
+  }
+
+  .img-book img {
+    width: 95%;
+    align-items: center;
+  }
+
+  .nav-ul {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  div.h2 {
+    width: 10%;
+    text-align: center;
+    color: rgb(133, 4, 255);
+  }
+
+  div.container-header header p {
+    font-size: x-large;
+    color: rgb(72, 0, 139);
+  }
+
+  .capter-title {
+    color: rgb(133, 4, 255);
+  }
+
+  p.first-letter::first-letter {
+    font-size: 64px;
+    font-weight: bold;
+  }
+
+  article.main-content p {
+    font-size: 16px;
+  } 
+
+  footer {
+    background-color: rgb(255, 0, 221);
+    border-top: 2px solid rgba(46, 46, 46, 0.397);
+  }
+
+  footer .container-footer p {
+    font-size: 10px;
+  }
+  
+}
+
+/* Telas maiore que */
+@media screen and (max-width: 1023px) and (min-width: 600px) {
+  body {
+    background-color: rgb(6, 201, 168);
+    color: rgb(46, 46, 46);
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  body {
+    background-color: rgb(231, 231, 231);
+    color: rgb(46, 46, 46);
+  }
+  header ul {
+    display: flex;
+  }
+}
