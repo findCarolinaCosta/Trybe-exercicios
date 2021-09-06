@@ -32,6 +32,13 @@ const dragonAttack = (dragon) => {
 
 // 2 - Crie uma função que retorna o dano causado pelo warrior .
 //  * O dano será um número aleatório entre o valor do atributo strength (dano mínimo) e o valor de strength * weaponDmg (dano máximo).
+const warriorAttack = (warrior) => {
+  const { weaponDmg } = warrior;
+  const minDamage = warrior.strength;
+  const maxDamage = minDamage * weaponDmg;
+  const warriorDamage = Math.floor((Math.random() * (maxDamage - minDamage + 1)) + minDamage);
+  return warriorDamage;
+};
 
 // 3 - Crie uma função que retorna um objeto com duas chaves e dois valores contendo o dano e a mana gasta pelo mago em um turno.
 //  * O dano será um número aleatório entre o valor do atributo intelligence (dano mínimo) e o valor de intelligence * 2 (dano máximo).
