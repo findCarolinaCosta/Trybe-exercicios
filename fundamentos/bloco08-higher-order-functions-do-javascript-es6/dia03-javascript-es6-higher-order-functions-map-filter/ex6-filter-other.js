@@ -72,7 +72,9 @@ const expectedResult = [
 // 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
 
 function oldBooks() {
-  // escreva seu código aqui
+  const allBooksOld = books.filter((book) => (book.releaseYear < 1961))
+    .map((book) => book.name);
+  return allBooksOld;
 }
 
 assert.deepStrictEqual(oldBooks(), expectedResult);
