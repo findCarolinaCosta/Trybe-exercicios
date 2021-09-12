@@ -1,11 +1,12 @@
 // Faça uma lista com as suas frutas favoritas
-const specialFruit = ['', '', ''];
+const specialFruit = ['Morango', 'Banana', 'Goiaba'];
 
 // Faça uma lista de complementos que você gostaria de adicionar
-const additionalItens = ['', '', ''];
+const additionalItens = ['Aveia', 'Manteiga de Amendoim', 'Limão'];
 
 const fruitSalad = (fruit, additional) => {
-  // Esreva sua função aqui
+  const readySalad = [...fruit, ...additional];
+  return readySalad;
 };
 
 console.log(fruitSalad(specialFruit, additionalItens));
