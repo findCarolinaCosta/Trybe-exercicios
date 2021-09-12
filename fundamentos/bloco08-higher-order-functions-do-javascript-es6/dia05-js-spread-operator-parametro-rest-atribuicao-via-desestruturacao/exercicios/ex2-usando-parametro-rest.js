@@ -4,6 +4,7 @@
 const assert = require('assert');
 
 // escreva sum abaixo
+const sum = (...numbers) => numbers.reduce(((accumulator, val) => accumulator + val), 0);
 
 assert.strictEqual(sum(), 0);
 assert.strictEqual(sum(1), 1);
