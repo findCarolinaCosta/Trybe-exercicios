@@ -32,7 +32,7 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [x] 4-2: _JavaScript - Array e loop For_
 - [x] 4-3: _JavaScript - Lógica de Programação e Algoritmos_
 - [x] 4-4: _JavaScript - Objetos e funções_
-- [x] 4-5: _[Projeto - Playground Functions]_
+- [x] 4-5: [Projeto - Playground Functions](https://github.com/findCarolinaCosta/project-playground-functions)
 
 ##### Bloco 5: Introdução - JavaScript - Projetos
 
@@ -41,7 +41,7 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [x] 5-3: _JavaScript - Eventos_
 - [x] 5-4: _JavaScript - Web Storage_
 - [x] 5-6: _[Projeto - Arte com Pixels]_
-- [x] 5-7: _[Projeto - Lista de tarefas]_
+- [x] 5-7: [Projeto - Lista de tarefas](https://github.com/findCarolinaCosta/project-todo-list)
 
 ##### Bloco 6: HTML & CSS avançado
 
@@ -50,22 +50,22 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [x] 6-3: _CSS Flexbox - Part 1_
 - [x] 6-4: _CSS Flexbox - Part 2_
 - [x] 6-5: _CSS Responsivo - Mobile First_
-- [x] 6-6: _[Projeto - Página inicial do Facebook]_
+- [x] 6-6: _[Projeto - Trybewarts]_
 
 ##### Bloco 7: JavaScript ES6 & Testes Unitários
 
 - [x] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
 - [x] 7-2: _JavaScript ES6 - Objects_
 - [x] 7-3: _Testes unitários em JavaScript_
-- [x] 7-4: _[Projeto - JavaScript Testes Unitários]_
+- [x] 7-4: [Projeto - JavaScript Testes Unitários](https://github.com/tryber/sd-015-b-project-js-unit-tests/tree/carolina-pereira-da-costa-unit-tests)
 
 ##### Bloco 8: JavaScript ES6
 
 - [x] 8-1: _JavaScript ES6 - Introdução a Higher Order Functions_
 - [x] 8-2: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
-- [ ] 8-3: _JavaScript ES6 - Higher Order Functions - map e filter_
-- [ ] 8-4: _JavaScript ES6 - Higher Order Functions - reduce_
-- [ ] 8-5: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
+- [x] 8-3: _JavaScript ES6 - Higher Order Functions - map e filter_
+- [x] 8-4: _JavaScript ES6 - Higher Order Functions - reduce_
+- [x] 8-5: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
 - [ ] 8-6: _[Projeto - Zoo functions]_
 
 ##### Bloco 9: Assincronicidade & Callbacks
