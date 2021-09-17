@@ -12,6 +12,7 @@ const promise = new Promise((resolve, reject) => {
 });
 
 promise
-  .then((sum => console.log([2, 3, 5, 10].map(number => sum / number))))
+  .then((sum => [2, 3, 5, 10].map(number => sum / number)))
+  .then(array => array.reduce((acc, num) => num + acc, 0))
   .catch(() =>
     console.log('É mais de oito mil! Essa promise deve estar quebrada!'));
