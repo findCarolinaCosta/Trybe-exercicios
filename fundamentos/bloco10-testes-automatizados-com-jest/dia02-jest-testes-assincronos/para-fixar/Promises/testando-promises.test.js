@@ -19,10 +19,16 @@ const findAnimalsByType = (type) => (
 );
 
 describe('Quando o tipo do animal existe', () => {
-  test('Retorne a lista de animais', () => (
+  it('Retorne a lista de animais', () => (
     findAnimalsByType('Dog').then((listDogs) => {
       expect(listDogs[0].name).toEqual('Dorminhoco');
       expect(listDogs[1].name).toEqual('Soneca');
     })
+  ));
+  //testes do erro
+  it('Retorna o erro', () => (
+    findAnimalsByType('Lion').catch((error) => (
+      expect(error.message).toMatch('Não possui esse tipo de animal.')
+    ))
   ));
 });
