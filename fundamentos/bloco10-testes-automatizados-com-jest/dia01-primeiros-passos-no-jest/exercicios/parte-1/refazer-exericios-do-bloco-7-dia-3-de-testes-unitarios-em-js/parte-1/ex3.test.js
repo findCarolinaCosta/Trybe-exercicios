@@ -1,3 +1,4 @@
+const myRemoveWithoutCopy = require('./ex3');
 const myListTest3 = [1, 2, 3, 4];
 myRemoveWithoutCopy(myListTest3, 1);
 describe('', () => {
