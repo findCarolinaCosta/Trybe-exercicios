@@ -5,7 +5,7 @@ test('Não deveria passar!', (done) => {
       console.log('Deveria falhar!');
       done();
     } catch (error) {
-      done();
+      done(error); // Alteramos esta linha
     }
   }, 500);
 });
