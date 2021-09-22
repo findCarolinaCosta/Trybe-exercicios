@@ -1,6 +1,11 @@
 test('Não deveria passar!', (done) => {
   setTimeout(() => {
-    expect(10).toBe(5);
-    console.log('Deveria falhar!');
+    try {
+      expect(10).toBe(5);
+      console.log('Deveria falhar!');
+      done();
+    } catch (error) {
+      done();
+    }
   }, 500);
 });
