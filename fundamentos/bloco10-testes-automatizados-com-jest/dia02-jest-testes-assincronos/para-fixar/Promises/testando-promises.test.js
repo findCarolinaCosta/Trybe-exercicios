@@ -5,7 +5,7 @@ const Animals = [
 ];
 
 const findAnimalsByType = (type) => (
-  new Promise((resolve) => { // linha alterada
+  new Promise((resolve, reject) => {
     setTimeout(() => {
       const arrayAnimals = Animals.filter((animal) => animal.type === type);
 
@@ -13,7 +13,7 @@ const findAnimalsByType = (type) => (
         return resolve(arrayAnimals);
       }
 
-      return resolve(new Error('Não possui esse tipo de animal.')); // linha alterada
+      return reject(new Error('Não possui esse tipo de animal.'));
     }, 100);
   })
 );
@@ -34,10 +34,14 @@ describe('Quando o tipo do animal existe', () => {
 });
 
 describe('Quando o tipo do animal, não existe', () => {
-  test('Retorne a lista de animais', () => {
+  test('Retorna o erro', async () => {
     expect.assertions(1);
-    return findAnimalsByType('Lion').catch((error) => (
-      expect(error.message).toMatch('Não possui esse tipo de animal.')
-    ));
+    try {
+      return findAnimalsByType('Lion');
+    } catch (error) {
+      return (
+        expect(error.message).toMatch('Não possui esse tipo de animal.')
+      );
+    }
   });
-}); //falha com uma mensagem dizendo que era esperada uma asserção
+}); // teste que faz asserções, garantimos que todas elas foram executadas, e caso não sejam, o teste falha por outro motivo (quantidade de asserções).
