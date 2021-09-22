@@ -5,7 +5,7 @@ const Animals = [
 ];
 
 const findAnimalsByType = (type) => (
-  new Promise((resolve, reject) => {
+  new Promise((resolve) => { // linha alterada
     setTimeout(() => {
       const arrayAnimals = Animals.filter((animal) => animal.type === type);
 
@@ -13,7 +13,7 @@ const findAnimalsByType = (type) => (
         return resolve(arrayAnimals);
       }
 
-      return reject(new Error('Não possui esse tipo de animal.'));
+      return resolve(new Error('Não possui esse tipo de animal.')); // linha alterada
     }, 100);
   })
 );
