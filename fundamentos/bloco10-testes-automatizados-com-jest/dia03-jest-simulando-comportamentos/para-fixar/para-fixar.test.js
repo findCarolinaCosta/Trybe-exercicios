@@ -2,7 +2,12 @@ const math = require('./mockando-modulos/math');
 
 describe('', () => {
   it('1. Faça o mock da funcão subtrair e teste sua chamada.', () => {
-
+    const mockSubtrair = jest.spyOn(math, "subtrair");  // para fazer da oficial
+    mockSubtrair(3, 2);
+    expect(mockSubtrair).toHaveBeenCalled();
+    expect(mockSubtrair).toHaveBeenCalledTimes(1);
+    expect(mockSubtrair).toHaveBeenCalledWith(3, 2);
+    expect(mockSubtrair(3, 2)).toBe(1);
   });
 
   it('2. Faça o mock da função multiplicar e implemente como retorno padrão o valor "10". Teste a chamada e o retorno.', () => {
@@ -20,4 +25,4 @@ describe('', () => {
   it('5. Faça o mock da função subtrair de maneira que seja possível restaurar sua implementação original. Defina como retorno padrão o valor "20". Teste o número de chamadas e o retorno. Restaure a implementação original da função e teste sua execução.', () => {
 
   });
-})
+});
