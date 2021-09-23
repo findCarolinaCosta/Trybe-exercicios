@@ -1,11 +1,11 @@
 const service = require('./service');
 
 test("#randomRgbColor", () => {
-  // testando se a função foi chamada
+  // testando se a função foi chamada. Não simulamos nenhum comportamento aqui, pois, para esse teste, isso não importa! Queremos saber se ela foi chamada e ponto final.
+  service.randomRgbColor = jest.fn();
+
   service.randomRgbColor();
   expect(service.randomRgbColor).toHaveBeenCalled();
 });
 
-// Erro de correspondência: o valor recebido deve ser uma função simulada ou espiã
-
-// Esse erro acontece porque a propriedade toHaveBeenCalled , assim como outras que serão ensinadas a seguir, são exclusivas para funções simuladas. Ou seja: se você não simula uma função, a propriedade não funciona corretamente.
+//Ao declarar service.randomRgbColor = jest.fn(); , estamos dizendo ao teste que, a partir daquele momento, estamos tomando controle da função service.randomRgbColor e que ela será uma simulação da função original.
