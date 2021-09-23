@@ -17,4 +17,23 @@ test("#randomRgbColor2", () => {
   expect(service.randomRgbColor()).toBe("rgb(255, 255, 255)");
 }); // "No contexto deste teste, quando essa função for chamada, ela retornará o valor que eu defini, ao invés de um valor aleatório!"
 
-// Na terceira linha do exemplo acima, estamos manualmente chamando a função service.randomRgbColor(); . Caso isso não seja feito, o teste expect(service.randomRgbColor).toHaveBeenCalled() irá falhar. Isso acontece porque mockar uma função redefine seu comportamento, mas não a executa. A propriedade toHaveBeenCalled() espera que a função dentro do expect tenha sido executada por alguma chamada anterior a essa linha dentro do contexto desse teste.
+test("#randomRgbColor3", () => {
+  // testando quantas vezes a função foi chamada e qual seu retorno
+  service.randomRgbColor = jest
+    .fn()
+    .mockReturnValue('default value')
+    .mockReturnValueOnce('first call')
+    .mockReturnValueOnce('second call');
+
+  expect(service.randomRgbColor).toHaveBeenCalledTimes(0);
+
+  expect(service.randomRgbColor()).toBe("first call");
+  expect(service.randomRgbColor).toHaveBeenCalledTimes(1);
+
+  expect(service.randomRgbColor()).toBe("second call");
+  expect(service.randomRgbColor).toHaveBeenCalledTimes(2);
+
+  expect(service.randomRgbColor()).toBe("default value");
+  expect(service.randomRgbColor).toHaveBeenCalledTimes(3);
+});
+// testar quantas vezes a função foi chamada. Para isso, utilizamos a propriedade toHaveBeenCalledTimes(number)
