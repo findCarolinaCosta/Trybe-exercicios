@@ -11,7 +11,12 @@ describe('', () => {
   });
 
   it('2. Faça o mock da função multiplicar e implemente como retorno padrão o valor "10". Teste a chamada e o retorno.', () => {
-
+    const mockMultiplicar = jest.spyOn(math, "multiplicar");
+    mockMultiplicar(2, 5);
+    expect(mockMultiplicar).toHaveBeenCalled(); // se foi chamada
+    expect(mockMultiplicar).toHaveBeenCalledTimes(1) // dentro desse teste
+    expect(mockMultiplicar).toHaveBeenCalledWith(2, 5); // parametro passado
+    expect(mockMultiplicar(2, 5)).toEqual(10);
   });
 
   it('3. Faça o mock da função somar e implemente uma função que recebe dois valores e retorna sua soma. Teste a chamada, o retorno e os parâmetros passados.', () => {
