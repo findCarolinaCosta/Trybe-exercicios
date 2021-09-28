@@ -1,3 +1,5 @@
+const { encode, decode } = require('./ex4');
+
 describe('Testa a função encode e decode', () => {
   it('1. Teste se encode é função', () => {
     expect(typeof encode).toEqual('function');
