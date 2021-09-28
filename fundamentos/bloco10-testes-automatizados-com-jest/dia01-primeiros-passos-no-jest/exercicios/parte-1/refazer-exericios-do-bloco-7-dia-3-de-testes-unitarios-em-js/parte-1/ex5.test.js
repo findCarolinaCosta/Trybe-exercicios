@@ -1,3 +1,5 @@
+const techList = require('./ex5');
+
 describe('Testa a função techList', () => {
   it('Testa se a função techList é definida', () => {
     expect(techList).toBeDefined();
