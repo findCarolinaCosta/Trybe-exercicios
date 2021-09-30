@@ -1,3 +1,5 @@
+const searchEmployee = require('./bonus');
+
 describe('Testa a função searchEmployee', () => {
   it('Testa se a função existe', () => {
     expect(typeof searchEmployee).toBe('function');
