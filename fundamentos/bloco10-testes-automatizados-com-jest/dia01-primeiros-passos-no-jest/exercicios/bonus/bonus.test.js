@@ -9,12 +9,18 @@ describe('Testa a função searchEmployee', () => {
     expect(searchEmployee('8579-6', 'lastName')).toBe('Gates');
   });
   it('Testa se searchEmployee(id, "specialities"), retorna o esperado', () => {
-    expect(searchEmployee('8579-6', 'specialities')).toBe('UX', 'Design');
+    expect(searchEmployee('8579-6', 'specialities')).toEqual(['UX', 'Design']);
   });
-  it('Testa erro "ID não identificada", para caso o id não constar no quadro de funcionários', () => {
-    expect(searchEmployee('2333-1', 'specialities')).toThrow();
+  it('Testa erro "ID não identificado", para caso o id não constar no quadro de funcionários', () => {
+    expect(() => { searchEmployee('2333-1', 'specialities') }).toThrow();
   });
-  it('Testa se retorna se retorna o erro "Informação indisponível", caso a informação não existir', () => {
-    expect(() => { searchEmployee('2333-1', 'specialities') }).toThrowError(new Error("Informação indisponível"));
+  it('esta a mensagem do erro para ID inexistente', () => {
+    expect(() => { searchEmployee('2333-1', 'specialities') }).toThrowError(new Error("ID não identificado"));
+  });
+  it('Testa se lança um erro quando a informação e o ID são inexistentes', () => {
+    expect(() => { searchEmployee() }).toThrow();
+  });
+  it('Testa a mensagem do erro para informação inexistente', () => {
+    expect(() => { searchEmployee('4678-2', 'shift') }).toThrowError(new Error("Informação indisponível"));
   });
 });
