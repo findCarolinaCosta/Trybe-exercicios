@@ -35,8 +35,11 @@ describe('Quando o tipo do animal existe', () => {
 
 describe('Quando o tipo do animal, não existe', () => {
   test('Retorne a lista de animais', async () => {
+    expect.assertions(1); // Na verdade é necessário ainda para não dar falso positivo
     await findAnimalsByType('Lion').catch((error) => (
       expect(error.message).toMatch('Não possui esse tipo de animal.')
     ));
   });
-}); // Converte para função assíncrona, não precisando mais do assertions
+});
+
+module.exports = findAnimalsByType;
