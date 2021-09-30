@@ -34,14 +34,10 @@ describe('Quando o tipo do animal existe', () => {
 });
 
 describe('Quando o tipo do animal, não existe', () => {
-  test('Retorna o erro', async () => {
+  test('Retorne a lista de animais', () => {
     expect.assertions(1);
-    try {
-      return findAnimalsByType('Lion');
-    } catch (error) {
-      return (
-        expect(error.message).toMatch('Não possui esse tipo de animal.')
-      );
-    }
+    return findAnimalsByType('Lion').catch((error) => (
+      expect(error.message).toMatch('Não possui esse tipo de animal.')
+    ));
   });
 }); // teste que faz asserções, garantimos que todas elas foram executadas, e caso não sejam, o teste falha por outro motivo (quantidade de asserções).
