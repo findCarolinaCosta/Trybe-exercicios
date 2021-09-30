@@ -36,3 +36,5 @@ const professionalBoard = [
     specialities: ['Backend'],
   },
 ];
+
+module.exports = professionalBoard;
