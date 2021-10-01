@@ -8,7 +8,11 @@ describe('', () => {
   });
 
   it('2. Faça o mock da função multiplicar e implemente como retorno padrão o valor "10". Teste a chamada e o retorno.', () => {
+    math.multiplicar = jest.fn().mockReturnValue(10);
 
+    math.multiplicar();
+    expect(math.multiplicar).toHaveBeenCalled();
+    expect(math.multiplicar()).toBe(10);
   });
 
   it('3. Faça o mock da função somar e implemente uma função que recebe dois valores e retorna sua soma. Teste a chamada, o retorno e os parâmetros passados.', () => {
