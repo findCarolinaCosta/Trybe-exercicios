@@ -30,12 +30,21 @@ const findAnimalByName = (name) => (
   })
 );
 
-const findAnimalByAge = (age) => {
+const findAnimalByAge = (age) => (
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const listAnimals = Animals.filter((animal) => animal.age === age);
 
-}
+      if (listAnimals.length > 0) resolve(listAnimals);
+
+      return reject(new Error('Nenhum animal encontrado!'));
+    }, 100);
+  })
+)
 
 const getListAnimals = (type) => (
   findAnimalsByType(type).then(list => list)
 );
 
-module.exports = findAnimalByAge;
+const functions = (findAnimalByName, findAnimalByAge);
+module.exports = functions;
