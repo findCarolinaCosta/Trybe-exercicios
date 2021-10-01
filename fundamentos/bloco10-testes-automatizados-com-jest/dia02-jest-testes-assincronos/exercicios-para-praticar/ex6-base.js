@@ -18,9 +18,17 @@ const findAnimalsByType = (type) => (
   })
 );
 
-const findAnimalByName = (name) => {
-  // Adicione seu código aqui
-};
+const findAnimalByName = (name) => (
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const animalNameFound = Animals.find((animal) => animal.name === name);
+
+      if (animalNameFound) resolve(animalNameFound);
+
+      return reject(new Error('Nenhum animal com esse nome!'));
+    }, 100);
+  })
+);
 
 const getListAnimals = (type) => (
   findAnimalsByType(type).then(list => list)
