@@ -30,8 +30,12 @@ const findAnimalByName = (name) => (
   })
 );
 
+const findAnimalByAge = (age) => {
+
+}
+
 const getListAnimals = (type) => (
   findAnimalsByType(type).then(list => list)
 );
 
-module.exports = findAnimalByName;
+module.exports = findAnimalByAge;

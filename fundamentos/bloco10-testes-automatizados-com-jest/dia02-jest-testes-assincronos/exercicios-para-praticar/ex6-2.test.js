@@ -1,3 +1,5 @@
+const findAnimalByAge = require('./ex6-base');
+
 describe('6.2 - Adicione uma nova funcionalidade para buscar pela idade dos animais. O retorno deve ser um array de objetos, mas, caso não ache nenhum, retorne uma mensagem de erro. Escreva tanto a função como o seu teste.', () => {
   describe('Testando promise - findAnimalByAge', () => {
     describe('Quando existe o animal com o a idade', () => {
