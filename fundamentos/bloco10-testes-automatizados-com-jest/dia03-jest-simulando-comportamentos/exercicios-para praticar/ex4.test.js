@@ -39,4 +39,24 @@ describe('4. Dentro de um mesmo arquivo, crie três funções. A primeira deve r
 
   });
 
+  describe('Testa função que recebe duas strings e ás concatena', () => {
+    service.thirdFunction.mockImplementation((a, b, c) => a.concat(b, c));
+    it('Testa se retorna o que é esperado', () => {
+      expect(service.thirdFunction("a", "m", "or")).toBe("amor");
+    });
+
+    it('Testa se a função é chamada', () => {
+      expect(service.thirdFunction).toHaveBeenCalled();
+    });
+
+    it('Testa vezes que foi chamada', () => {
+      expect(service.thirdFunction).toHaveBeenCalledTimes(1);
+    });
+
+    it('Testa se recebe o parâmetro esperado', () => {
+      expect(service.thirdFunction).toHaveBeenCalledWith("a", "m", "or");
+    });
+
+  });
+
 });
