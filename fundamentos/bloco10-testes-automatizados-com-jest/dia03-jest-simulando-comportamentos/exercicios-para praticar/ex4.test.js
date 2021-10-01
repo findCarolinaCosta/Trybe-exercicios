@@ -19,4 +19,24 @@ describe('4. Dentro de um mesmo arquivo, crie três funções. A primeira deve r
 
   });
 
+  describe('Testa função de retornar a primeira letra de uma string', () => {
+    service.secondFunction.mockImplementation(a => a.charAt(a.length - 1));
+    it('Testa se retorna o que é esperado', () => {
+      expect(service.secondFunction("letter")).toBe("r");
+    });
+
+    it('Testa se a função é chamada', () => {
+      expect(service.secondFunction).toHaveBeenCalled();
+    });
+
+    it('Testa vezes que foi chamada', () => {
+      expect(service.secondFunction).toHaveBeenCalledTimes(1);
+    });
+
+    it('Testa se recebe o parâmetro esperado', () => {
+      expect(service.secondFunction).toHaveBeenCalledWith("letter");
+    });
+
+  });
+
 });
