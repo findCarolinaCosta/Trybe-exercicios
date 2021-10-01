@@ -49,6 +49,21 @@ describe('', () => {
   });
 
   it('5. Faça o mock da função subtrair de maneira que seja possível restaurar sua implementação original. Defina como retorno padrão o valor "20". Teste o número de chamadas e o retorno. Restaure a implementação original da função e teste sua execução.', () => {
+    const mockSubtrair = jest.spyOn(math, "subtrair");
+    mockSubtrair.mockImplementation((a, b) => a * b);
+    mockSubtrair.mockReturnValue(20);
 
+    expect(mockSubtrair(10, 2)).toBe(20);
+    expect(mockSubtrair).toHaveBeenCalled();
+    expect(mockSubtrair).toHaveBeenCalledTimes(2);
+    expect(mockSubtrair).toHaveBeenCalledWith(10, 2);
+
+    mockSubtrair.mockRestore();
+    mockSubtrair.mockReturnValue(8);
+
+    expect(mockSubtrair(10, 2)).toBe(8);
+    expect(mockSubtrair).toHaveBeenCalled();
+    expect(mockSubtrair).toHaveBeenCalledTimes(1);
+    expect(mockSubtrair).toHaveBeenCalledWith(10, 2);
   });
 });
