@@ -1,0 +1,19 @@
+{
+  "name": "exercicios-para-praticar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ex1.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "jest": "^27.2.4"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.5"
+  }
+}
