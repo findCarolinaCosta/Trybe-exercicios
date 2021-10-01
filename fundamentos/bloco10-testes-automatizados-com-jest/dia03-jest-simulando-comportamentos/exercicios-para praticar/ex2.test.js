@@ -14,7 +14,7 @@ describe('2. Com a mesma função do exercício anterior, utilizando o mock, cri
     expect(service.retornaNumeroAleatorio).toHaveBeenCalledTimes(1);
   });
 
-  it('Testa se recebe dois parâmetros', () => {
+  it('Testa se recebe os parâmetros esperados', () => {
     expect(service.retornaNumeroAleatorio).toHaveBeenCalledWith(10, 2);
   });
 
