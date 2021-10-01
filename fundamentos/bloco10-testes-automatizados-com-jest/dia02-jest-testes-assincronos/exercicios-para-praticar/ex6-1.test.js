@@ -1,3 +1,5 @@
+const findAnimalByName = require('./ex6-base');
+
 describe('6.1 - Adicione uma funcionalidade para buscar pelo nome do animal - crie uma função que deverá passar no teste abaixo. Dica : use o código do exemplo para criar uma nova função, analise os testes antes de iniciar.', () => {
   describe('Testando promise - findAnimalByName', () => {
     describe('Quando existe o animal com o nome procurado', () => {

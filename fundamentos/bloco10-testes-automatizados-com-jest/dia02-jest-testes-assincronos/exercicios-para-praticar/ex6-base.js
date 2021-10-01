@@ -18,6 +18,12 @@ const findAnimalsByType = (type) => (
   })
 );
 
+const findAnimalByName = (name) => {
+  // Adicione seu código aqui
+};
+
 const getListAnimals = (type) => (
   findAnimalsByType(type).then(list => list)
 );
+
+module.exports = findAnimalByName;
