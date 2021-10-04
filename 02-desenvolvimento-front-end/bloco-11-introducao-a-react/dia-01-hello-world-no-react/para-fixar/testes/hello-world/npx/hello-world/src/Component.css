@@ -1,0 +1,11 @@
+.name {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
