@@ -2,14 +2,14 @@ import { Component } from 'react';
 
 class Pokemon extends Component {
   render() {
-    const { pokemons } = this.props;
+    const { pokemon } = this.props;
 
     return (
       <article>
-        <p>{pokemons.name}</p>
-        <p>{pokemons.type}</p>
-        <p>Average weight: {pokemons.averageWeight.value} {pokemons.averageWeight.measurementUnit}</p>
-        <img src={pokemons.image} alt={pokemons.name} />
+        <p>{pokemon.name}</p>
+        <p>{pokemon.type}</p>
+        <p>Average weight: {pokemon.averageWeight.value} {pokemon.averageWeight.measurementUnit}</p>
+        <img src={pokemon.image} alt={pokemon.name} />
       </article>
     );
   }
