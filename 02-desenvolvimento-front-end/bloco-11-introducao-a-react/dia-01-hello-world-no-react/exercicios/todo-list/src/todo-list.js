@@ -9,7 +9,7 @@ const Task = (value) => {
 
 const tasksList = ['Estudar', 'Limpar a casa', 'Limpar cantinho das gatas', 'Tomar banho', 'Almoçar'];
 
-class GetList extends React.Component {
+class GetList extends Component {
   render() {
     return (
       <div>
