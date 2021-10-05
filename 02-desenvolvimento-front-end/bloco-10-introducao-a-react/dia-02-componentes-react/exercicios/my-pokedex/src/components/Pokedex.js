@@ -7,7 +7,7 @@ class PokemonsList extends Component {
     return (
       <section>
         {data.map((elem) => {
-          return <Pokemon key={data.id} pokemon={elem} />;
+          return <Pokemon key={elem.id} pokemon={elem} />;
         })}
       </section>
     )
