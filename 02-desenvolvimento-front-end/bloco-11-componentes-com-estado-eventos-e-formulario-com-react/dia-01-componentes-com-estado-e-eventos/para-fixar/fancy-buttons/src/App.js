@@ -1,6 +1,5 @@
 // Para fixar
-// 5 - Agora você vai converter sua aplicação para uma que conta o número de cliques dado em cada botão! Primeiramente, defina um estado inicial para a contagem de cada botão.
-// 🦜 Dica: Uma possibilidade é você definir três chaves, uma para cada botão!
+//6 - Agora, quando um botão for clicado, altere de forma assíncrona o estado deste botão de zero para um.
 
 import React, { Component } from 'react';
 import './App.css';
@@ -10,7 +9,7 @@ class App extends Component {
     super();
     this.handleBtnOne = this.handleBtnOne.bind(this);
     this.handleBtnTwo = this.handleBtnTwo.bind(this);
-    this.handleBtnThree = this.handleBtnTwo.bind(this);
+    this.handleBtnThree = this.handleBtnThree.bind(this);
 
     this.state = {
       handleBtnOne: 0,
@@ -21,15 +20,25 @@ class App extends Component {
   }
 
   handleBtnOne() {
-    console.log('Clicou no botão 1!')
+    this.setState(() => ({
+      handleBtnOne: 1,
+    }),
+      console.log('Clicou no botão 1!'));
+
   }
 
   handleBtnTwo() {
-    console.log('Clicou no botão 2!')
+    this.setState(() => ({
+      handleBtnTwo: 1,
+    }),
+      console.log('Clicou no botão 2!'));
   }
 
   handleBtnThree() {
-    console.log('Clicou no botão 3!')
+    this.setState(() => ({
+      handleBtnThree: 1,
+    }),
+      console.log('Clicou no botão 3!'));
   }
 
   render() {
