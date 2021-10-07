@@ -1,5 +1,5 @@
 // Para fixar
-//6 - Agora, quando um botão for clicado, altere de forma assíncrona o estado deste botão de zero para um.
+//7 - Por fim, baseie-se no estado anterior ao atual para incrementar a contagem de cliques cada vez que um botão for clicado!
 
 import React, { Component } from 'react';
 import './App.css';
@@ -20,34 +20,32 @@ class App extends Component {
   }
 
   handleBtnOne() {
-    this.setState(() => ({
-      handleBtnOne: 1,
-    }),
-      console.log('Clicou no botão 1!'));
-
+    this.setState((previousState, _props) => ({
+      handleBtnOne: previousState.handleBtnOne + 1,
+    }));
   }
 
   handleBtnTwo() {
-    this.setState(() => ({
-      handleBtnTwo: 1,
-    }),
-      console.log('Clicou no botão 2!'));
+    this.setState((previousState, _props) => ({
+      handleBtnTwo: previousState.handleBtnTwo + 1,
+    }));
   }
 
   handleBtnThree() {
-    this.setState(() => ({
-      handleBtnThree: 1,
-    }),
-      console.log('Clicou no botão 3!'));
+    this.setState((previousState, _props) => ({
+      handleBtnThree: previousState.handleBtnThree + 1,
+    }));
   }
 
   render() {
     return (
-      <div>
-        <button onClick={this.handleBtnOne}>Meu botão 1</button>
-        <button onClick={this.handleBtnTwo}>Meu botão 2</button>
-        <button onClick={this.handleBtnThree}>Meu botão 3</button>
-      </div>
+      <div className='div-btn'>
+        <button className='btn' onClick={this.handleBtnOne}>Vezes o botão 1 foi clicado: {this.state.handleBtnOne}</button>
+        <br />
+        <button className='btn' onClick={this.handleBtnTwo}>Vezes o botão 2 foi clicado: {this.state.handleBtnTwo}</button>
+        <br />
+        <button className='btn' onClick={this.handleBtnThree}>Vezes o botão 3 foi clicado: {this.state.handleBtnThree}</button>
+      </div >
     );
   }
 }

@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.div-btn {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 20px;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;	
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:violet;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.btn:hover {
+  background-color: #b05af6;
+}
+
+.btn:active {
+  background-color: rgb(253, 197, 253);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
