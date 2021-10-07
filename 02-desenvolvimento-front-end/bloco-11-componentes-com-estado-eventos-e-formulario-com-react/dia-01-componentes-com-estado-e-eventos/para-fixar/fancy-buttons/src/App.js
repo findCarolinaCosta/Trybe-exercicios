@@ -1,5 +1,6 @@
 // Para fixar
-// 4 - Garanta acesso ao objeto this na função que você declarou.
+// 5 - Agora você vai converter sua aplicação para uma que conta o número de cliques dado em cada botão! Primeiramente, defina um estado inicial para a contagem de cada botão.
+// 🦜 Dica: Uma possibilidade é você definir três chaves, uma para cada botão!
 
 import React, { Component } from 'react';
 import './App.css';
@@ -10,6 +11,13 @@ class App extends Component {
     this.handleBtnOne = this.handleBtnOne.bind(this);
     this.handleBtnTwo = this.handleBtnTwo.bind(this);
     this.handleBtnThree = this.handleBtnTwo.bind(this);
+
+    this.state = {
+      handleBtnOne: 0,
+      handleBtnTwo: 0,
+      handleBtnThree: 0,
+
+    }
   }
 
   handleBtnOne() {
