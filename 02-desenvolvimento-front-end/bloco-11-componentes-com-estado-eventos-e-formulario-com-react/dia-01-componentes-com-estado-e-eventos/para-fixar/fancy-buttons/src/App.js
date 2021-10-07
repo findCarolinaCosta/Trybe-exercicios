@@ -1,32 +1,38 @@
 // Para fixar
-// 3 - Declare dentro da classe do seu componente dos exercícios de fixação acima a função que lida com o evento que antes era lidado por uma função do lado de fora da classe!
-//Não são reconhecidas ainda
+// 4 - Garanta acesso ao objeto this na função que você declarou.
 
 import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  function handleBtnOne() {
-  console.log('Clicou no botão 1!')
-}
+  constructor() {
+    super();
+    this.handleBtnOne = this.handleBtnOne.bind(this);
+    this.handleBtnTwo = this.handleBtnTwo.bind(this);
+    this.handleBtnThree = this.handleBtnTwo.bind(this);
+  }
 
-function handleBtnTwo() {
-  console.log('Clicou no botão 2!')
-}
+  handleBtnOne() {
+    console.log('Clicou no botão 1!')
+  }
 
-function handleBtnThree() {
-  console.log('Clicou no botão 3!')
-}
+  handleBtnTwo() {
+    console.log('Clicou no botão 2!')
+  }
 
-render() {
-  return (
-    <div>
-      <button onClick={handleBtnOne}>Meu botão 1</button>
-      <button onClick={handleBtnTwo}>Meu botão 2</button>
-      <button onClick={handleBtnThree}>Meu botão 3</button>
-    </div>
-  );
-}
+  handleBtnThree() {
+    console.log('Clicou no botão 3!')
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleBtnOne}>Meu botão 1</button>
+        <button onClick={this.handleBtnTwo}>Meu botão 2</button>
+        <button onClick={this.handleBtnThree}>Meu botão 3</button>
+      </div>
+    );
+  }
 }
 
 export default App;
