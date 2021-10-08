@@ -7,13 +7,15 @@ class Form extends Component {
       selectFild: '',
       imputText: '',
       textArea: '',
+      imputCheckbox: false,
     }
   }
 
-  handleChange = (event) => {
-    const { name } = event.target;
+  handleChange = ({ target }) => {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
-      [name]: event.target.value,
+      [name]: value,
     });
   }
 
@@ -23,7 +25,7 @@ class Form extends Component {
         <h1>Fixando como faz formulário em react com componentes controlados:</h1>
         <h2>Para fixar</h2>
         <p>
-          3 - Faça todos os seus elementos componentes do formulário ficarem 100% controlados. Faça um event handler genérico para lidar com eles.
+          4 - Acrescente no seu formulário um input do tipo checkbox e garanta que seu event handler esteja tratando este caso corretamente.
         </p>
         <form>
           <label>
@@ -46,7 +48,7 @@ class Form extends Component {
           <div>
             <label>
               Segundo imput tipo checkbox:
-              <input type="checkbox" />
+              <input type="checkbox" name='imputCheckbox' value={this.state.imputCheckbox} onChange={this.handleChange} />
             </label>
           </div>
         </form>
