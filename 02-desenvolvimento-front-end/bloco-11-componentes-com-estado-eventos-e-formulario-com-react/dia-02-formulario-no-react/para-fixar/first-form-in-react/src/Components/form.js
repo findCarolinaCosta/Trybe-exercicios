@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Select from './Select';
 
 class Form extends Component {
   constructor() {
@@ -29,18 +30,12 @@ class Form extends Component {
           7 - Faça todos os seus campos serem componentes filhos do seu componente de formulário. Garanta que seu estado ainda pertence ao componente pai.
         </p>
         <form>
+
           <fieldset>
             <legend>Opção de select</legend>
-            <label>
-              <p>Campo de select: </p>
-              <select name='selectFild' value={this.state.selectFild} onChange={this.handleChange} >
-                <option>Select 1</option>
-                <option>Select 2</option>
-                <option>Select 3</option>
-                <option>Select 4</option>
-              </select>
-            </label>
+            < Select value={this.state.selectFild} handleChange={this.handleChange} />
           </fieldset>
+
           <fieldset>
             <legend>Textos</legend>
             <label>
