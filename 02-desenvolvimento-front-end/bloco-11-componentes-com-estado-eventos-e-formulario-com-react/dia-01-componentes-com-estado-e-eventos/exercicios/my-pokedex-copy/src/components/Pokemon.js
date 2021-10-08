@@ -5,7 +5,7 @@ class Pokemon extends Component {
     const { pokemon } = this.props;
 
     return (
-      <article>
+      <article className='pokemon'>
         <p>{pokemon.name}</p>
         <p>{pokemon.type}</p>
         <p>Average weight: {pokemon.averageWeight.value} {pokemon.averageWeight.measurementUnit}</p>
