@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Select from './Select';
+import Texts from './texts';
 
 class Form extends Component {
   constructor() {
@@ -22,6 +23,8 @@ class Form extends Component {
   }
 
   render() {
+    const { imputText, textArea } = this.state;
+
     return (
       <div>
         <h1>Fixando como faz formulário em react com componentes controlados:</h1>
@@ -31,22 +34,13 @@ class Form extends Component {
         </p>
         <form>
 
-          <fieldset>
-            <legend>Opção de select</legend>
-            < Select value={this.state.selectFild} handleChange={this.handleChange} />
-          </fieldset>
+          < Select value={this.state.selectFild} handleChange={this.handleChange} />
 
-          <fieldset>
-            <legend>Textos</legend>
-            <label>
-              <p>Primeiro imput tipo texto: </p>
-              <input name='imputText' type="text" value={this.state.imputText} onChange={this.handleChange} />
-            </label>
-            <label>
-              <p>Text area: </p>
-              <textarea name='textArea' value={this.state.textArea} onChange={this.handleChange} />
-            </label>
-          </fieldset>
+          <Texts
+            imputText={imputText}
+            textArea={textArea}
+            handleChange={this.handleChange} />
+
           <fieldset>
             <legend>Outros</legend>
             <div>
