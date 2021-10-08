@@ -5,12 +5,15 @@ class Form extends Component {
     super();
     this.state = {
       selectFild: '',
+      imputText: '',
+      textArea: '',
     }
   }
 
   handleChange = (event) => {
+    const { name } = event.target;
     this.setState({
-      selectFild: event.target.value,
+      [name]: event.target.value,
     });
   }
 
@@ -20,7 +23,7 @@ class Form extends Component {
         <h1>Fixando como faz formulário em react com componentes controlados:</h1>
         <h2>Para fixar</h2>
         <p>
-          2 - Baixe a React Developer Tools e veja, nela, o dado inserido no elemento controlado sendo salvo no Estado.
+          3 - Faça todos os seus elementos componentes do formulário ficarem 100% controlados. Faça um event handler genérico para lidar com eles.
         </p>
         <form>
           <label>
@@ -34,11 +37,11 @@ class Form extends Component {
           </label>
           <label>
             <p>Primeiro imput tipo texto: </p>
-            <input type="text" />
+            <input name='imputText' type="text" value={this.state.imputText} onChange={this.handleChange} />
           </label>
           <label>
             <p>Text area: </p>
-            <textarea></textarea>
+            <textarea name='textArea' value={this.state.textArea} onChange={this.handleChange} />
           </label>
           <div>
             <label>
