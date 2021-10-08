@@ -8,6 +8,7 @@ class Form extends Component {
       imputText: '',
       textArea: '',
       imputCheckbox: false,
+      imputFile: '',
     }
   }
 
@@ -25,7 +26,7 @@ class Form extends Component {
         <h1>Fixando como faz formulário em react com componentes controlados:</h1>
         <h2>Para fixar</h2>
         <p>
-          4 - Acrescente no seu formulário um input do tipo checkbox e garanta que seu event handler esteja tratando este caso corretamente.
+          5 - Busque na documentação de React acerca de formulários (primeiro link da seção de Recursos Adicionais!) como se deve adicionar um input para arquivos . Acrescente um ao seu formulário.
         </p>
         <form>
           <label>
@@ -51,6 +52,10 @@ class Form extends Component {
               <input type="checkbox" name='imputCheckbox' value={this.state.imputCheckbox} onChange={this.handleChange} />
             </label>
           </div>
+          <label>
+            Terceiro imput tipo file:
+            <input type="file" name='imputFile' value={this.state.imputFile} onChange={this.handleChange} />
+          </label>
         </form>
 
         <p>💡 Atenção!Essa nomenclatura, oficial do React, é confusa.Estamos dizendo aqui que o elemento do formulário é um componente controlado.Não estamos falando dos componentes React aqui, mas dos elementos que compõem o formulário!Cuidado para não confundir.</p>
