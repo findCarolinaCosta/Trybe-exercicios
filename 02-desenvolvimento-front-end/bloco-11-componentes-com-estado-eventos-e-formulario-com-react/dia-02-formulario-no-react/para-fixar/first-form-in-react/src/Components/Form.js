@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Select from './Select';
-import Texts from './texts';
+import Texts from './Texts';
 
 class Form extends Component {
   constructor() {
