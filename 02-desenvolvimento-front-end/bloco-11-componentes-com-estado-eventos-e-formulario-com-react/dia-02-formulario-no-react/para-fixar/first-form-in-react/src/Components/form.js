@@ -26,7 +26,7 @@ class Form extends Component {
         <h1>Fixando como faz formulário em react com componentes controlados:</h1>
         <h2>Para fixar</h2>
         <p>
-          6 - Encapsule alguns dos seus campos num fieldset .
+          7 - Faça todos os seus campos serem componentes filhos do seu componente de formulário. Garanta que seu estado ainda pertence ao componente pai.
         </p>
         <form>
           <fieldset>
