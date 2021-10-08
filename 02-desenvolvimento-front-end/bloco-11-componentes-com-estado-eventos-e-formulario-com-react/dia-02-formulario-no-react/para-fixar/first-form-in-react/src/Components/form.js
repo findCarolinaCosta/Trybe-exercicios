@@ -1,6 +1,19 @@
 import { Component } from 'react';
 
 class Form extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectFild: '',
+    }
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      selectFild: event.target.value,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -12,7 +25,7 @@ class Form extends Component {
         <form>
           <label>
             <p>Campo de select: </p>
-            <select>
+            <select name='selectFild' value={this.state.selectFild} onChange={this.handleChange} >
               <option>Select 1</option>
               <option>Select 2</option>
               <option>Select 3</option>
@@ -36,7 +49,7 @@ class Form extends Component {
         </form>
 
         <p>💡 Atenção!Essa nomenclatura, oficial do React, é confusa.Estamos dizendo aqui que o elemento do formulário é um componente controlado.Não estamos falando dos componentes React aqui, mas dos elementos que compõem o formulário!Cuidado para não confundir.</p>
-      </div>
+      </div >
     );
   }
 }
