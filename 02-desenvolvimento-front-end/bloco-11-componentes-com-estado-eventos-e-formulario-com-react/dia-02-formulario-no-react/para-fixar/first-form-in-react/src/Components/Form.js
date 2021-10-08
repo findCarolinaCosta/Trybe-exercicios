@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Select from './Select';
 import Texts from './Texts';
+import Others from './Others'
 
 class Form extends Component {
   constructor() {
@@ -23,7 +24,7 @@ class Form extends Component {
   }
 
   render() {
-    const { imputText, textArea } = this.state;
+    const { imputText, textArea, imputCheckbox, imputFile } = this.state;
 
     return (
       <div>
@@ -41,19 +42,10 @@ class Form extends Component {
             textArea={textArea}
             handleChange={this.handleChange} />
 
-          <fieldset>
-            <legend>Outros</legend>
-            <div>
-              <label>
-                Segundo imput tipo checkbox:
-                <input type="checkbox" name='imputCheckbox' value={this.state.imputCheckbox} onChange={this.handleChange} />
-              </label>
-            </div>
-            <label>
-              Terceiro imput tipo file:
-              <input type="file" name='imputFile' value={this.state.imputFile} onChange={this.handleChange} />
-            </label>
-          </fieldset>
+          <Others
+            imputCheckbox={imputCheckbox}
+            imputFile={imputFile}
+            handleChange={this.handleChange} />
 
         </form>
 
