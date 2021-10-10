@@ -2,7 +2,9 @@ import Greeting from './props-testes/Greeting'
 
 function App() {
   return (
-    <Greeting />
+    <main>
+      <Greeting name="Samuel" lastName="Silva" />
+    </main>
   );
 }
 
