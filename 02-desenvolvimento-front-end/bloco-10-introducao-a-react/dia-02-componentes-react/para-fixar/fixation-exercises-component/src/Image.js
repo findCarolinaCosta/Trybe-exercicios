@@ -2,12 +2,13 @@ import React from 'react';
 
 class Image extends React.Component {
   render() {
-    return <img src={this.props.source} alt={this.props.alternativeText} />;
+    return (
+      <div>
+        <h1>2. Chame o componente Image, de forma que seja mostrada esta imagem - Link, ou o texto Cute cat staring , caso a imagem não consiga ser carregada.</h1>
+        <img src={this.props.source} alt={this.props.alternativeText} />
+      </div>
+    );
   }
 }
 
 export default Image;
-
-
-//1. Qual o nome do componente declarado acima?
-//R: Image, com a primeira letra maiúscula para dizer que é um componente
