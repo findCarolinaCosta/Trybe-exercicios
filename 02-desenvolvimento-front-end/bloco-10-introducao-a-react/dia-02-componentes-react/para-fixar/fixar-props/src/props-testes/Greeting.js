@@ -1,6 +1,4 @@
-function Greeting(name) {
-  return `Hello, ${name}`;
+function greeting(name, lastName) {
+  return `Hello, ${name} ${lastName}`;
 }
-console.log(Greeting('Samuel'));
-
-export default Greeting;
+console.log(greeting('Samuel', 'Silva'));
