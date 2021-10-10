@@ -10,3 +10,4 @@ export default Image;
 
 
 //1. Qual o nome do componente declarado acima?
+//R: Image, com a primeira letra maiúscula para dizer que é um componente
