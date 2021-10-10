@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import './App.css';
+import Album from './components/Album'; //1. Importá-lo no arquivo App.js :
 
 class App extends Component {
   render() {
@@ -35,23 +36,10 @@ class App extends Component {
 
     // Retorno do que será renderizado
     return (
-      <article>
-        <h1>Vamos refatorar o código abaixo para poder entender, na prática, sobre composição de componentes e seus benefícios.</h1>
-        <section>
-          <img src={album01.image} alt={album01.title} />
-          <h2>{album01.title}</h2>
-          <p>Lançamento: {album01.releaseDate.year}</p>
-          <p>Gravadora: {album01.others.recordCompany}</p>
-          <p>Formatos: {album01.others.formats}</p>
-        </section>
-        <section>
-          <img src={album02.image} alt={album02.title} />
-          <h2>{album02.title}</h2>
-          <p>Lançamento: {album02.releaseDate.year}</p>
-          <p>Gravadora: {album02.others.recordCompany}</p>
-          <p>Formatos: {album02.others.formats}</p>
-        </section>
-      </article>
+      <div>
+        <Album album={album01} />
+        <Album album={album02} />
+      </div> //2. Passar as props apropriadas
     );
   }
 }
