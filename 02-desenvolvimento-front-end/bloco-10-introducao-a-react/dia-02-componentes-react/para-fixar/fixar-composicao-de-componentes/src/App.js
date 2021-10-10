@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import './App.css';
-import Album from './components/Album'; //1. Importá-lo no arquivo App.js :
+import Album from './components/Album';
 
 class App extends Component {
   render() {
@@ -37,9 +37,10 @@ class App extends Component {
     // Retorno do que será renderizado
     return (
       <div>
+        <p>Importante notar que os dois componentes irmãos, são, na realidade, o mesmo componente, porém reutilizados** com base nas props recebidas. Ou seja, apesar de serem o mesmo componente, renderizam informações diferentes, uma vez que recebem props diferentes.</p>
         <Album album={album01} />
         <Album album={album02} />
-      </div> //2. Passar as props apropriadas
+      </div>
     );
   }
 }
