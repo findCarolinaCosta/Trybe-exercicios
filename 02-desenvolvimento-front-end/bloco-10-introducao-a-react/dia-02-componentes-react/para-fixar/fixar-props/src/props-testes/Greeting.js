@@ -2,7 +2,11 @@ import React from 'react';
 
 class Greeting extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name} {this.props.lastName}</h1>;
+    //faz isso por trás dos pano
+    //const props = { name: 'Samuel', lastName: 'Silva' }
+    //sendo assim posível até descostruir
+    const { name, lastName } = this.props;
+    return <h1>Hello, {name} {lastName}</h1>;
   }
 }
 
