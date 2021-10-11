@@ -3,7 +3,7 @@ import './App.css';
 import Album from './components/Album';
 import UserProfile from './components/UserProfile';
 import { albuns } from './data-ex1';
-import { joao, amelia } from './data-ex2';
+import { users } from './data-ex2';
 
 class App extends Component {
   render() {
@@ -17,8 +17,7 @@ class App extends Component {
         <hr />
         <div className='div-internal'>
           <h1>Exemplo 2</h1>
-          <UserProfile user={joao} />
-          <UserProfile user={amelia} />
+          {users.map(user => <UserProfile key={user.id} user={user} />)}
           <p>Analisando o código do exemplo 2, temos: <br />
             1. O componente App é composto por dois componentes UserProfile . Em outras palavras, o componente App é pai dos dois componentes UserProfile . Além disso, user=joao e user=amelia são componentes irmãos , e eles dois são filhos do componente App .<br />
             2. O componente UserProfile , por sua vez, possui um componente Image . Ou seja, UserProfile tem Image como filho. <br />
