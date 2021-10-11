@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Others extends Component {
   render() {
@@ -13,7 +14,9 @@ class Others extends Component {
               type="checkbox"
               name='imputCheckbox'
               imputCheckbox={imputCheckbox}
-              onChange={handleChange} />
+              onChange={handleChange}
+            />
+            {imputCheckbox === false ? 'Aceite os termos' : 'Ok'}
           </label>
         </div>
         <label>
@@ -23,10 +26,17 @@ class Others extends Component {
             name='imputFile'
             imputFile={imputFile}
             onChange={handleChange} />
+          {imputFile === '' ? ' Adiciona um arquivo' : 'Ok'}
         </label>
       </fieldset>
     )
   }
+}
+
+Others.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  imputCheckbox: PropTypes.bool.isRequired,
+  imputFile: PropTypes.any.isRequired,
 }
 
 export default Others;
