@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    const shoppingList = ['leite', 'arroz', 'feijão', 'banana', 'carne'];
+    const items = shoppingList.map((item) => {
+      console.log("item: ", item);
+      return (<li key={item}>{item}</li>); //keys são importantes para o React indentificar, com precisão, quais itens foram adicionados, removidos ou alterados. Sendo mais recomendado usar nome ou um id e não index do array nesse exemplo.
+    });
+
+    return (
+      <div className="App">
+        <h1> Como você renderizaria dinamicamente essa lista de compras?</h1>
+        <h2>Lista de compras</h2>
+        <ul>
+          {items}
+        </ul>
+      </div>
+    );
+  }
 }
 
 export default App;
