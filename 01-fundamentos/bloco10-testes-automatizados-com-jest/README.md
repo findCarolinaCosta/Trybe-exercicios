@@ -1,0 +1,1 @@
+Houveram mudanças na organização do curso, alguns conteúdos foram alterados. A princípio tenho que reorganizar o diretório de fundamentos e o READEME principal, para atualiza-los.
