@@ -2,7 +2,7 @@ import { Component } from 'react'
 import './App.css';
 import Album from './components/Album';
 import UserProfile from './components/UserProfile';
-import { album01, album02 } from './data-ex1';
+import { albuns } from './data-ex1';
 import { joao, amelia } from './data-ex2';
 
 class App extends Component {
@@ -12,8 +12,7 @@ class App extends Component {
         <div className='div-internal'>
           <h1>Exemplo 1</h1>
           <p>Importante notar que os dois componentes irmãos, são, na realidade, o mesmo componente, porém reutilizados** com base nas props recebidas. Ou seja, apesar de serem o mesmo componente, renderizam informações diferentes, uma vez que recebem props diferentes.</p>
-          <Album album={album01} />
-          <Album album={album02} />
+          {albuns.map(elem => <Album key={elem.title} album={elem} />)}
         </div>
         <hr />
         <div className='div-internal'>
