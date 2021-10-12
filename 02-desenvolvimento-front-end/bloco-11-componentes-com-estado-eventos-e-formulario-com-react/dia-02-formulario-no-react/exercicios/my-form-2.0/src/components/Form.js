@@ -1,10 +1,16 @@
 import { Component } from 'react';
 import PersonalInfo from './PersonalInfo';
+import './Form.css';
+
 
 class Form extends Component {
   render() {
     return (
-      <PersonalInfo />
+      <div className='container'>
+        <form>
+          <PersonalInfo />
+        </form>
+      </div>
     )
   }
 }
