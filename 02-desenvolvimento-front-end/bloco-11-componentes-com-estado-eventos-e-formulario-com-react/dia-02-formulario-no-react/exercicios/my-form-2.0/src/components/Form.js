@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import PersonalInfo from './PersonalInfo';
 import './Form.css';
+import DetailsLastJob from './DetailsLastJob';
 
 
 class Form extends Component {
@@ -9,6 +10,7 @@ class Form extends Component {
       <div className='container'>
         <form>
           <PersonalInfo />
+          <DetailsLastJob />
         </form>
       </div>
     )

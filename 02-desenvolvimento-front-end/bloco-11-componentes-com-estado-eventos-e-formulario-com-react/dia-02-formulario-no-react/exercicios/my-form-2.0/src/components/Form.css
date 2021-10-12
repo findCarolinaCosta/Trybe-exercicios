@@ -13,7 +13,6 @@ input {
   align-items: center;
   margin: 20px;
   width: auto;
-  
 }
 
 .container-info {
@@ -21,10 +20,18 @@ input {
   text-align: center;
 }
 
-.div-name{
+.details-last-job {
+  margin-top: 15px;
+}
+
+.div-internal{
   margin-top: 15px;
 }
 
 .div-type-housing {
   margin-top: 15px;
+}
+
+.text {
+  width: 90%;
 }
