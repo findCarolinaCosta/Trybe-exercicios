@@ -8,40 +8,40 @@ class PersonalInfo extends Component {
     }
     return (
       <fieldset className='container-info'>
-        <legend>Informações pessoais: </legend>
+        <legend>Informações pessoais:</legend>
 
-        <div className='div-name'>
+        <div className='div-internal'>
           <label htmlFor="name">
             Escreva seu nome completo:
-            <input id='name' name='nome' type="text" placeholder='Digite seu nome aqui' maxLength='40' style={style} required='required' />
+            <input id='name' name='nome' className='text' type="text" placeholder='Digite seu nome aqui' maxLength='40' style={style} required='required' />
           </label>
         </div>
 
-        <div className='div-email'>
+        <div className='div-internal'>
           <label htmlFor="name">
             Escreva seu email:
-            <input id='email' name='email' type='email' placeholder='Digite seu email aqui' maxLength='50' required='required' />
+            <input id='email' name='email' className='text' type='email' placeholder='Digite seu email aqui' maxLength='50' required='required' />
           </label>
         </div>
 
-        <div className='div-cpf'>
+        <div className='div-internal'>
           <label htmlFor="cpf">
             Digite seu CPF:
-            <input id='cpf' name='cpf' type='text' placeholder='Somente números' maxLength='11' required='required' />
+            <input id='cpf' name='cpf' className='text' type='text' placeholder='Somente números' maxLength='11' required='required' />
           </label>
         </div>
 
-        <div className='div-address'>
+        <div className='div-internal'>
           <label htmlFor="address">
             Digite seu Endereço:
-            <input id='address' name='address' type='text' placeholder='Endereço, Nº' maxLength='200' required='required' onChange={event => event.target.value.match(/^\d/) ? console.log(event.target.value.replace(/[^\w\s]/gi, '')) : console.log(event.target.value)} />
+            <input id='address' name='address' className='text' type='text' placeholder='Endereço, Nº' maxLength='200' required='required' onChange={event => event.target.value.match(/^\d/) ? console.log(event.target.value.replace(/[^\w\s]/gi, '')) : console.log(event.target.value)} />
           </label>
         </div>
 
-        <div className='div-city'>
+        <div className='div-internal'>
           <label htmlFor="city">
             Digite sua cidade:
-            <input id='city' name='city' type='text' placeholder='Cidade' maxLength='28' required='required'
+            <input id='city' name='city' className='text' type='text' placeholder='Cidade' maxLength='28' required='required'
               onChange={
                 console.error('Tem que fazer uma função linha 45 do PersonalInfo')
               }
@@ -49,14 +49,14 @@ class PersonalInfo extends Component {
           </label>
         </div>
 
-        <div className='div-state'>
+        <div className='div-internal'>
           <label htmlFor="state">
             Selecione seu estado:
             <States />
           </label>
         </div>
 
-        <div className='div-type-housing'>
+        <div className='div-internal'>
           <label htmlFor="house">
             Selecione entre os tipos de moradia:
             <input
