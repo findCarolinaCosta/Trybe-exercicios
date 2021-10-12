@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Others extends Component {
   render() {
-    const { imputCheckbox, imputFile, handleChange } = this.props;
+    const { imputcheckbox, imputfile, handleChange } = this.props;
     return (
       <fieldset>
         <legend>Outros</legend>
@@ -12,21 +12,21 @@ class Others extends Component {
             Segundo imput tipo checkbox:
             <input
               type="checkbox"
-              name='imputCheckbox'
-              imputCheckbox={imputCheckbox}
+              name='imputcheckbox'
+              imputcheckbox={imputcheckbox.toString()}
               onChange={handleChange}
             />
-            {imputCheckbox === false ? 'Aceite os termos' : 'Ok'}
+            {imputcheckbox === false ? 'Aceite os termos' : 'Ok'}
           </label>
         </div>
         <label>
           Terceiro imput tipo file:
-          <input
+          <input className='fileBtn'
             type="file"
-            name='imputFile'
-            imputFile={imputFile}
+            name='imputfile'
+            imputfile={imputfile}
             onChange={handleChange} />
-          {imputFile === '' ? ' Adiciona um arquivo' : 'Ok'}
+          {imputfile === '' ? ' Adiciona um arquivo' : 'Ok'}
         </label>
       </fieldset>
     )
@@ -35,8 +35,8 @@ class Others extends Component {
 
 Others.propTypes = {
   handleChange: PropTypes.func.isRequired,
-  imputCheckbox: PropTypes.bool.isRequired,
-  imputFile: PropTypes.any.isRequired,
+  imputcheckbox: PropTypes.bool.isRequired,
+  imputfile: PropTypes.any.isRequired,
 }
 
 export default Others;

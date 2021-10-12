@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Texts extends Component {
   render() {
-    const { imputText, textArea, handleChange } = this.props;
+    const { imputtext, textarea, handleChange } = this.props;
 
     return (
       <fieldset>
@@ -11,19 +11,19 @@ class Texts extends Component {
         <label>
           <p>Primeiro imput tipo texto: </p>
           <input
-            name='imputText'
+            name='imputtext'
             type="text"
-            imputText={imputText}
+            imputtext={imputtext}
             onChange={handleChange} />
-          {!imputText.length ? ' -texto inválido- ' : ' -ok- '}
+          {!imputtext.length ? ' -texto inválido- ' : ' -ok- '}
         </label>
         <label>
           <p>Text area: </p>
           <textarea
-            name='textArea'
-            textArea={textArea}
+            name='textarea'
+            textarea={textarea}
             onChange={handleChange} />
-          {!textArea.length ? ' -texto inválido- ' : ' -ok- '}
+          {!textarea.length ? ' -texto inválido- ' : ' -ok- '}
         </label>
       </fieldset>
     );
@@ -32,8 +32,8 @@ class Texts extends Component {
 
 Texts.propTypes = {
   handleChange: PropTypes.func.isRequired,
-  imputText: PropTypes.string.isRequired,
-  textArea: PropTypes.string.isRequired,
+  imputtext: PropTypes.string.isRequired,
+  textarea: PropTypes.string.isRequired,
 }
 
 export default Texts;
