@@ -47,8 +47,7 @@ class Form extends Component {
         <h1>Fixando como faz formulário em react com componentes controlados:</h1>
         <h2>Para fixar</h2>
         <p>
-          9 - Crie, no estado do componente pai, um campo formularioComErros que deve ser true caso algum desses componentes tenha erros e false caso contrário. <br />
-          🦜 Dica: Se algum dos componentes transmitir true para a função que fará o handle dos erros, qual valor deve ser armazenado no Estado ?
+          Formulário para fixar concluído ✅
         </p>
         <form>
 
