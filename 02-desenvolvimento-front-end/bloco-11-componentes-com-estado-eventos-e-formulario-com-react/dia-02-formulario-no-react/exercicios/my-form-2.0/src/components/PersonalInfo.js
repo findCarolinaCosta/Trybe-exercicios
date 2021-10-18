@@ -49,7 +49,7 @@ class PersonalInfo extends Component {
         <div className='div-internal'>
           <label htmlFor="state">
             Selecione seu estado:
-            <States statedata={stateData} handleChange={handleChange} />
+            <States { ...this.props } handleChange={handleChange} />
           </label>
         </div>
 

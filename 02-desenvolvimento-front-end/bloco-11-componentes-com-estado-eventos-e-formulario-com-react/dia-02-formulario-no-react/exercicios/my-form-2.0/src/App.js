@@ -2,21 +2,7 @@ import { Component } from 'react';
 import Form from './components/Form';
 import './App.css';
 import FilledInfo from './components/FilledInfo';
-
-
-const INITIAL_STATE = {
-  name: '',
-  email: '',
-  cpf: '',
-  address: '',
-  city: '',
-  state: '',
-  addresstype: '',
-  curriculumsummary: '',
-  office: '',
-  descriptionjob: '',
-  submitted: false,
-}
+import INITIAL_STATE from './StateData';
 
 class App extends Component {
   constructor(props) {
@@ -34,11 +20,11 @@ class App extends Component {
   sendForm = () => { this.setState({ submitted: true }) };
 
   render() {
-    const { name, email, cpf, address, city, state, addresstype, curriculumsummary, office, descriptionjob, submitted, sendForm } = this.state;
-    const stateData = { name, email, cpf, address, city, state, addresstype, curriculumsummary, office, descriptionjob }
+    const { name, email, cpf, address, city, state, addresstype, curriculumsummary, office, descriptionjob, submitted } = this.state;
+    const stateData = { name, email, cpf, address, city, state, addresstype, curriculumsummary, office, descriptionjob };
     return (
       <main>
-        < Form handleChange={this.handleChange} stateData={stateData} sendForm={sendForm} />
+        < Form handleChange={this.handleChange} stateData={stateData} sendForm={this.sendForm} { ...this.state } cleanForm={this.cleanForm}/>
         {submitted && <FilledInfo currentState={this.state} />}
       </main >
     );

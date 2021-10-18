@@ -3,12 +3,12 @@ import states from '../data-state'
 
 class States extends Component {
   render() {
-    const { handleChange } = this.props;
+    const { stateData, handleChange } = this.props;
     return (
       <select name="state" id="state" className='text' onChange={handleChange} >
         <option>Selecione</option>
         {states.map(state =>
-          <option key={state.uf} value={state.nome}>{state.nome}</option>
+          <option key={state.uf} value={stateData.state}>{state.nome}</option>
         )}
       </select>
     )
