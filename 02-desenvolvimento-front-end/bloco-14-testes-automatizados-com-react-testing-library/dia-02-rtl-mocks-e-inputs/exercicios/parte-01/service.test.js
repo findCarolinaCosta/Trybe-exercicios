@@ -6,6 +6,8 @@ describe('1 - Testa função que gera um número aleatório', () => {
     service.handleNumber = jest.fn().mockReturnValue(10);
 
     expect(service.handleNumber()).toBe(10);
+    expect(service.handleNumber).toHaveBeenCalled();
+    expect(service.handleNumber).toHaveBeenCalledTimes(1);
   });
 
 })
