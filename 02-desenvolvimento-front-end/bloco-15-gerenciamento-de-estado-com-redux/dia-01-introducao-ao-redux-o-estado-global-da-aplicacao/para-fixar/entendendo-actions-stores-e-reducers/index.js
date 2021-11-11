@@ -28,8 +28,9 @@ const reducer = (state = ESTADO_INICIAL, action) => {
 };
 
 const store = Redux.createStore(reducer);
+store.dispatch(fazerLogin('alguem@email.com', '12345678'));
 
-console.log(store.getState()); //{ login: true, email: 'alguem@email.com', password: '12345678' }
+console.log(store.getState()); // output atual: { login: true, email: 'alguem@email.com', password: '12345678' }
 
 
-// Mas e se precisarmos alterar o dado que está no estado? A peça que tem esta função é a action ! Uma action é um objeto JavaScript que tem pelo menos uma propriedade type e é responsável por comunicar ao reducer uma mudança a ser feita na store . Em Redux nós utilizamos o actionCreator , que nada mais do que uma função que retorna uma action . Para o nosso exemplo, iremos usar uma actionCreator chamada fazerLogin . Esta função irá enviar uma action ao nosso reducer , com a intenção de alterar para verdadeiro a chave login da nossa store .
+//Conseguimos mudar o estado da store utilizando o dispatch . Ele despacha nossa action para dentro do reducer , para que nosso estado seja alterado. Note, também, que o reducer retorna todo o estado , e não somente o que será modificado. Retornamos, então, um objeto que contém todos os dados atuais do estado { ...state } mais as chaves que serão modificadas pela action!
