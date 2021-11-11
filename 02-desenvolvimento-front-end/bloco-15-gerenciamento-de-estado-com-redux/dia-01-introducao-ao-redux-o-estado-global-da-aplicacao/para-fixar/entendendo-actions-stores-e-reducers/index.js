@@ -13,5 +13,7 @@ const reducer = (state = ESTADO_INICIAL) => {
 
 const store = Redux.createStore(reducer);
 
+console.log(store.getState()); //{ login: false, email: '', password: '' }
 
-// Agora sim, nosso reducer está pronto! Mas o que acontece se nosso valor inicial (que podemos chamar de estado inicial) ficar muito grande? Nosso código vai ficar "bagunçado" né?! Então podemos reescrevê-lo.
+
+// Nosso reducer está montado e possui o nosso estado inicial da aplicação. Vamos verificar o output quando acessamos a store com a função getState() .
