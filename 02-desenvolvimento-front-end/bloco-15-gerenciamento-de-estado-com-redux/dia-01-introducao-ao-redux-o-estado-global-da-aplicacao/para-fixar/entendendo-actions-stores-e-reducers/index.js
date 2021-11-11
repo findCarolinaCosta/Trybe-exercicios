@@ -1,10 +1,17 @@
 const Redux = require('redux');
 
-const reducer = (state = { login: false, email: '' }) => {
+const ESTADO_INICIAL = {
+  login: false,
+  email: '',
+  password: '',
+};
+
+
+const reducer = (state = ESTADO_INICIAL) => {
   return state;
 };
 
 const store = Redux.createStore(reducer);
 
 
-//Uma store só funciona se passarmos uma função que será responsável por alterar os dados dela: o reducer . O reducer recebe como primeiro parâmetro um state, sendo que seu retorno substituirá o state da store . Para fins didáticos, iremos montar o reducer no mesmo arquivo, mas a boa prática é fazer em um arquivo separado.
+// Agora sim, nosso reducer está pronto! Mas o que acontece se nosso valor inicial (que podemos chamar de estado inicial) ficar muito grande? Nosso código vai ficar "bagunçado" né?! Então podemos reescrevê-lo.
