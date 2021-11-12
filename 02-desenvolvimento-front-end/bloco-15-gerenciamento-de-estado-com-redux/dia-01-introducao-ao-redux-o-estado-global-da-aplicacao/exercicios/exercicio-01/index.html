@@ -65,6 +65,14 @@
     nextBtn.addEventListener('click', handleClick('NEXT_COLOR'));
     prevBtn.addEventListener('click', handleClick('PREVIOUS_COLOR'));
 
+    store.subscribe(() => {
+      const spanColor = document.getElementById('value');
+      const containerDiv = document.getElementById('container');
+      const { colors, index } = store.getState();
+      span.innerHTML = colors[index];
+      containerDiv.style.background = colors[index];
+    })
+
 
   </script>
 </body>
