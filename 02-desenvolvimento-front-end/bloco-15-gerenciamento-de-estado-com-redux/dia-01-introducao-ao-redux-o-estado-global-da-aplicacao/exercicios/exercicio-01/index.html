@@ -61,15 +61,15 @@
 
     const nextBtn = document.getElementById('next');
     const prevBtn = document.getElementById('previous');
-    const handleClick = (type) => store.dispatch({ type, });
-    nextBtn.addEventListener('click', handleClick('NEXT_COLOR'));
-    prevBtn.addEventListener('click', handleClick('PREVIOUS_COLOR'));
+
+    nextBtn.addEventListener('click', () => store.dispatch({ type: 'NEXT_COLOR' }));
+    prevBtn.addEventListener('click', () => store.dispatch({ type: 'PREVIOUS_COLOR' }));
 
     store.subscribe(() => {
       const spanColor = document.getElementById('value');
       const containerDiv = document.getElementById('container');
       const { colors, index } = store.getState();
-      span.innerHTML = colors[index];
+      spanColor.innerHTML = colors[index];
       containerDiv.style.background = colors[index];
     })
 
