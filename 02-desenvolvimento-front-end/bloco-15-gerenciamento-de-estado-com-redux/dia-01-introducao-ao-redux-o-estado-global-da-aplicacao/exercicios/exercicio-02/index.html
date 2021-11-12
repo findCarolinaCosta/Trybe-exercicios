@@ -40,6 +40,12 @@
 
     const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
       switch (action.type) {
+        case 'MODIFICAR_1_NOME/SOBRENOME':
+          return {
+            ...state,
+            nome: action.nome,
+            sobrenome: action.sobrenome,
+          }
         default:
           return state;
       }
@@ -47,6 +53,12 @@
 
     const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
       switch (action.type) {
+        case 'MODIFICAR_2_NOME/SOBRENOME':
+          return {
+            ...state,
+            nome: action.nome,
+            sobrenome: action.sobrenome,
+          }
         default:
           return state;
       }
