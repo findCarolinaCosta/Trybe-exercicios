@@ -85,6 +85,20 @@
       }, 1000);
     };
 
+    store.subscribe(() => {
+      const { meuPrimeiroReducer, meuSegundoReducer } = store.getState();
+      const name1 = document.getElementById('nome-1');
+      const sobrenome1 = document.getElementById('sobrenome-1');
+      const name2 = document.getElementById('nome-2');
+      const sobrenome2 = document.getElementById('sobrenome-2');
+
+      name1.innerHTML = meuPrimeiroReducer.nome;
+      sobrenome1.innerHTML = meuPrimeiroReducer.sobrenome;
+
+      name2.innerHTML = meuSegundoReducer.nome;
+      sobrenome2.innerHTML = meuSegundoReducer.sobrenome;
+    })
+
   </script>
 </body>
 
