@@ -65,7 +65,25 @@
     };
 
     const allReducers = Redux.combineReducers({ meuPrimeiroReducer, meuSegundoReducer });
-    const store = Redux.createStore(allReducers);
+    const store = Redux.createStore(
+      allReducers,
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    );
+
+    window.onload = () => {
+      setTimeout(() => {
+        store.dispatch({
+          type: 'MODIFICAR_1_NOME/SOBRENOME',
+          nome: 'Bruna',
+          sobrenome: 'Santana Oliveira',
+        })
+        store.dispatch({
+          type: 'MODIFICAR_2_NOME/SOBRENOME',
+          nome: 'Rodrigo',
+          sobrenome: 'Santos da Silva',
+        })
+      }, 1000);
+    };
 
   </script>
 </body>
