@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  margin: 5%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: auto;
+}
+
+.container-info {
+  max-width: 300px;
+  text-align: center;
+}
+
+.details-last-job {
+  margin-top: 15px;
+}
+
+.div-internal{
+  margin-top: 15px;
+}
+
+.div-type-housing {
+  margin-top: 15px;
+}
+
+.text {
+  width: 90%;
+}
