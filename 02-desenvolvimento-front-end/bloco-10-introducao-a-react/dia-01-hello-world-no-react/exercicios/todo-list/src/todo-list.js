@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './todo-list.css'
 
 const Task = (value) => {
   return (
@@ -12,7 +13,7 @@ const tasksList = ['Estudar', 'Limpar a casa', 'Limpar cantinho das gatas', 'Tom
 class GetList extends Component {
   render() {
     return (
-      <div>
+      <div className='container'>
         <h1>Todo List:</h1>
         <ul>{tasksList.map(taskItem => Task(taskItem))}</ul>
       </div>

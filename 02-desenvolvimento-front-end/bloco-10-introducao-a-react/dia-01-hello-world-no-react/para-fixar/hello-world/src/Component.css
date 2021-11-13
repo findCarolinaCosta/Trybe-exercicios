@@ -4,7 +4,7 @@
   flex-wrap: wrap;
 }
 
-.description {
+.container-div {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
