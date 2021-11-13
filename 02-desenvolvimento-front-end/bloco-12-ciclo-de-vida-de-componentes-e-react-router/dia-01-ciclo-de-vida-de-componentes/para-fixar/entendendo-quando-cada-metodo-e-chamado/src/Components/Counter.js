@@ -16,12 +16,14 @@ class Counter extends Component {
   // Podemos também, nos métodos shouldComponentUpdate e componentDidUpdate , acessar os estados ou props próximos e anteriores. Para isso, devemos utilizar os parâmetros nextProps e nextState no shouldComponentUpdate e prevProps e prevState no componentDidUpdate .
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate");
+    console.log("shouldComponentUpdate", this.state, 'estado atual', nextState, 'próximo estado');
     return true;
   }
 
+  //o estado só é de fato atualizado quando chega no método componentDidUpdate . Por isso, caso seja necessário impedir uma renderização, você deve utilizar o método shouldComponentUpdate , que permite comparar os atuais e próximos estados ou props e adicionar a lógica. Como por exemplo uma condição
+
   componentDidUpdate(prevProps, prevState) {
-    console.log("componentDidUpdate");
+    console.log("componentDidUpdate", this.state, 'estado atual' , prevState, 'estado anterior');
   }
 
   render() {
