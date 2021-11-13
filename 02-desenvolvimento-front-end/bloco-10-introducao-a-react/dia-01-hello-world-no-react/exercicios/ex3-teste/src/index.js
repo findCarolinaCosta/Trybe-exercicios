@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+ReactDOM.render( //responsável por renderizar e atualizar seu código dentro do HTML , exibindo seus elementos React .
   <React.StrictMode>
     <App />
   </React.StrictMode>,
