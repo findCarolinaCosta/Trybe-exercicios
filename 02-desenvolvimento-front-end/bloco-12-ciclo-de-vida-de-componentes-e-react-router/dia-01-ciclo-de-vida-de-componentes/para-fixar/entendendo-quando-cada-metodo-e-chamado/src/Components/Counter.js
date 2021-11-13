@@ -13,6 +13,8 @@ class Counter extends Component {
     console.log("componentDidMount");
   }
 
+  // Podemos também, nos métodos shouldComponentUpdate e componentDidUpdate , acessar os estados ou props próximos e anteriores. Para isso, devemos utilizar os parâmetros nextProps e nextState no shouldComponentUpdate e prevProps e prevState no componentDidUpdate .
+
   shouldComponentUpdate(nextProps, nextState) {
     console.log("shouldComponentUpdate");
     return true;
