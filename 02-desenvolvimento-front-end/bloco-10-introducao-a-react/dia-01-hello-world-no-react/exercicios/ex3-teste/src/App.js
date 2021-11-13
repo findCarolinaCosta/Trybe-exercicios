@@ -10,9 +10,11 @@ function App() {
         <Header />
       </header>
       <main className="App-header">
+        <div className='content'>
         <Content />
+        </div>
       </main>
-      <footer>
+      <footer className='footer'>
         <Footer />
       </footer>
     </div>

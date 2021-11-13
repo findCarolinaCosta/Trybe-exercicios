@@ -8,8 +8,8 @@ export default class Content extends Component {
       <div>
         { conteudos.map((assunto) => {
           return (
-            <section className='conatiner-content'>
-              <h3>O conteúdo é: { assunto.conteudo }</h3>
+            <section className='card'>
+              <h3 className='title'>O conteúdo é: { assunto.conteudo }</h3>
               <div className='about'>
                   <p>Status: { assunto.status }</p> 
                   <p>Bloco: { assunto.bloco }</p>
