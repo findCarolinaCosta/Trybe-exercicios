@@ -19,7 +19,7 @@ class SecondComponent extends React.Component {
           onChange={event => this.setState({ inputValue: event.target.value })}
         />
         <button onClick={() => myFirstDispatch(this.state.inputValue)}>
-          Executar qualquer tarefa
+        Adicionar Tarefa
         </button> {/* O botão está disparando o mapDispatch e enviando o valor para a store*/}
       </div>
     );
