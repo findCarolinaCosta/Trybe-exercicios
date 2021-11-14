@@ -33,6 +33,7 @@ class App extends React.Component {
             Mostrar / Ocultar Perfil
           </button>
         </div>
+        <Connections />
       </div>
     );
   }
