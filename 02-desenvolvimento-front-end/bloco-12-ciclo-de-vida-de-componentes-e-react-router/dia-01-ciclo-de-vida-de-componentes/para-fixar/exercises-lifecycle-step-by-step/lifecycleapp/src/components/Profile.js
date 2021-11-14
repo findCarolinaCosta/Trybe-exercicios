@@ -13,6 +13,20 @@ class Profile extends React.Component {
     this.changeDataJson = this.changeDataJson.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.getUserNameFromLocalStorage = this.getUserNameFromLocalStorage.bind(this);
+  }
+
+  componentDidUpdate(_prevProps, prevState) {
+    const { userName } = this.state;
+    if (prevState.userName.length < userName.length) {
+      localStorage.setItem('UserName', userName);
+    }
+  }
+
+  componentWillUnmount() {
+    /* eslint-disable no-alert */
+    alert('Você ocultou seu perfil');
+    /* eslint-disable no-alert */
   }
 
   handleChange({ target }) {
@@ -36,10 +50,13 @@ class Profile extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    /* eslint-disable no-alert */
-    alert('Você ocultou seu perfil');
-    /* eslint-disable no-alert */
+  getUserNameFromLocalStorage() {
+    const { userName } = this.state;
+    if (userName.length === 0 && localStorage.getItem('UserName') !== null) {
+      this.setState({
+        userName: localStorage.getItem('UserName'),
+      });
+    }
   }
 
   changeDataJson(dataJson) {
@@ -47,7 +64,8 @@ class Profile extends React.Component {
   }
 
   render() {
-    const { api: { name, email, bio, location, login } = '', api } = this.state;
+    const { api: { name, email, bio, location, login } = '', api, loading } = this.state;
+    this.getUserNameFromLocalStorage();
 
     const loginUser = (
       <div className="form">
