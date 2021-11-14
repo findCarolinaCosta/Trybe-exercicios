@@ -63,3 +63,15 @@ class App extends Component {
 }
 
 export default App;
+
+
+// Exemplo um pouco mais complicado porém importante de mencionar:
+
+// Para atualizar o estado baseado no estado anterior e executar alguma lógica somente depois do estado atualizar 
+
+// this.setState(
+//   (estadoAnterior) => ({ meuEstado: estadoAnterior }), // Primeiro parâmetro!
+//   () => { /* ... Sua lógica aqui */ } // Segundo parâmetro!
+// ) 
+
+//Nesse caso tanto o primeiro parâmetro quanto o segundo são callbacks!
