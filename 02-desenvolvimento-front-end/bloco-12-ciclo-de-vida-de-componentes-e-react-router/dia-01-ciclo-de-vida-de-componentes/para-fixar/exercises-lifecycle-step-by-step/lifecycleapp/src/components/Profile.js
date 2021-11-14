@@ -24,7 +24,9 @@ class Profile extends React.Component {
   }
 
   componentWillUnmount() {
-
+    /* eslint-disable no-alert */
+    alert('Você ocultou seu perfil');
+    /* eslint-disable no-alert */
   }
 
   changeDataJson(dataJson) {
