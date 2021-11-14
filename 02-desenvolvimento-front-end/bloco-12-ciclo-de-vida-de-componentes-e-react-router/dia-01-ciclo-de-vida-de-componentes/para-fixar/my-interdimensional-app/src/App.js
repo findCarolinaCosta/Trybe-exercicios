@@ -5,6 +5,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+        loading: true,
         characters: [],
     };
   }
@@ -25,26 +26,36 @@ class App extends Component {
     this.fetchCharacters();
   } // resolvido os problemas chamando a função fetchCharacters dentro do componentDidMount 
 
-  render() {
+  renderJokeElement() {
     const { characters } = this.state;
-    console.log('Render da classe.', 'Itens do characters do state:', characters.length);
-    if (characters.length > 0) console.log('Quando o characters tiver algo esse output é chamado');
     return (
-      <div className="App">
-        <h1>
-          Ricky and Morty Characters:
-        </h1>
-        <div className="body">
-          {characters.map(({ name, image }) => {
+        <>
+          <section className="body">
+            {characters.map(({ name, image, id }) => {
             return (
-              <div className="container" key={name}> {/* as keys são usadas pelo react para identificar quais itens sofreram alterações, para que se for preciso rederizar novamente somente pela key modificada e não toda uma lista, etc...*/}
+                <div className="container" key={id}> {/* as keys são usadas pelo react para identificar quais itens sofreram alterações, para que se for preciso rederizar novamente somente pela key modificada e não toda uma lista, etc...*/}
                 <h3>{name}</h3>
                 <img src={image} alt={name}/>
               </div>
             )
           })}
-        </div>
-      </div>
+          </section>
+        </>
+    )
+  }
+
+  render() {
+    const { characters, loading } = this.state;
+    const loadingElement = <span>Loading...</span>;
+    console.log('Render da classe.', 'Itens do characters do state:', characters.length);
+    if (characters.length > 0) console.log('Quando o characters tiver algo esse output é chamado');
+    return (
+        <main className="App">
+          <h1>
+            Ricky and Morty Characters:
+          </h1>
+          {loading ? loadingElement :  this.renderJokeElement()}
+        </main>
     );
   }
 }
