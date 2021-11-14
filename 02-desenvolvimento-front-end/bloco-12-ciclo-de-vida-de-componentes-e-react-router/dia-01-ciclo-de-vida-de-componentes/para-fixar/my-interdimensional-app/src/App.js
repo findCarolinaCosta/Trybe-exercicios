@@ -10,11 +10,13 @@ class App extends Component {
     };
   }
 
-  fetchCharacters = () => {
-    fetch('https://rickandmortyapi.com/api/character')
-    .then(response => response.json())
-    .then(data => {
-      this.setState({characters: data.results})
+   fetchCharacters = () => {
+    this.setState({ loading: true}, () => { //para garantir que algo só rode depois do estado ser atualizado! Passamos como segundo parâmetro da this.setState uma callback!
+        fetch('https://rickandmortyapi.com/api/character')
+        .then(response => response.json())
+        .then(data => {
+        this.setState({characters: data.results, loading: false})
+      })
     })
     console.log('Retorno do fetch');
     console.log(this.state.characters, 'State na função de fetch');
@@ -32,13 +34,13 @@ class App extends Component {
         <>
           <section className="body">
             {characters.map(({ name, image, id }) => {
-            return (
+              return (
                 <div className="container" key={id}> {/* as keys são usadas pelo react para identificar quais itens sofreram alterações, para que se for preciso rederizar novamente somente pela key modificada e não toda uma lista, etc...*/}
-                <h3>{name}</h3>
-                <img src={image} alt={name}/>
-              </div>
-            )
-          })}
+                  <h3>{name}</h3>
+                  <img src={image} alt={name}/>
+                </div>
+              )
+            })}
           </section>
         </>
     )
