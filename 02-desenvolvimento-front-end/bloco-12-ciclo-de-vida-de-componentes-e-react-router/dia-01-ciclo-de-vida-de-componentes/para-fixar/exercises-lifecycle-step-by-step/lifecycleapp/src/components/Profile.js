@@ -8,12 +8,14 @@ class Profile extends React.Component {
       api: '',
       userName: '',
       loading: true,
+      showProfile: true,
     };
 
     this.changeDataJson = this.changeDataJson.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.getUserNameFromLocalStorage = this.getUserNameFromLocalStorage.bind(this);
+    this.changeProfile = this.changeProfile.bind(this);
   }
 
   componentDidUpdate(_prevProps, prevState) {
@@ -59,12 +61,31 @@ class Profile extends React.Component {
     }
   }
 
+  changeProfile() {
+    const { showProfile } = this.state;
+    this.setState({ showProfile: !showProfile });
+  }
+
+  btnHidden() {
+    return (
+      <div className="central d-flex justify-content-center">
+        <button
+          className="btn btn-dark align-self-center"
+          type="button"
+          onClick={ this.changeProfile }
+        >
+          Mostrar / Ocultar Perfil
+        </button>
+      </div>
+    );
+  }
   changeDataJson(dataJson) {
     this.setState({ api: dataJson });
   }
 
   render() {
-    const { api: { name, email, bio, location, login } = '', api, loading } = this.state;
+    const { api: { name, email, bio, location, login } = '', api,
+      loading, showProfile } = this.state;
     this.getUserNameFromLocalStorage();
 
     const loginUser = (
@@ -99,11 +120,15 @@ class Profile extends React.Component {
       </div>
     );
 
+    const conditionCardInfo = loading ? <p>Loading...</p> : card;
     return (
+      <>
       <div className="git d-flex flex-column justify-content-center align-items-center">
-        { loading ? <p>Loading...</p> : card }
+          { showProfile ? conditionCardInfo : null }
         { api ? null : loginUser }
       </div>
+        { hideBtn ? null : this.btnHidden() }
+      </>
     );
   }
 }
