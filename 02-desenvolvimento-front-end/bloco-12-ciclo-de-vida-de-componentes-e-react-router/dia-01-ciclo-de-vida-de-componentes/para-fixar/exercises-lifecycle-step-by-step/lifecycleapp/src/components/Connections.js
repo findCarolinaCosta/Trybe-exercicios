@@ -26,7 +26,12 @@ class Connections extends React.Component {
   }
 
   componentDidUpdate(_prevProps, prevState) {
-
+    const { list } = this.state;
+    if (prevState.list.length < list.length) {
+      this.changeToBlue(); // Ao adicionar um contato, a div ficará azul.
+    } else if (prevState.list.length > list.length) {
+      this.changeToCoral(); // Ao deletar um contato, a div ficará coral.
+    }
   }
 
   handleChange({ target: { value } }) {
