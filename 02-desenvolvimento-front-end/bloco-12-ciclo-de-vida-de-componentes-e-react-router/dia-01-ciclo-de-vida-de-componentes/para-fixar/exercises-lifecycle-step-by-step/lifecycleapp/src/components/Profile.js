@@ -34,16 +34,18 @@ class Profile extends React.Component {
   }
 
   render() {
-    const { api: { name, email, bio } = '', api } = this.state;
+    const { api: { name, email, bio, location, login } = '', api } = this.state;
 
     if (!api) return <p>Loading...</p>;
 
     const card = (
       <div className="d-flex h-100 flex-column justify-content-center align-items-center">
         <h1>{ name }</h1>
+        <a href={ api.html_url }>{ login }</a>
         <span>{ email }</span>
         <img className="myPicture" src={ api.avatar_url } alt="Avatar" />
         <p>{ bio }</p>
+        <p>{ location }</p>
       </div>
     );
 
