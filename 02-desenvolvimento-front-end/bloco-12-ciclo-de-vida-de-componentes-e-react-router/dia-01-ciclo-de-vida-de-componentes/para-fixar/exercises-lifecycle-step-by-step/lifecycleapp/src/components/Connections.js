@@ -86,10 +86,9 @@ class Connections extends React.Component {
   removeContact(loginToRemove) {
     const { list, counter } = this.state;
     const updatedList = list.filter(({ login }) => login !== loginToRemove);
-    const decreaseOne = -1;
     this.setState({
       list: updatedList,
-      counter: counter > 1 ? decreaseOne : 0,
+      counter: counter === 0 ? 0 : counter - 1,
     });
     if (counter <= 1) {
       localStorage.removeItem('List');
