@@ -72,9 +72,6 @@ class Connections extends React.Component {
         list: JSON.parse(localStorage.getItem('List')),
         counter: list.length,
       });
-      if (list.length === 0) {
-        localStorage.removeItem('List');
-      }
     }
   }
 
@@ -89,10 +86,14 @@ class Connections extends React.Component {
   removeContact(loginToRemove) {
     const { list, counter } = this.state;
     const updatedList = list.filter(({ login }) => login !== loginToRemove);
+    const decreaseOne = -1;
     this.setState({
       list: updatedList,
-      counter: counter - 1,
+      counter: counter > 1 ? decreaseOne : 0,
     });
+    if (counter <= 1) {
+      localStorage.removeItem('List');
+    }
   }
 
   contactAdder(counter) {
