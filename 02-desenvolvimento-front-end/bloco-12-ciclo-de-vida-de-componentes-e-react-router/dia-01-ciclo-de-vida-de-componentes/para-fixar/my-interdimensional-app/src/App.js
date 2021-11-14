@@ -15,13 +15,20 @@ class App extends Component {
     .then(data => {
       this.setState({characters: data.results})
     })
+    console.log('Retorno do fetch');
+    console.log(this.state.characters, 'State na função de fetch');
   }
 
   componentDidMount() {
+    console.log('Sobre qualquer mudança o componentDidMount renderiza a classe novamente');
+    console.log(this.state.characters, 'State no componentDidMount');
     this.fetchCharacters();
   } // resolvido os problemas chamando a função fetchCharacters dentro do componentDidMount 
+
   render() {
     const { characters } = this.state;
+    console.log('Render da classe.', 'Itens do characters do state:', characters.length);
+    if (characters.length > 0) console.log('Quando o characters tiver algo esse output é chamado');
     return (
       <div className="App">
         <h1>
@@ -41,6 +48,5 @@ class App extends Component {
     );
   }
 }
-//ainda não funcionando: já que characters é um array vazio ainda, porque o problema do código é lido antes da API retornar.
 
 export default App;
