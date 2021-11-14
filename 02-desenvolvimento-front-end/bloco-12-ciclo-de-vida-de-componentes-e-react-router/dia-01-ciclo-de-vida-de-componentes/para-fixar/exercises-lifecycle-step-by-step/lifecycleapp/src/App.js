@@ -20,7 +20,12 @@ class App extends React.Component {
   }
 
   render() {
-
+    const { showProfile } = this.state;
+    return (
+      <div className="gitNetwork d-flex flex-column justify-content-center">
+        { showProfile ? <Profile /> : null }
+      </div>
+    );
   }
 }
 
