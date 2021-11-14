@@ -6,18 +6,31 @@ class Profile extends React.Component {
 
     this.state = {
       api: '',
+      userName: '',
+      loading: true,
     };
 
     this.changeDataJson = this.changeDataJson.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  async componentDidMount() {
-    const myUser = 'findCarolinaCosta'; // Preencha myUser com o seu user do GitHub.
+  handleChange({ target }) {
+    const { name, value } = target;
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  async handleClick() {
+    const { userName } = this.state;
+    const myUser = userName; // Preencha myUser com o seu user do GitHub.
     try {
       const url = `https://api.github.com/users/${myUser}`;
       const response = await fetch(url);
       const dataJson = await response.json();
       this.changeDataJson(dataJson);
+      this.setState({ loading: false });
     } catch (error) {
       console.log(error);
     }
@@ -36,7 +49,26 @@ class Profile extends React.Component {
   render() {
     const { api: { name, email, bio, location, login } = '', api } = this.state;
 
-    if (!api) return <p>Loading...</p>;
+    const loginUser = (
+      <div className="form">
+        <form className="input-group justify-content-center">
+          <input
+            className="form-control"
+            type="text"
+            name="userName"
+            onChange={ this.handleChange }
+            placeholder="Digite seu nome usuário"
+          />
+          <button
+            className="btn btn-outline-dark"
+            type="button"
+            onClick={ this.handleClick }
+          >
+            Entrar
+          </button>
+        </form>
+      </div>
+    );
 
     const card = (
       <div className="d-flex h-100 flex-column justify-content-center align-items-center">
