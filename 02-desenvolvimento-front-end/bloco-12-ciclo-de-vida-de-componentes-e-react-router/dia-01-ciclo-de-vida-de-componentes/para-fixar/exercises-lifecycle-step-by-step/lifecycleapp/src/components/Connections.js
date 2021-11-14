@@ -17,6 +17,7 @@ class Connections extends React.Component {
     this.contactAdder = this.contactAdder.bind(this);
     this.changeToBlue = this.changeToBlue.bind(this);
     this.changeToCoral = this.changeToCoral.bind(this);
+    this.getListFromLocalStorage = this.getListFromLocalStorage.bind(this);
   }
 
   shouldComponentUpdate(_nextProps, { list }) {
@@ -27,6 +28,9 @@ class Connections extends React.Component {
 
   componentDidUpdate(_prevProps, prevState) {
     const { list } = this.state;
+    if (list.length > 0) {
+      localStorage.setItem('List', JSON.stringify(list));
+    }
     if (prevState.list.length < list.length) {
       this.changeToBlue(); // Ao adicionar um contato, a div ficará azul.
     } else if (prevState.list.length > list.length) {
@@ -48,7 +52,6 @@ class Connections extends React.Component {
     try {
       const apiResponse = await fetch(url);
       const profileObject = await apiResponse.json();
-
       if (profileObject.login && isUserAbsent) {
         this.setState({
           list: [...list, profileObject],
@@ -59,6 +62,19 @@ class Connections extends React.Component {
       }
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  getListFromLocalStorage() {
+    const { list } = this.state;
+    if (list.length === 0 && JSON.parse(localStorage.getItem('List') !== null)) {
+      this.setState({
+        list: JSON.parse(localStorage.getItem('List')),
+        counter: list.length,
+      });
+      if (list.length === 0) {
+        localStorage.removeItem('List');
+      }
     }
   }
 
@@ -73,7 +89,6 @@ class Connections extends React.Component {
   removeContact(loginToRemove) {
     const { list, counter } = this.state;
     const updatedList = list.filter(({ login }) => login !== loginToRemove);
-
     this.setState({
       list: updatedList,
       counter: counter - 1,
@@ -130,6 +145,7 @@ class Connections extends React.Component {
 
   render() {
     const { list, counter, background } = this.state;
+    this.getListFromLocalStorage();
 
     return (
       <div className={ `git-connections ${background}` }>
