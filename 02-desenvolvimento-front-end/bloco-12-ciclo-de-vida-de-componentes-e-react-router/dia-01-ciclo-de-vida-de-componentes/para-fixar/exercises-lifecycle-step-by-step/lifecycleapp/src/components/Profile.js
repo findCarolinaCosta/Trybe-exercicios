@@ -83,7 +83,8 @@ class Profile extends React.Component {
 
     return (
       <div className="git d-flex flex-column justify-content-center align-items-center">
-        { card }
+        { loading ? <p>Loading...</p> : card }
+        { api ? null : loginUser }
       </div>
     );
   }
