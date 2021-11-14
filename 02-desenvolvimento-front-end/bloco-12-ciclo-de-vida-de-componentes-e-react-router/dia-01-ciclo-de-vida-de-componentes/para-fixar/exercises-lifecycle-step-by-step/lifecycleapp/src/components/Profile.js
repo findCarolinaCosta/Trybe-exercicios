@@ -9,6 +9,7 @@ class Profile extends React.Component {
       userName: '',
       loading: true,
       showProfile: true,
+      hideBtn: true,
     };
 
     this.changeDataJson = this.changeDataJson.bind(this);
@@ -46,7 +47,7 @@ class Profile extends React.Component {
       const response = await fetch(url);
       const dataJson = await response.json();
       this.changeDataJson(dataJson);
-      this.setState({ loading: false });
+      this.setState({ loading: false, hideBtn: false });
     } catch (error) {
       console.log(error);
     }
@@ -79,15 +80,29 @@ class Profile extends React.Component {
       </div>
     );
   }
+
+  returnLogoutBtn() {
+    return (
+      <div className="central d-flex justify-content-center">
+        <button
+          className="btn btn-dark align-self-center"
+          type="button"
+          // onClick={  }
+        >
+          Logout
+        </button>
+      </div>
+    );
+  }
+
   changeDataJson(dataJson) {
     this.setState({ api: dataJson });
   }
 
   render() {
     const { api: { name, email, bio, location, login } = '', api,
-      loading, showProfile } = this.state;
+      loading, showProfile, hideBtn } = this.state;
     this.getUserNameFromLocalStorage();
-
     const loginUser = (
       <div className="form">
         <form className="input-group justify-content-center">
@@ -108,7 +123,6 @@ class Profile extends React.Component {
         </form>
       </div>
     );
-
     const card = (
       <div className="d-flex h-100 flex-column justify-content-center align-items-center">
         <h1>{ name }</h1>
@@ -123,11 +137,12 @@ class Profile extends React.Component {
     const conditionCardInfo = loading ? <p>Loading...</p> : card;
     return (
       <>
-      <div className="git d-flex flex-column justify-content-center align-items-center">
+        <div className="git d-flex flex-column justify-content-center align-items-center">
           { showProfile ? conditionCardInfo : null }
-        { api ? null : loginUser }
-      </div>
+          { api ? null : loginUser }
+        </div>
         { hideBtn ? null : this.btnHidden() }
+        { hideBtn ? null : this.returnLogoutBtn() }
       </>
     );
   }
