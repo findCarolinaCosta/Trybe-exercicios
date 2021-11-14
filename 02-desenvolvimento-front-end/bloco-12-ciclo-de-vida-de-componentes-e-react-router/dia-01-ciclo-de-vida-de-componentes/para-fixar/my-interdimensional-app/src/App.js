@@ -17,6 +17,9 @@ class App extends Component {
     })
   }
 
+  componentDidMount() {
+    this.fetchCharacters();
+  } // resolvido os problemas chamando a função fetchCharacters dentro do componentDidMount 
   render() {
     const { characters } = this.state;
     return (
