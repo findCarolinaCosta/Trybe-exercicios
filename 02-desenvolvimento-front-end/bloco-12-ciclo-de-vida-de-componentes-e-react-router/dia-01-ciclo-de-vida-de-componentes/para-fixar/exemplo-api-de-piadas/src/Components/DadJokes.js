@@ -29,6 +29,11 @@ class DadJoke extends Component {
 
   saveJoke() {
     //Salvando a piada no array de piadas existentes
+    this.setState(
+      ({ storedJokes, jokeObj }) => ({
+      storedJokes: [...storedJokes, jokeObj]
+      }) //callback que atuliza o estado baseado no anterior 
+    );
 
   }
 
