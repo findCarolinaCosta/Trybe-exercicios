@@ -9,13 +9,17 @@ class CardDog extends Component {
       data: ''
     }
   }
-
-  setDataState = async () => {
-   this.setState({  data: await fetchDogApi() })
-  }
-
+  
   componentDidMount() {
     this.setDataState();
+  }
+
+  shouldComponentUpdate(_nextProps, nextState) {
+    return nextState.data.message.includes('terrier') ? false : true;
+  }
+  
+  setDataState = async () => {
+   this.setState({  data: await fetchDogApi() })
   }
 
   render() { 
