@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Connections extends React.Component {
   constructor() {
@@ -46,22 +47,28 @@ class Connections extends React.Component {
 
   async handleClick() {
     const { user, list, counter } = this.state;
-    const url = `https://api.github.com/users/${user}`;
-    const isUserAbsent = !list.some((contact) => contact.login === user);
-
-    try {
-      const apiResponse = await fetch(url);
-      const profileObject = await apiResponse.json();
-      if (profileObject.login && isUserAbsent) {
-        this.setState({
-          list: [...list, profileObject],
-          counter: counter + 1,
-        });
-      } else {
-        throw new Error('Usuário não encontrado');
+    const { isLogin } = this.props;
+    if (isLogin) {
+      const url = `https://api.github.com/users/${user}`;
+      const isUserAbsent = !list.some((contact) => contact.login === user);
+      try {
+        const apiResponse = await fetch(url);
+        const profileObject = await apiResponse.json();
+        if (profileObject.login && isUserAbsent) {
+          this.setState({
+            list: [...list, profileObject],
+            counter: counter + 1,
+          });
+        } else {
+          throw new Error('Usuário não encontrado');
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
+    } else {
+      /* eslint-disable no-alert */
+      alert('Digite um nome de usuário para poder adicionar contatos');
+    /* eslint-disable no-alert */
     }
   }
 
@@ -155,5 +162,9 @@ class Connections extends React.Component {
     );
   }
 }
+
+Connections.propTypes = {
+  isLogin: PropTypes.func.isRequired,
+};
 
 export default Connections;

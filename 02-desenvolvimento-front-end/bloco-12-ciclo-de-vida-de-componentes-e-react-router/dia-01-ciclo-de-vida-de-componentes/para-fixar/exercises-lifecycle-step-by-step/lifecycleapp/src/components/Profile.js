@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Profile extends React.Component {
   constructor() {
@@ -53,6 +54,8 @@ class Profile extends React.Component {
     } catch (error) {
       console.log(error);
     }
+    const { confirmIfLogin } = this.props;
+    confirmIfLogin(true);
   }
 
   getInfosFromLocalStorage() {
@@ -76,6 +79,7 @@ class Profile extends React.Component {
       api: '',
       userName: '',
     });
+    window.location.reload();
   }
 
   changeProfile() {
@@ -181,5 +185,9 @@ class Profile extends React.Component {
     );
   }
 }
+
+Profile.propTypes = {
+  confirmIfLogin: PropTypes.func.isRequired,
+};
 
 export default Profile;
