@@ -17,6 +17,11 @@ class CardDog extends Component {
   shouldComponentUpdate(_nextProps, nextState) {
     return nextState.data.message.includes('terrier') ? false : true;
   }
+
+  componentDidUpdate() {
+    const { data } = this.state;
+    localStorage.setItem('urlDog', data.message);
+  }
   
   setDataState = async () => {
    this.setState({  data: await fetchDogApi() })
