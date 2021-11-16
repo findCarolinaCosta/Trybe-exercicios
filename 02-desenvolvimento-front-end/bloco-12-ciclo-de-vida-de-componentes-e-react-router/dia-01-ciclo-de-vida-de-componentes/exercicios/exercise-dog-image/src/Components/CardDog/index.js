@@ -21,8 +21,6 @@ class CardDog extends Component {
   }
 
   componentDidUpdate() {
-    const { data } = this.state;
-    localStorage.setItem('urlDog', data.message);
     // const dogBreed = data.message.split('/');
     // alert(`Dog breed: ${dogBreed[4]}`);
   }
@@ -44,6 +42,7 @@ class CardDog extends Component {
     const newArrayInfo = [ ...arrayInfos, dogInfos ];
     this.setState({ arrayInfos: newArrayInfo});
     this.setState({ DogName: "" });
+    localStorage.setItem('InfosDogs', JSON.stringify(newArrayInfo));
   }
 
   render() { 
