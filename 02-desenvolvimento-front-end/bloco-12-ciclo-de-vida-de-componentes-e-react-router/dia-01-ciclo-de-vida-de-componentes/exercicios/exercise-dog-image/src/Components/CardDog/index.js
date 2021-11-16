@@ -21,6 +21,8 @@ class CardDog extends Component {
   componentDidUpdate() {
     const { data } = this.state;
     localStorage.setItem('urlDog', data.message);
+    const dogBreed = data.message.split('/');
+    alert(`Dog breed: ${dogBreed[4]}`);
   }
   
   setDataState = async () => {
