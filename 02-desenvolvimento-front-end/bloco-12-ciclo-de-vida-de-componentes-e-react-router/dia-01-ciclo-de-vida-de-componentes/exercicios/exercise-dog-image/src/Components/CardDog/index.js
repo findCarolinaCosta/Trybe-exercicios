@@ -20,9 +20,12 @@ class CardDog extends Component {
     return nextState.data.message.includes('terrier') ? false : true;
   }
 
-  componentDidUpdate() {
-    // const dogBreed = data.message.split('/');
-    // alert(`Dog breed: ${dogBreed[4]}`);
+  componentDidUpdate(_PrevProps, PrevState) {
+    const { data } = this.state;
+    if (PrevState.data !== data) {
+      const dogBreed = data.message.split('/');
+      alert(`Dog breed: ${dogBreed[4]}`);
+    }
   }
   
   setDataState = async () => {
