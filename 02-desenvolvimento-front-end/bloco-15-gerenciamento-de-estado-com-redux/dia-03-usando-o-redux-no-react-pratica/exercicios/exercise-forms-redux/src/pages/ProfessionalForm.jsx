@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Input from '../components/Input';
 import TextArea from '../components/TextArea';
 import Button from '../components/Button';
+import { saveStateProfessional } from '../redux/actions/action';
+import '../styles/ProfessionalForm.css';
 
 class ProfessionalForm extends Component {
   constructor() {
@@ -20,23 +24,29 @@ class ProfessionalForm extends Component {
     this.setState({ [name]: value });
   }
 
+  handleSubmit() {
+    const { history, getInfoState } = this.props;
+    getInfoState(this.state);
+    history.push('/formdisplay');
+  }
+
   render() {
     const { curriculo, cargo, descricao } = this.state;
     return (
-      <fieldset>
-        <TextArea
-          label="Resumo do currículo: "
-          value={ curriculo }
-          name="curriculo"
-          maxLength="1000"
-          onChange={ this.handleChange }
-          required
-        />
+      <fieldset className="container">
         <Input
           label="Cargo:"
           name="cargo"
           type="text"
           value={ cargo }
+          onChange={ this.handleChange }
+          required
+        />
+        <TextArea
+          label="Resumo do currículo: "
+          value={ curriculo }
+          name="curriculo"
+          maxLength="1000"
           onChange={ this.handleChange }
           required
         />
@@ -50,11 +60,22 @@ class ProfessionalForm extends Component {
         />
         <Button
           label="enviar"
-          onClick={ () => console.log('Envia as informações para a store') }
+          onClick={ () => this.handleSubmit() }
         />
       </fieldset>
     );
   }
 }
 
-export default ProfessionalForm;
+ProfessionalForm.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  getInfoState: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getInfoState: (state) => dispatch(saveStateProfessional(state)),
+});
+
+export default connect(null, mapDispatchToProps)(ProfessionalForm);

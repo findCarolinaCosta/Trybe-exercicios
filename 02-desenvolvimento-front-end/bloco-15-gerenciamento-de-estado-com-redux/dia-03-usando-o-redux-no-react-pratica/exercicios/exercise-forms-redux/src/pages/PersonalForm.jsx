@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import Select from '../components/Select';
+import { saveStatePersonalForm } from '../redux/actions/action';
+import '../styles/PersonalForm.css';
 
 class PersonalForm extends Component {
   constructor() {
@@ -18,11 +22,18 @@ class PersonalForm extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange({ target }) {
     const { name, value } = target;
     this.setState({ [name]: value });
+  }
+
+  handleSubmit() {
+    const { history, getInfoState } = this.props;
+    getInfoState(this.state);
+    history.push('/professionalform');
   }
 
   render() {
@@ -32,7 +43,7 @@ class PersonalForm extends Component {
       'Minas Gerais',
       'Amapá', 'Amazonas', 'São Paulo', 'Ceará', 'Distrito Federal'];
     return (
-      <fieldset>
+      <fieldset className="container">
         <Input
           label="nome: "
           type="text"
@@ -84,11 +95,22 @@ class PersonalForm extends Component {
         <Button
           type="button"
           label="Enviar"
-          onClick={ () => console.log('Ao clicar, envie a informação do formulário') }
+          onClick={ this.handleSubmit }
         />
       </fieldset>
     );
   }
 }
 
-export default PersonalForm;
+PersonalForm.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  getInfoState: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getInfoState: (state) => dispatch(saveStatePersonalForm(state)),
+});
+
+export default connect(null, mapDispatchToProps)(PersonalForm);
