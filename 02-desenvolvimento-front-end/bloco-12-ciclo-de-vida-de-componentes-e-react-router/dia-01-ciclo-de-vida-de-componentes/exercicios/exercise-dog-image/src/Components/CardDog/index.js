@@ -39,6 +39,9 @@ class CardDog extends Component {
           <img className="Dog-img" src={data.message} alt="Dog image" />
         </div>
         <button onClick={ () => this.setDataState() }>Novo dog</button>
+        <div>
+          <input type="text" placeholder="Digite um nome para o dog"/>
+        </div>
       </div>
     )
   }
