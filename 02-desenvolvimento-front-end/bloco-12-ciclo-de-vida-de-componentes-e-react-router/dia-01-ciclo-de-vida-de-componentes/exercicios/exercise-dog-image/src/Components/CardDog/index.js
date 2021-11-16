@@ -13,7 +13,16 @@ class CardDog extends Component {
   }
   
   componentDidMount() {
-    this.setDataState();
+    if (localStorage.InfosDogs) {
+      const getArrayInfo = JSON.parse(localStorage.InfosDogs);
+      const lastDog = getArrayInfo[getArrayInfo.length - 1].message;
+      this.setState({
+        arrayInfos: getArrayInfo,
+        data: { message: lastDog }
+      });
+    } else {
+      this.setDataState();
+    }
   }
 
   shouldComponentUpdate(_nextProps, nextState) {
