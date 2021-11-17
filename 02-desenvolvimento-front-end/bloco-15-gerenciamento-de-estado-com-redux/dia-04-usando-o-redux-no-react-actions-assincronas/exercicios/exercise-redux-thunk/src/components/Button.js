@@ -4,12 +4,17 @@ import { connect } from 'react-redux';
 import { fetchAPI } from '../actions';
 
 class Button extends Component {
+  componentDidMount() {
+    const { getImage } = this.props;
+    getImage();
+  }
+
   render() {
     const { getImage } = this.props;
     return (
       <button
         type="button"
-        onClick={ () => getImage() }
+        onClick={() => getImage()}
       >
         Find a cat!
       </button>
