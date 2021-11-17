@@ -51,4 +51,4 @@ const store = createStore(reducer);
 
 export default store;
 
-//Arquivo que contém nossa store, action e reducer. Para fins didáticos estamos com tudo no mesmo arquivo, mas as boas práticas pedem que deixemos cada parte em um arquivo separado, tanto para manter o código mais fácil de ser lido, quanto para fazer da manutenção menos complexa.
+//ao rodar npm start e clicar no botão aparece erro dizendo que as actions deveriam retornar objetos
