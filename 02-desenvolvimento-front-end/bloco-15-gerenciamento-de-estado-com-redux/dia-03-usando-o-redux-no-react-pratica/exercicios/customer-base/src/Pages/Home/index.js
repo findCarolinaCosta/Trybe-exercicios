@@ -6,7 +6,7 @@ class Home extends React.Component {
     return (
       <>
         <Header />
-        <h1>Sistema de cadatro de clientes</h1>
+        <h1>Sistema de cadastro de clientes</h1>
       </>
     )
   }
