@@ -7,6 +7,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        {/* <Route path="/login" component={} />
+        <Route path="/registered" component={} /> */}
       </Routes>
     </BrowserRouter>
   );
