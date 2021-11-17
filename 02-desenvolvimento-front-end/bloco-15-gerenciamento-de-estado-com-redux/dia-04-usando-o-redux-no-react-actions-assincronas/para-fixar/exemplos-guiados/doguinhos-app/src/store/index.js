@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
 const GET_IMAGE = 'GET_IMAGE';
 const REQUEST_IMAGE = 'REQUEST_IMAGE';
@@ -47,8 +48,8 @@ function reducer(state = initialState, action) {
   }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 export default store;
 
-//ao rodar npm start e clicar no botão aparece erro dizendo que as actions deveriam retornar objetos
+//Adiciona modificações resolvendo o erro das actions podendo ser chamadas de  actions assíncronas com a instalação do pacote redux-thunk
