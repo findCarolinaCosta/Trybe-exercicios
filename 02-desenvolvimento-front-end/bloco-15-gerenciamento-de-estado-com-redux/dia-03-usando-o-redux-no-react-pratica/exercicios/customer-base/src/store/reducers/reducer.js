@@ -1,4 +1,4 @@
-import LOGIN from '../action/index'
+import { LOGIN } from '../action/index'
 
 const INITIAL_STATE = {};
 
