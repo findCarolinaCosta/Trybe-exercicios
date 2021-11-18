@@ -1,9 +1,8 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { render, cleanup } from '@testing-library/react';
-import App from './App';
+import { render } from '@testing-library/react';
 import { createStore, combineReducers } from 'redux';
-import clickReducer from './reducers';
+import clickReducer from '../reducers';
 
 const renderWithRedux = (
   component,
@@ -14,3 +13,5 @@ const renderWithRedux = (
     store,
   }
 }
+
+export default renderWithRedux;
