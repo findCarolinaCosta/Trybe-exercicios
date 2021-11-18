@@ -2,6 +2,7 @@ import { cleanup } from '@testing-library/react';
 import renderWithRedux from './reduxSynchronousTests';
 import App from '../App';
 import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 
 describe('testing clicks', () => {
   beforeEach(cleanup);
@@ -20,5 +21,23 @@ describe('testing clicks', () => {
   });
 });
 
-// Caso seja interessante alterar o valor inicial do clickReducer , isso também é possível passando como segundo parâmetro para a função renderWithRedux um objeto com as propriedades que respeitem o formato original do state.
-// Obs: o objeto initialState representa o valor inicial do state . O clickReducer representa o reducer criado. O counter representa a propriedade que criamos dentro do nosso reducer 
+describe('Exercicio de fixação', () => {
+  beforeEach(cleanup);
+  test('1. Crie um teste com o valor padrão do reducer e teste se um clique funciona.', () => {
+    const { queryByText } = renderWithRedux(<App />);
+    const buttonAdicionar = queryByText('Clique aqui');
+
+    userEvent.click(buttonAdicionar);
+    expect(queryByText('1')).toBeInTheDocument();
+  });
+
+  test('2.Altere o valor inicial do counter para 10, faça um clique do botão e crie os testes para esses comportamentos.', () => {
+    const { queryByText } = renderWithRedux(<App />, { initialState: { clickReducer: { counter: 10 }}});
+    const buttonAdicionar = queryByText('Clique aqui');
+
+    expect(queryByText('10')).toBeInTheDocument();
+
+    userEvent.click(buttonAdicionar);
+    expect(queryByText('11')).toBeInTheDocument();
+  });
+})
