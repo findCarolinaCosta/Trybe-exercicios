@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import  fetchDogApi  from '../../services/index';
+import { connect } from 'react-redux';
+import { requestDogApi } from '../../store/actions/actions';
 import './style.css';
 
 class CardDog extends Component {
@@ -20,13 +21,15 @@ class CardDog extends Component {
         arrayInfos: getArrayInfo,
         data: { message: lastDog }
       });
-    } else {
-      this.setDataState();
     }
   }
 
   shouldComponentUpdate(_nextProps, nextState) {
-    return nextState.data.message.includes('terrier') ? false : true;
+    if (nextState.data !== undefined) {
+      return nextState.data.message.includes('terrier') ? false : true;
+    } else {
+      return false;
+    }
   }
 
   componentDidUpdate(_PrevProps, PrevState) {
@@ -38,7 +41,11 @@ class CardDog extends Component {
   }
   
   setDataState = async () => {
-   this.setState({  data: await fetchDogApi() })
+    const { getApi, dataStore } = this.props;
+    await getApi();
+    if (dataStore !== undefined) {
+      this.setState({  data: dataStore.payload, })
+    }
   }
 
   getDogName = ({ target }) => {
@@ -58,15 +65,16 @@ class CardDog extends Component {
   }
 
   render() { 
-    const  { data, DogName } = this.state;
-    if (data === '') return "loading...";
+    const  { data , DogName } = this.state;
+    // const { dataStore } = this.props;
+    if (data.loading) return "loading...";
     return (
       <div className="card-dog">
         <p>Dogs:</p>
         <div>
-          <img className="Dog-img" src={data.message} alt="Dog image" />
+          <img className="Dog-img" src={data.message} alt="Dog" />
         </div>
-        <button onClick={ () => this.setDataState() }>Novo dog</button>
+        <button onClick={ this.setDataState }>Novo dog</button>
         <div>
           <input 
             type="text" 
@@ -80,5 +88,13 @@ class CardDog extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return ({
+    dataStore: state.dogInfos,
+  })
+};
+
+const mapDisptachToProps = (dispatch) => ({ getApi: () => dispatch(requestDogApi()) }) 
  
-export default CardDog;
+export default connect(mapStateToProps, mapDisptachToProps)(CardDog);
