@@ -12,15 +12,15 @@ function Cars({
     <div>
       <div>
         <img className={redCar ? 'car-right' : 'car-left'} src={carRed} alt="red car" />
-        <button onClick={() => moveCar('red', !redCar)} type="button">move</button>
+        <button onClick={() => moveCar('red', !redCar)} type="button">move red</button>
       </div>
       <div>
         <img className={blueCar ? 'car-right' : 'car-left'} src={carBlue} alt="blue car" />
-        <button onClick={() => moveCar('blue', !blueCar)} type="button">move</button>
+        <button onClick={() => moveCar('blue', !blueCar)} type="button">move blue</button>
       </div>
       <div>
         <img className={yellowCar ? 'car-right' : 'car-left'} src={carYellow} alt="yellow car" />
-        <button onClick={() => moveCar('yellow', !yellowCar)} type="button">move</button>
+        <button onClick={() => moveCar('yellow', !yellowCar)} type="button">move yellow</button>
       </div>
     </div>
   );
