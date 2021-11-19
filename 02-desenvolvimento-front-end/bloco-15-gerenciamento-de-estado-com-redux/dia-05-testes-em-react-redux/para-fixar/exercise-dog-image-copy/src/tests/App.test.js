@@ -1,30 +1,22 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import { fireEvent, waitFor } from '@testing-library/react';
-import fetchMock from 'jest-fetch-mock'
+import fetchMock from 'fetch-mock-jest';
 import App from '../App';
 import renderWithRedux from './helpers';
-
-describe('Teste que já vem nesse arquivo', () => {
-  it('renders learn react link', () => {
-    const { getByText } = render(<App />);
-    const linkElement = getByText(/learn react/i);
-    expect(linkElement).toBeInTheDocument();
-  });
-})
+import '@testing-library/jest-dom';
 
 describe('Página principal', () => {
   test('Testa que o botão de adicionar cachorro está presente', async () => {
     const { queryByText } = renderWithRedux(<App />);
-    const buttonDoguinho = queryByText('Novo Doguinho');
+    const buttonDog = queryByText('Novo dog');
 
-    expect(buttonDoguinho).toBeInTheDocument();
+    expect(buttonDog).toBeInTheDocument();
 
     fetchMock.getOnce('https://dog.ceo/api/breeds/image/random', {
       body: { message: 'myDogUrl' },
     });
 
-    fireEvent.click(buttonDoguinho);
+    fireEvent.click(buttonDog);
     await waitFor(() => expect(fetchMock.called()).toBeTruthy());
   });
 });
