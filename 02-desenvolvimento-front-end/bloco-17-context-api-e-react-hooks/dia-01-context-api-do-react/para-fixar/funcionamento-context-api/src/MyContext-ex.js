@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-const MyContext = createContext('defaultValue'); //valor passado como parâmetro para createContext será utilizado como o valor padrão do contexto, caso nenhum valor seja especificado ao utilizar o Provider 
+const MyContext = createContext(1); //valor passado como parâmetro para createContext será utilizado como o valor padrão do contexto, caso nenhum valor seja especificado ao utilizar o Provider 
 
 export default MyContext;
 
