@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './App'
-import Provider from '../utils/Provider'
+import Provider from './useContext/Provider'
 
 ReactDOM.render(
   <Provider>
