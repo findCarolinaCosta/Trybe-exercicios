@@ -1,3 +1,4 @@
+import UseContext from "./useContext/UseContext";
 import UseState from "./useState/UseState";
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <div className="App">
       <UseState />
       <hr/>
+      <UseContext />
     </div>
   );
 }
