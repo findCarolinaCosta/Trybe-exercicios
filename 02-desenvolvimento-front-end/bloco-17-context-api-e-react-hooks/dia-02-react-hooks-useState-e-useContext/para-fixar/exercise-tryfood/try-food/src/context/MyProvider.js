@@ -22,12 +22,18 @@ function MyProvider({ children }) {
 
   /* Passo 8 */
   const removeItemFromList = (orderState, indexPresentInList, itemType) => {
-    setOrderList();
+    orderState.splice(indexPresentInList, 1);
+    setOrderList(
+      {
+        ...orderList, [itemType]: orderState,
+      },
+    );
   };
 
   /* Passo 9 */
   const updateValueItemInList = (orderState, indexPresentInList, newItem) => {
-    setOrderList();
+    orderState.splice(indexPresentInList, 1, newItem);
+    setOrderList({ ...orderState, [newItem.itemType]: orderState });
   };
 
   /* Passo 7 */
@@ -43,7 +49,11 @@ function MyProvider({ children }) {
 
   /* Passo 6 */
   const addItemToList = (newItem) => {
-    setOrderList();
+    setOrderList(
+      {
+        ...orderList, [newItem.itemType]: [...orderList[newItem.itemType], newItem],
+      },
+    );
   };
 
   /* Passo 2 */
