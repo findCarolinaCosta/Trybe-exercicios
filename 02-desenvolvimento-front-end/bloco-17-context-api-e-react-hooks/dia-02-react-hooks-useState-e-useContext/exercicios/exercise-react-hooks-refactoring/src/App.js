@@ -8,8 +8,8 @@ import TrafficSignal from './TrafficSignal'
 function App() {
   return (
     <>
-      <Cars />
       <TrafficSignal />
+      <Cars />
     </>
   );
 }
