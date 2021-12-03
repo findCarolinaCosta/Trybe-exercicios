@@ -3,9 +3,14 @@
 import React from 'react';
 import TicTacToe from './TicTacToe';
 import './App.css';
+import Provider from './context/Provider';
 
 function App() {
-  return <TicTacToe />;
+  return (
+  <Provider>
+    <TicTacToe />;
+  </Provider>
+  );
 }
 
 export default App;
