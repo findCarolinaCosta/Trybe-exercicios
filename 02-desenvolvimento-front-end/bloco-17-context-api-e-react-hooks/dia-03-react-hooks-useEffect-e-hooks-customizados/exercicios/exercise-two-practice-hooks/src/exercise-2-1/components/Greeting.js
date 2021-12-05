@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+const INITIAL_NAME = '';
 
 function Greeting() {
-  const [name, setame] = useState('')
+  const gettingName = window.localStorage.getItem('Name') || INITIAL_NAME;
+  const [name, setame] = useState(gettingName);
+
+  useEffect(() => {
+   window.localStorage.setItem('Name', name);
+  }, [name]);
 
   function handleChange(event) {
     setame(event.target.value)
