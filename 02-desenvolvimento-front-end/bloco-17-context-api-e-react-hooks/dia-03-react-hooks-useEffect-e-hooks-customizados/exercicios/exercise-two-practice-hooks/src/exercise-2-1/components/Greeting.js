@@ -16,7 +16,7 @@ function Greeting() {
 
   return (
     <div>
-      <h1>Exercício 2.1:</h1>
+      <h1>Exercício 2.1 e 2.2: praticando hooks</h1>
       <form>
         <label htmlFor="name">Name: </label>
         <input onChange={handleChange} id="name" />
