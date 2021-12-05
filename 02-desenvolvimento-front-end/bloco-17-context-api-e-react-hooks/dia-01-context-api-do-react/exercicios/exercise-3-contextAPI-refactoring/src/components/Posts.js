@@ -1,17 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Context from '../Context';
 
-const Posts = ({ posts }) => (
+const Posts = () => (
   <ul>
-    {posts.map(({ id, title }) => <li key={id}>{title}</li>)}
+    <Context.Consumer>
+      {({posts}) => posts.map(({ id, title }) => <li key={id}>{title}</li>)}
+    </Context.Consumer>
   </ul>
 );
-
-Posts.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  })).isRequired,
-};
 
 export default Posts;
