@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Greeting() {
-  // substitua essa variável por uma variável no estado, utilizando useState
-  const name = '';
+  const [name, setame] = useState('')
 
   function handleChange(event) {
-    // atualize o valor do estado com base no que está em event.target.value
+    setame(event.target.value)
   }
 
   return (
