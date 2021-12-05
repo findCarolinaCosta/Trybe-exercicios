@@ -4,7 +4,7 @@ function useTodoList() {
   const [todoList, setTodoList] = useState([]);
 
   const addTodos = (task) => {
-    setTodoList(todoList.concat(task))
+    setTodoList(state => [...state, task]);
   }
 
    return { todoList, addTodos  };
