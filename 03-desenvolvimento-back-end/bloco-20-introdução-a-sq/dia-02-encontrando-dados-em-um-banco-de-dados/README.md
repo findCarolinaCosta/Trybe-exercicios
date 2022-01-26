@@ -5,7 +5,7 @@
 
 # O que aprendi e sou capaz de fazer:
 - Compreendi o que é uma query SQL e quais são seus tipos de comando
-- Gerarei valores com SELECT
+- Gerei valores com SELECT
 - Selecionei colunas individualmente com SELECT
 - Renomeei e gerar colunas em uma consulta com AS
 - Concatenei colunas e valores com CONCAT
