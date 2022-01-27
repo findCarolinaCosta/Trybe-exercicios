@@ -135,15 +135,15 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 
 ##### Bloco 18: Projeto Final de Front-end
 
-- [ ] 18-1: _[Projeto - App de Receitas]_
+- [x] 18-1: _[Projeto - App de Receitas]_
 
 ## Desenvolvimento Back-end :hourglass_flowing_sand:
 
 ##### Bloco 19: Introdução - Bancos de dados relacionais
 
-- [ ] 19-1: _Banco de dados SQL_
-- [ ] 19-2: _Encontrando dados em um banco de dados_
-- [ ] 19-3: _Filtrando dados de forma específica_
+- [x] 19-1: _Banco de dados SQL_
+- [x] 19-2: _Encontrando dados em um banco de dados_
+- [x] 19-3: _Filtrando dados de forma específica_
 - [ ] 19-4: _Manipulando tabelas_
 - [ ] 19-5: _[Projeto - All For One]_
 
