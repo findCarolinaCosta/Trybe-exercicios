@@ -100,7 +100,7 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [x] 12-1: _Melhorando o reuso de componentes: props.children e PropTypes_
 - [x] 12-2: _Ciclo de vida de componentes em React_
 - [x] 12-3: _React Router_
-- [x] 12-4: _[Projeto - Movie Cards Library CRUD]_
+- [x] 12-4: _[Projeto - TrybeTunes]_
 
 ##### Bloco 13: Metodologias ágeis
 
