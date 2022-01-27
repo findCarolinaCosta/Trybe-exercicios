@@ -93,7 +93,7 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 
 - [x] 11-1: _Components com estado_
 - [x] 11-2: _Eventos e formulários no React_
-- [x] 11-3: _[Projeto - Movie Cards Library Stateful]_
+- [x] 11-3: _[Projeto - Tryunfo]_
 
 ##### Bloco 12: React
 
