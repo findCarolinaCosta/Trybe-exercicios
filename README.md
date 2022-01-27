@@ -240,25 +240,18 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 
 - [ ] 32-1: _[Projeto - App de Delivery]_
 
-##### Bloco 33: Projeto
-
-- [ ] 33-1: _[Projeto - Trybeer V2]_
-
 ## Ciência da Computação :hourglass_flowing_sand:
 
-##### Bloco 34: Introdução - Ciência da Computação
+##### Bloco 33: Introdução à Python
 
-- [ ] 34-1: _Arquitetura de Computadores_
-- [ ] 34-2: _Arquitetura de redes_
-- [ ] 34-3: _Redes de computadores, ferramentas e segurança_
-- [ ] 34-4: _[Projeto - Explorando os protocolos]_
+##### Bloco 34: Programação Orientada a Objetos e Padrões de Projeto
 
-##### Bloco 35: Python
+##### Bloco 35: Redes e Raspagem de Dados
 
-- [ ] 35-1: _Aprendendo Python_
-- [ ] 35-2: _Testes e Exceções_
-- [ ] 35-3: _Entrada e Saída de dados_
-- [ ] 35-4: _Entrada e Saída de dados_
-- [ ] 35-5: _[Projeto - Tech news]_
+##### Bloco 36: Algoritmos
+
+##### Bloco 37: Estrutura de Dados I: Arrays, Hashmaps e Sets
+
+##### Bloco 38: Estrutura de Dados II: Listas, Filas e Pilhas
 
 # [...]
