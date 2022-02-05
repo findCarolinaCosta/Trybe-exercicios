@@ -50,7 +50,7 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [x] 6-3: _CSS Flexbox - Part 1_
 - [x] 6-4: _CSS Flexbox - Part 2_
 - [x] 6-5: _CSS Responsivo - Mobile First_
-- [x] 6-6: _[Projeto - Trybewarts]_
+- [x] 6-6: [Projeto - Trybewarts](https://github.com/findCarolinaCosta/project-trybewarts)
 
 ##### Bloco 7: JavaScript ES6 & Testes Unitários
 
@@ -66,20 +66,20 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [x] 8-3: _JavaScript ES6 - Higher Order Functions - map e filter_
 - [x] 8-4: _JavaScript ES6 - Higher Order Functions - reduce_
 - [x] 8-5: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
-- [x] 8-6: _[Projeto - Zoo functions]_
+- [x] 8-6: [Projeto - Zoo functions](https://github.com/findCarolinaCosta/project-zoo-functions)
 
 ##### Bloco 9: Assincronicidade & Callbacks
 
 - [x] 9-1: _JavaScript Assáncrono e Callbacks_
 - [x] 9-2: _JavaScript Promises_
-- [x] 9-3: _[Projeto - Carrinho de Compras]_
+- [x] 9-3: [Projeto - Carrinho de Compras](https://github.com/findCarolinaCosta/project-shopping-cart)
 
 ##### Bloco 10A: Jest
 
 - [x] 10-1: _Primeiros passos no Jest_
 - [x] 10-2: _Jest - Testes Assíncronos_
 - [x] 10-3: _Jest - Simulando comportamentos_
-- [x] 10-4: _[Projeto - Jest Assíncrono e Mocking]_
+- [x] 10-4: [Projeto - Jest Assíncrono e Mocking](https://github.com/findCarolinaCosta/project-jest)
 
 ## Desenvolvimento Front-end :hourglass_flowing_sand:
 
@@ -87,31 +87,31 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 
 - [x] 10B-1: _'Hello, world!' no React!_
 - [x] 10B-2: _Componentes React_
-- [x] 10B-3: _[Projeto - Movie Cards Library]_
+- [x] 10B-3: [Projeto - Movie Cards Library](https://github.com/findCarolinaCosta/project-movie-cards-library)
 
 ##### Bloco 11: React
 
 - [x] 11-1: _Components com estado_
 - [x] 11-2: _Eventos e formulários no React_
-- [x] 11-3: _[Projeto - Tryunfo]_
+- [x] 11-3: [Projeto - Tryunfo](https://github.com/findCarolinaCosta/project-tryunfo)
 
 ##### Bloco 12: React
 
 - [x] 12-1: _Melhorando o reuso de componentes: props.children e PropTypes_
 - [x] 12-2: _Ciclo de vida de componentes em React_
 - [x] 12-3: _React Router_
-- [x] 12-4: _[Projeto - TrybeTunes]_
+- [x] 12-4: [Projeto - TrybeTunes](https://github.com/findCarolinaCosta/project-trybetunes)
 
 ##### Bloco 13: Metodologias ágeis
 
 - [x] 13-1: _Metodologias ágeis_
-- [x] 13-2: _[Projeto - Frontend Online Store]_
+- [x] 13-2: [Projeto - Frontend Online Store](https://github.com/findCarolinaCosta/project-frontend-online-store)
 
 ##### Bloco 14: Testes em React
 
 - [x] 14-1: _Testando React com a React Testing Library_
 - [x] 14-2: _Testando React com a React Testing Library - Parte 2_
-- [x] 14-3: _[Projeto - Testes em React]_
+- [x] 14-3: [Projeto - Testes em React](https://github.com/findCarolinaCosta/project-react-testing-library)
 
 ##### Bloco 15: Introdução ao Redux
 
@@ -120,22 +120,22 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [x] 15-3: _React com Redux - Prática_
 - [x] 15-4: _React com Redux - Parte 2_
 - [x] 15-5: _Testes síncronos com React-Redux_
-- [x] 15-6: _[Projeto - Tabela com filtros de dados]_
+- [x] 15-6: [Projeto - Trybewallet](https://github.com/findCarolinaCosta/project-trybewallet)
 
 ##### Bloco 16: Projeto React
 
-- [x] 16-1: _[Projeto - Jogo de Trivia]_
+- [x] 16-1: [Projeto - Jogo de Trivia](https://github.com/findCarolinaCosta/project-trivia-react-redux)
 
 ##### Bloco 17: React & Context API
 
 - [x] 17-1: _Context API do React_
 - [x] 17-2: _React Hooks - useState e useContext_
 - [x] 17-3: _React Hooks - useEffect e Hooks customizados_
-- [x] 17-4: _[Projeto - StarWars Datatable com Context API e Hooks]_
+- [x] 17-4: [Projeto - StarWars Datatable com Context API e Hooks](https://github.com/findCarolinaCosta/project-starwars-planets-search)
 
 ##### Bloco 18: Projeto Final de Front-end
 
-- [x] 18-1: _[Projeto - App de Receitas]_
+- [x] 18-1: [Projeto - App de Receitas](https://github.com/findCarolinaCosta/project-recipes-app)
 
 ## Desenvolvimento Back-end :hourglass_flowing_sand:
 
@@ -144,7 +144,7 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [x] 19.1: _Utilizando Containers - Docker_
 - [x] 19.2: _Manipulação e Criação de Imagens no Docker_
 - [x] 19.3: _Orquestrando Containers com Docker Compose_
-- [x] 19.4: _[Projeto - Docker Todo-List]_
+- [x] 19.4: [Projeto - Docker Todo-List](https://github.com/findCarolinaCosta/project-docker-todo-list)
 
 ##### Bloco 20: Introdução à SQL
 
@@ -153,14 +153,14 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 - [x] 19-2: _Encontrando dados em um banco de dados_
 - [x] 19-3: _Filtrando dados de forma específica_
 - [x] 19-4: _Manipulando tabelas_
-- [x] 19-5: _[Projeto - All For One]_
+- [x] 19-5: [Projeto - All For One : relational-db-mysql-crud](https://github.com/findCarolinaCosta/relational-db-mysql-crud)
 
 ##### Bloco 21: Funções SQL, JOINs e Normalização
 
 - [x] 21-1: _Funções mais usadas no SQL_
-- [ ] 21-2: _Descomplicando JOINs_
-- [ ] 21-3: _Transformando ideias em um modelo de banco de dados_
-- [ ] 21-4: _[Projeto - One For All]_
+- [x] 21-2: _Descomplicando JOINs_
+- [x] 21-3: _Transformando ideias em um modelo de banco de dados_
+- [x] 21-4: [Projeto - One For All : relational-db-mysql-concepts-in-practice](https://github.com/findCarolinaCosta/relational-db-mysql-concepts-in-practice)
 
 ##### Bloco 22: Introdução ao desenvolvimento Web com Node.js
 
