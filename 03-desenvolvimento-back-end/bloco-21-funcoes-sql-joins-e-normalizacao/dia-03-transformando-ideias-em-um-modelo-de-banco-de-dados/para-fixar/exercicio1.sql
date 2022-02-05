@@ -25,8 +25,8 @@ CREATE TABLE `exercicio-de-fixacao`.`funcionario` (
 
 INSERT INTO `exercicio-de-fixacao`.`funcionario` (`funcionario_id`, `nome`, `sobrenome`, `email`, `telefone`, `data_cadastro`) 
 VALUES (12, 'Joseph', 'Rodrigues', 'jo@gmail.com', '(35)998552-1445', '2020-05-05 08:50:25'),
-	   (13, 'André', 'Freeman', 'andre1990@gmail.com	', '(47)99522-4996', '5 de Fevereiro de 2020'),
-	   (14, 'Cíntia', 'Duval', 'cindy@outlook.com	', '(33)99855-4669', '2020-05-05 10:55:35', 'Estratégico'),
+	   (13, 'André', 'Freeman', 'andre1990@gmail.com', '(47)99522-4996', '5 de Fevereiro de 2020'),
+	   (14, 'Cíntia', 'Duval', 'cindy@outlook.com', '(33)99855-4669', '2020-05-05 10:55:35'),
 	   (15, 'Fernanda', 'Mendes', 'fernandamendes@yahoo.com	', '(33)99200-1556', '2020-05-05 11:45:40');
 
 -- -----------------------------------------------------
@@ -49,3 +49,6 @@ VALUES (12, 'Administração'),
 	   (14, 'Estratégico'),
 	   (14, 'Vendas'),
 	   (15, 'Marketing');
+       
+
+
