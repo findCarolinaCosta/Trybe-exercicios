@@ -1,13 +1,9 @@
 const readline = require("readline-sync");
 
-const lista = {
-  1: "Calculo de IMC",
-  2: "Calculo velocidade média",
-  3: "Sorteio",
-};
+const lista = ["Calculo de IMC", "Calculo velocidade média", "Sorteio"];
 
-Object.keys(lista).forEach((item) => {
-  console.log(`   ${item} - ${lista[item]}`);
+lista.forEach((item, index) => {
+  console.log(`   ${index + 1} - ${item}`);
 });
 
 const question = readline.questionInt(
@@ -29,4 +25,5 @@ if (question === 3) {
   require("./sorteio.js");
 }
 
-console.log("Número inválido. Saindo");
+if (question > lista.length || question <= 0)
+  console.log("Número inválido. Saindo");
