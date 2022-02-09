@@ -5,7 +5,8 @@
   "main": "fatorial.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "factorial": "node ./fatorial"
+    "factorial": "node ./fatorial",
+    "fibonacci": "node ./fibonacci"
   },
   "keywords": [],
   "author": "Carolina P da Costa",
