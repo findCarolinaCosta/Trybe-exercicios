@@ -4,7 +4,8 @@
   "description": "",
   "main": "getNumberInfo.js",
   "scripts": {
-    "test": "mocha getNumberInfo.test"
+    "test": "mocha getNumberInfo.test",
+    "writeFile": "mocha writeFile.test"
   },
   "keywords": [],
   "author": "Carolina P da Costa",
