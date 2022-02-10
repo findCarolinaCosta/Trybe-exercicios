@@ -18,6 +18,17 @@ function getAccount(a, b, c) {
   });
 }
 
-getAccount(20, 2, 4)
-  .then((resolve) => console.log(resolve))
-  .catch((error) => console.log(error));
+function getRandomNumber() {
+  return Math.floor(Math.random() * 100 + 1);
+}
+
+function runGetAccount() {
+  const randomNumbers = Array.from({ length: 3 }).map(getRandomNumber);
+  console.log(`Numeros: ${randomNumbers}`);
+
+  getAccount(...randomNumbers)
+    .then((resolve) => console.log(resolve))
+    .catch((error) => console.log(error));
+}
+
+runGetAccount();
