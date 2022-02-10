@@ -1,0 +1,18 @@
+{
+  "name": "exercicios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "getNumberInfo.js",
+  "scripts": {
+    "test": "mocha getNumberInfo.test",
+    "writeFile": "mocha writeFile.test"
+  },
+  "keywords": [],
+  "author": "Carolina P da Costa",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.0",
+    "sinon": "^13.0.1"
+  }
+}
