@@ -38,4 +38,16 @@ describe("Testa função getNumberInfo", () => {
       expect(answer).to.be.equals("neutro");
     });
   });
+
+  describe("Testa retorno esperado quando parâmetro não é typeof numero", () => {
+    it("resposta é uma string", () => {
+      const answer = getNumberInfo(0);
+      expect(answer).to.be.a("string");
+    });
+
+    it("parâmetro !== de numero", () => {
+      const answer = getNumberInfo("AAAA");
+      expect(answer).to.be.equals("o parâmetro deve ser um número");
+    });
+  });
 });
