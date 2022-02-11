@@ -10,6 +10,15 @@ const recipes = [
 
 app.use(cors());
 
+app.get("/recipes/:id", (req, res) => {
+  const { id } = req.params;
+  const recipe = recipes.find((r) => r.id === parseInt(id));
+
+  if (!recipe) return res.status(404).json({ message: "Recipe not found!" });
+
+  res.status(200).json(recipe);
+});
+
 app.get("/recipes", function (_req, res) {
   return res.json(recipes);
 });

@@ -15,6 +15,15 @@ const orderedList = drinks.sort((a, b) => a.name.localeCompare(b.name));
 
 app.use(cors());
 
+app.get("/drinks/:id", (req, res) => {
+  const { id } = req.params;
+  const drink = drinks.find((d) => d.id === parseInt(id));
+
+  if (!drink) return res.status(404).json({ message: "Drink not found!" });
+
+  res.status(200).json(drink);
+});
+
 app.get("/drinks", (_req, res) => {
   return res.json(orderedList);
 });
