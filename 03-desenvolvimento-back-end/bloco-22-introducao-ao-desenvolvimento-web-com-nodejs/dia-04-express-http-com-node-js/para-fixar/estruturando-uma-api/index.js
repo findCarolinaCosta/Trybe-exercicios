@@ -11,6 +11,17 @@ const recipes = [
 app.use(cors());
 
 app.get("/recipes/search", function (req, res) {
+  const { name, maxPrice, minPrice } = req.query;
+  const filteredRecipes = recipes.filter(
+    (r) =>
+      r.name.includes(name) &&
+      r.price < parseInt(maxPrice) &&
+      r.price >= minPrice
+  );
+  res.status(200).json(filteredRecipes);
+});
+
+app.get("/recipes/search", function (req, res) {
   const { name } = req.query;
   const filteredRecipes = recipes.filter((r) => r.name.includes(name));
   res.status(200).json(filteredRecipes);
