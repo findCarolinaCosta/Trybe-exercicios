@@ -10,6 +10,12 @@ const recipes = [
 
 app.use(cors());
 
+app.get("/recipes/search", function (req, res) {
+  const { name } = req.query;
+  const filteredRecipes = recipes.filter((r) => r.name.includes(name));
+  res.status(200).json(filteredRecipes);
+});
+
 app.get("/recipes/:id", (req, res) => {
   const { id } = req.params;
   const recipe = recipes.find((r) => r.id === parseInt(id));
