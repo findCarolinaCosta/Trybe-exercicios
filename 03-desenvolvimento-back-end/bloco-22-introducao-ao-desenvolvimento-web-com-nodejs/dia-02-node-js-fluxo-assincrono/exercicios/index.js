@@ -22,13 +22,16 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 100 + 1);
 }
 
-function runGetAccount() {
+async function runGetAccount() {
   const randomNumbers = Array.from({ length: 3 }).map(getRandomNumber);
   console.log(`Numeros: ${randomNumbers}`);
 
-  getAccount(...randomNumbers)
-    .then((resolve) => console.log(resolve))
-    .catch((error) => console.log(error));
+  try {
+    const result = await getAccount(...randomNumbers);
+    console.log(result);
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 runGetAccount();
