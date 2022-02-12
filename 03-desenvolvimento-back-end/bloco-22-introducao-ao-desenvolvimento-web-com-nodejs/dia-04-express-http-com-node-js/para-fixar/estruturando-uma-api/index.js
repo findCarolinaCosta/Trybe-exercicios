@@ -62,6 +62,18 @@ app.put("/recipes/:id", function (req, res) {
   res.status(204).end(); //204 = requisição foi completada com sucesso como retorno
 });
 
+app.delete("/recipes/:id", function (req, res) {
+  const { id } = req.params;
+  const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
+
+  if (recipeIndex === -1)
+    return res.status(404).json({ message: "Recipe not found!" });
+
+  recipes.splice(recipeIndex, 1);
+
+  res.status(204).end();
+});
+
 app.listen(3001, () => {
   console.log("Aplicação ouvindo na porta 3001");
 });
