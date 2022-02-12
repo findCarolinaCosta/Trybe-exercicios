@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
+const bodyParser = require("body-parser");
 
 const recipes = [
   { id: 1, name: "Lasanha", price: 40.0, waitTime: 30 },
@@ -8,7 +9,8 @@ const recipes = [
   { id: 3, name: "Macarrão com molho branco", price: 35.0, waitTime: 25 },
 ];
 
-app.use(cors());
+// app.use(cors());
+app.use(bodyParser.json());
 
 app.get("/recipes/search", function (req, res) {
   const { name, maxPrice, minPrice } = req.query;
@@ -38,6 +40,12 @@ app.get("/recipes/:id", (req, res) => {
 
 app.get("/recipes", function (_req, res) {
   return res.json(recipes);
+});
+
+app.post("/recipes", function (req, res) {
+  const { id, name, price } = req.body;
+  recipes.push({ id, name, price });
+  res.status(201).json({ message: "Recipe created successfully!" });
 });
 
 app.listen(3001, () => {
