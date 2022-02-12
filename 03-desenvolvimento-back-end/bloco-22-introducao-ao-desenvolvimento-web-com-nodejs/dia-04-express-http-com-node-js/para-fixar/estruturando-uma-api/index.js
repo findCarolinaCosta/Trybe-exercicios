@@ -1,7 +1,8 @@
 const express = require("express");
-const app = express();
-// const cors = require("cors");
 const bodyParser = require("body-parser");
+
+const app = express();
+app.use(bodyParser.json());
 
 const recipes = [
   { id: 1, name: "Lasanha", price: 40.0, waitTime: 30 },
@@ -9,8 +10,9 @@ const recipes = [
   { id: 3, name: "Macarrão com molho branco", price: 35.0, waitTime: 25 },
 ];
 
-// app.use(cors());
-app.use(bodyParser.json());
+app.get("/recipes", function (_req, res) {
+  res.status(200).json(recipes);
+});
 
 app.get("/recipes/search", function (req, res) {
   const { name, maxPrice, minPrice } = req.query;
@@ -23,23 +25,12 @@ app.get("/recipes/search", function (req, res) {
   res.status(200).json(filteredRecipes);
 });
 
-app.get("/recipes/search", function (req, res) {
-  const { name } = req.query;
-  const filteredRecipes = recipes.filter((r) => r.name.includes(name));
-  res.status(200).json(filteredRecipes);
-});
-
-app.get("/recipes/:id", (req, res) => {
+app.get("/recipes/:id", function (req, res) {
   const { id } = req.params;
   const recipe = recipes.find((r) => r.id === parseInt(id));
-
   if (!recipe) return res.status(404).json({ message: "Recipe not found!" });
 
   res.status(200).json(recipe);
-});
-
-app.get("/recipes", function (_req, res) {
-  return res.json(recipes);
 });
 
 app.post("/recipes", function (req, res) {
@@ -48,7 +39,6 @@ app.post("/recipes", function (req, res) {
   res.status(201).json({ message: "Recipe created successfully!" });
 });
 
-//Atualizar informações baseado no id passado como parâmetro
 app.put("/recipes/:id", function (req, res) {
   const { id } = req.params;
   const { name, price } = req.body;
@@ -59,7 +49,7 @@ app.put("/recipes/:id", function (req, res) {
 
   recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
 
-  res.status(204).end(); //204 = requisição foi completada com sucesso como retorno
+  res.status(204).end();
 });
 
 app.delete("/recipes/:id", function (req, res) {
@@ -72,6 +62,10 @@ app.delete("/recipes/:id", function (req, res) {
   recipes.splice(recipeIndex, 1);
 
   res.status(204).end();
+});
+
+app.all("*", function (req, res) {
+  return res.status(404).json({ message: `Rota '${req.path}' não existe!` });
 });
 
 app.listen(3001, () => {

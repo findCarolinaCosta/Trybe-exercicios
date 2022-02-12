@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
-// const cors = require("cors");
 const bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
 
 const drinks = [
   { id: 1, name: "Refrigerante Lata", price: 5.0 },
@@ -14,8 +15,20 @@ const drinks = [
 
 const orderedList = drinks.sort((a, b) => a.name.localeCompare(b.name));
 
-// app.use(cors());
-app.use(bodyParser.json());
+app.get("/drinks", function (_req, res) {
+  res.status(200).json(orderedList);
+});
+
+app.get("/drinks/search", function (req, res) {
+  const { name, maxPrice, minPrice } = req.query;
+  const filteredDrinks = drinks.filter(
+    (r) =>
+      r.name.includes(name) &&
+      r.price < parseInt(maxPrice) &&
+      r.price >= minPrice
+  );
+  res.status(200).json(filteredDrinks);
+});
 
 app.get("/drinks/:id", (req, res) => {
   const { id } = req.params;
@@ -26,14 +39,39 @@ app.get("/drinks/:id", (req, res) => {
   res.status(200).json(drink);
 });
 
-app.get("/drinks", (_req, res) => {
-  return res.json(orderedList);
-});
-
 app.post("/drinks", (req, res) => {
   const { id, name, price } = req.body;
   drinks.push({ id, name, price });
   res.status(200).json({ menssage: "Drink created successfully" });
+});
+
+app.put("/drinks/:id", function (req, res) {
+  const { id } = req.params;
+  const { name, price } = req.body;
+  const drinkIndex = drinks.findIndex((r) => r.id === parseInt(id));
+
+  if (drinkIndex === -1)
+    return res.status(404).json({ message: "Drink not found!" });
+
+  drinks[drinkIndex] = { ...drinks[drinkIndex], name, price };
+
+  res.status(204).end();
+});
+
+app.delete("/drinks/:id", function (req, res) {
+  const { id } = req.params;
+  const drinkIndex = drinks.findIndex((r) => r.id === parseInt(id));
+
+  if (drinkIndex === -1)
+    return res.status(404).json({ message: "Drink not found!" });
+
+  drinks.splice(drinkIndex, 1);
+
+  res.status(204).end();
+});
+
+app.all("*", function (req, res) {
+  return res.status(404).json({ message: `Rota '${req.path}' não existe!` });
 });
 
 app.listen(3001, () => {
