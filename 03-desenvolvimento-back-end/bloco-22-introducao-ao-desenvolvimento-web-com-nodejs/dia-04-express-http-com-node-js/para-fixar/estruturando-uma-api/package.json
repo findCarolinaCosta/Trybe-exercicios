@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js",
+    "dev": "nodemon index.js",
     "drinks": "nodemon drinks.js",
     "token": "nodemon validateToken.js"
   },
