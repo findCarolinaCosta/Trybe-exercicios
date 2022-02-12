@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
+const bodyParser = require("body-parser");
 
 const drinks = [
   { id: 1, name: "Refrigerante Lata", price: 5.0 },
@@ -13,7 +14,8 @@ const drinks = [
 
 const orderedList = drinks.sort((a, b) => a.name.localeCompare(b.name));
 
-app.use(cors());
+// app.use(cors());
+app.use(bodyParser.json());
 
 app.get("/drinks/:id", (req, res) => {
   const { id } = req.params;
@@ -26,6 +28,12 @@ app.get("/drinks/:id", (req, res) => {
 
 app.get("/drinks", (_req, res) => {
   return res.json(orderedList);
+});
+
+app.post("/drinks", (req, res) => {
+  const { id, name, price } = req.body;
+  drinks.push({ id, name, price });
+  res.status(200).json({ menssage: "Drink created successfully" });
 });
 
 app.listen(3001, () => {
