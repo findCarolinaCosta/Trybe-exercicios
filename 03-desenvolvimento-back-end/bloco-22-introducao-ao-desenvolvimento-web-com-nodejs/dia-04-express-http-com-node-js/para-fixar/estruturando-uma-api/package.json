@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon index.js",
-    "drinks": "nodemon drinks.js"
+    "drinks": "nodemon drinks.js",
+    "token": "nodemon validateToken.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
