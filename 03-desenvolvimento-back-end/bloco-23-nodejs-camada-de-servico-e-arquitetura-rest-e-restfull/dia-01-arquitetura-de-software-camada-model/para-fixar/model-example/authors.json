@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "first_name": "George",
+    "middle_name": "R. R.",
+    "last_name": "Martin"
+  },
+  {
+    "id": 2,
+    "first_name": "J.",
+    "middle_name": "R. R.",
+    "last_name": "Tolkien"
+  },
+  {
+    "id": 3,
+    "first_name": "Isaac",
+    "middle_name": null,
+    "last_name": "Asimov"
+  },
+  {
+    "id": 4,
+    "first_name": "Frank",
+    "middle_name": null,
+    "last_name": "Herbert"
+  },
+  {
+    "id": 5,
+    "first_name": "Júlio",
+    "middle_name": null,
+    "last_name": "Verne"
+  }
+]
