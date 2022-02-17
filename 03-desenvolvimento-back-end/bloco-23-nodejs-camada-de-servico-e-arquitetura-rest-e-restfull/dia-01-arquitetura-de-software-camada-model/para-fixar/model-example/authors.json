@@ -3,30 +3,35 @@
     "id": 1,
     "firstName": "George",
     "middleName": "R. R.",
-    "lastName": "Martin"
+    "lastName": "Martin",
+    "fullName": "George R. R. Martin"
   },
   {
     "id": 2,
     "firstName": "J.",
     "middleName": "R. R.",
-    "lastName": "Tolkien"
+    "lastName": "Tolkien",
+    "fullName": "J. R. R. Tolkien"
   },
   {
     "id": 3,
     "firstName": "Isaac",
     "middleName": null,
-    "lastName": "Asimov"
+    "lastName": "Asimov",
+    "fullName": "Isaac Asimov"
   },
   {
     "id": 4,
     "firstName": "Frank",
     "middleName": null,
-    "lastName": "Herbert"
+    "lastName": "Herbert",
+    "fullName": "Frank Herbert"
   },
   {
     "id": 5,
     "firstName": "Júlio",
     "middleName": null,
-    "lastName": "Verne"
+    "lastName": "Verne",
+    "fullName": "Júlio Verne"
   }
 ]
