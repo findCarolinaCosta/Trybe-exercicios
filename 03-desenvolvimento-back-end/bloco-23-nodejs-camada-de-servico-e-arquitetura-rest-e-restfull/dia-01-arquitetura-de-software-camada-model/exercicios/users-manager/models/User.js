@@ -14,10 +14,10 @@ function formatUserData({
   };
 }
 
-function create({ firstName, lastName, email, password }) {
+async function create({ firstName, lastName, email, password }) {
   const query =
     "INSERT INTO users (first_name, last_name, email, password) VALUES (?,?,?,?);";
-  const [result] = connection.execute(query, [
+  const [result] = await connection.execute(query, [
     firstName,
     lastName,
     email,
