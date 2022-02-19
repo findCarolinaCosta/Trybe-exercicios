@@ -6,6 +6,7 @@ const middlewares = require("./middlewares");
 app.use(bodyParser.json());
 
 app.post("/user", middlewares.createUser);
+app.get("/user", middlewares.getAllUsers);
 
 app.use(middlewares.error);
 

@@ -31,6 +31,12 @@ async function create({ firstName, lastName, email, password }) {
   };
 }
 
+async function findAll() {
+  const [result] = await connection.execute("SELECT * FROM user;");
+  return result;
+}
+
 module.exports = {
   create,
+  findAll,
 };
