@@ -9,7 +9,15 @@ const getAll = async () => {
 const findById = async (id) => {
   const author = await Author.findById(id);
 
-  if (!author) return null;
+  //comunicando ao controller toda vez que algum erro de domínio acontece
+  if (!author) {
+    return {
+      error: {
+        code: "notFound",
+        message: `Não foi possível encontrar uma pessoa autora com o id ${id}`,
+      },
+    };
+  }
 
   return author;
 };
@@ -27,7 +35,7 @@ const createAuthor = async ({ firstName, middleName, lastName }) => {
     return {
       error: {
         code: "alreadyExists",
-        message: "Uma pessoa autora já existe com esse nome completo",
+        message: "Uma pessoa autora já existe com esse nome",
       },
     };
   }
