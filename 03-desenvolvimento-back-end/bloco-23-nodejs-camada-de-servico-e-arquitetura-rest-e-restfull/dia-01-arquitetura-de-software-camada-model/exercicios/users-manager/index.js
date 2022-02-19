@@ -7,6 +7,7 @@ app.use(bodyParser.json());
 
 app.post("/user", middlewares.createUser);
 app.get("/user", middlewares.getAllUsers);
+app.get("/user/:id", middlewares.findUserById);
 
 app.use(middlewares.error);
 

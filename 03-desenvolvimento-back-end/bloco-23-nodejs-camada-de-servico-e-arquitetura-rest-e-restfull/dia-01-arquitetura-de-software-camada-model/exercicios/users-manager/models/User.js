@@ -36,7 +36,17 @@ async function findAll() {
   return result;
 }
 
+async function findById(id) {
+  const query = "SELECT * FROM user WHERE id = ?";
+  const [result] = await connection.execute(query, [id]);
+
+  if (!result) return null;
+
+  return formatUserData(result);
+}
+
 module.exports = {
   create,
   findAll,
+  findById,
 };
