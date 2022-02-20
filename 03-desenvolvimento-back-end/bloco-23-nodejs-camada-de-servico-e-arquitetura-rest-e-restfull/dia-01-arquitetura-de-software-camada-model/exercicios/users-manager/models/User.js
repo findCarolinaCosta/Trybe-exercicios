@@ -50,9 +50,17 @@ async function findById(id) {
   return formatUserData(result);
 }
 
+async function updateUser({ id, firstName, lastName, email, password }) {
+  const query =
+    "UPDATE user SET first_name = ?, last_name = ?, email = ?, password = ? WHERE id = ?;";
+  await connection.execute(query, [firstName, lastName, email, password, id]);
+  return await findById(id);
+}
+
 module.exports = {
   create,
   findAll,
   findById,
   isValid,
+  updateUser,
 };
