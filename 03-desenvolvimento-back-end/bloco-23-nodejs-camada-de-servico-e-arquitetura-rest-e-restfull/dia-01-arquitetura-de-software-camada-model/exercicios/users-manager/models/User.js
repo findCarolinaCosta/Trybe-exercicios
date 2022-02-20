@@ -1,4 +1,9 @@
 const connection = require("./connection");
+const userSchema = require("../schemas/userSchema");
+
+function isValid(userData) {
+  return userSchema.validate(userData);
+}
 
 function formatUserData({
   id,
@@ -49,4 +54,5 @@ module.exports = {
   create,
   findAll,
   findById,
+  isValid,
 };
