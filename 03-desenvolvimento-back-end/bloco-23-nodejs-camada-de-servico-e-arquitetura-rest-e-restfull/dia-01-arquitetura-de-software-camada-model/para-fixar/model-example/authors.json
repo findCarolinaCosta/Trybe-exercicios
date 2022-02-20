@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "firstName": "George",
+    "middleName": "R. R.",
+    "lastName": "Martin",
+    "fullName": "George R. R. Martin"
+  },
+  {
+    "id": 2,
+    "firstName": "J.",
+    "middleName": "R. R.",
+    "lastName": "Tolkien",
+    "fullName": "J. R. R. Tolkien"
+  },
+  {
+    "id": 3,
+    "firstName": "Isaac",
+    "middleName": null,
+    "lastName": "Asimov",
+    "fullName": "Isaac Asimov"
+  },
+  {
+    "id": 4,
+    "firstName": "Frank",
+    "middleName": null,
+    "lastName": "Herbert",
+    "fullName": "Frank Herbert"
+  },
+  {
+    "id": 5,
+    "firstName": "Júlio",
+    "middleName": null,
+    "lastName": "Verne",
+    "fullName": "Júlio Verne"
+  }
+]
