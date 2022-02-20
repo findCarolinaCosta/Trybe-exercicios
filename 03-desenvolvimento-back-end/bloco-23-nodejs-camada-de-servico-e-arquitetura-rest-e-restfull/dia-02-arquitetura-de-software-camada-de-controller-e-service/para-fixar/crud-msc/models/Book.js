@@ -41,9 +41,24 @@ const createBook = async ({ title, author_id }) =>
     [title, author_id]
   );
 
+const update = async ({ id, title, author_id }) => {
+  const query =
+    "UPDATE model_example.books SET title = ?, author_id = ? WHERE id = ?;";
+  const [result] = await connection.execute(query, [title, author_id, id]);
+
+  return { id, title, author_id, infos: result.info };
+};
+
+const deleteBook = async (id) => {
+  const query = "DELETE FROM model_example.books WHERE id = ?;";
+  return await connection.execute(query, [id]);
+};
+
 module.exports = {
   getAll,
   getByAuthorId,
   getById,
   createBook,
+  update,
+  deleteBook,
 };

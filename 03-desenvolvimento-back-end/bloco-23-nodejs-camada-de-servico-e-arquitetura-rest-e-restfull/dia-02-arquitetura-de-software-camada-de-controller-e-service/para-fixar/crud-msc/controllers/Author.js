@@ -42,8 +42,58 @@ async function create(req, res, next) {
   }
 }
 
+async function update(req, res, next) {
+  try {
+    const { firstName, middleName, lastName, birthday, nationality } = req.body;
+    const { id } = req.params;
+
+    const author = await Author.update({
+      id,
+      firstName,
+      middleName,
+      lastName,
+      birthday: birthday === "" && null,
+      nationality: nationality === "" && null,
+    });
+
+    if (!author) {
+      return res
+        .status(404)
+        .json({ error: true, message: "Livro não encontrado" });
+    }
+
+    return res.status(200).json(author);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+}
+
+async function deleteAuthor(req, res, next) {
+  try {
+    const { id } = req.params;
+
+    const author = await Author.findById(id);
+
+    if (!author) {
+      return res
+        .status(404)
+        .json({ error: true, message: "Author não encontrado" });
+    }
+
+    await Author.deleteAuthor(id);
+
+    return res.status(204).end();
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+}
+
 module.exports = {
   getAll,
   findById,
   create,
+  update,
+  deleteAuthor,
 };

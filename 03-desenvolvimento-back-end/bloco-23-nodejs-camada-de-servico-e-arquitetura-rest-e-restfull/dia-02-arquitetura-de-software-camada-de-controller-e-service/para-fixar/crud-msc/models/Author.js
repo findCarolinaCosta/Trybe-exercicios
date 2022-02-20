@@ -63,9 +63,31 @@ const findByName = async ({ first_name, middle_name, last_name }) => {
   return authors;
 };
 
+const update = async (obj) => {
+  const query =
+    "UPDATE model_example.authors SET first_name = ?, middle_name = ?, last_name = ?, birthday = ?, nationality = ? WHERE id = ?;";
+  await connection.execute(query, [
+    obj.first_name,
+    obj.middle_name,
+    obj.last_name,
+    obj.birthday,
+    obj.nationality,
+    obj.id,
+  ]);
+
+  return await findById(obj.id);
+};
+
+const deleteAuthor = async (id) =>
+  await connection.execute("DELETE FROM model_example.authors WHERE id = ?;", [
+    id,
+  ]);
+
 module.exports = {
   getAll,
   findById,
   create,
   findByName,
+  update,
+  deleteAuthor,
 };

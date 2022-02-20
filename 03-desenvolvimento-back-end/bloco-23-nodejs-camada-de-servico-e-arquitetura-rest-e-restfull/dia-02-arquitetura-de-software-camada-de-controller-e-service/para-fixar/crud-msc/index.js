@@ -16,13 +16,21 @@ app
   .route("/books")
   .get(Book.getAll)
   .post(validate.isValidBook, Book.createBook);
-app.get("/books/:id", Book.getById);
+app
+  .route("/books/:id")
+  .get(Book.getById)
+  .put(validate.isValidBook, Book.update)
+  .delete(Book.deleteBook);
 
 app
   .route("/authors")
   .get(Author.getAll)
   .post(validate.isValidAuthor, Author.create);
-app.get("/authors/:id", Author.findById);
+app
+  .route("/authors/:id")
+  .get(Author.findById)
+  .put(validate.isValidAuthor, Author.update)
+  .delete(validate.isValidAuthor, Author.deleteAuthor);
 
 app.use(middlewares.error);
 

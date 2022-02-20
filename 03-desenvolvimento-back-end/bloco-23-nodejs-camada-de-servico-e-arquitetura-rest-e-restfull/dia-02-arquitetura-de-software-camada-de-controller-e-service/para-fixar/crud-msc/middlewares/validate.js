@@ -17,7 +17,6 @@ async function isValidBook(req, res, next) {
 
 async function isValidAuthor(req, res, next) {
   const { firstName, middleName, lastName } = req.body;
-  // const isInvalidReturn = res.status(400).json({ message: "Dados inválidos" });
   if (!firstName || typeof firstName !== "string") {
     return res.status(400).json({ message: "Dados inválidos" });
   }
