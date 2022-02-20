@@ -21,7 +21,7 @@ function formatUserData({
 
 async function create({ firstName, lastName, email, password }) {
   const query =
-    "INSERT INTO users (first_name, last_name, email, password) VALUES (?,?,?,?);";
+    "INSERT INTO user (first_name, last_name, email, password) VALUES (?,?,?,?);";
   const [result] = await connection.execute(query, [
     firstName,
     lastName,
@@ -47,7 +47,7 @@ async function findById(id) {
 
   if (!result) return null;
 
-  return formatUserData(result);
+  return formatUserData(result[0]);
 }
 
 async function updateUser({ id, firstName, lastName, email, password }) {

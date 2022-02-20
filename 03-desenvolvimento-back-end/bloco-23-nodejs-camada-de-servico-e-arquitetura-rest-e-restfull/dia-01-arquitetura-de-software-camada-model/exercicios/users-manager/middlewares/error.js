@@ -1,8 +1,12 @@
-module.exports = (err, req, res, _next) => {
+module.exports = (err, _req, res, _next) => {
   if (err.status) {
     return res.status(err.status).json({ message: err.message });
   }
 
+  if (err.message) {
+    return res.status(400).json({ message: err.message });
+  }
+
   console.log(err);
-  res.status(500).json({ message: "Internal Server Error" });
+  return res.status(500).json({ message: "Internal Server Error" });
 };

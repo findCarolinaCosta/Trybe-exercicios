@@ -5,10 +5,12 @@ const middlewares = require("./middlewares");
 
 app.use(bodyParser.json());
 
-app.post("/user", middlewares.createUser);
-app.get("/user", middlewares.getAllUsers);
-app.get("/user/:id", middlewares.findUserById);
-app.put(middlewares.updateUser);
+app.route("/user").post(middlewares.createUser).get(middlewares.getAllUsers);
+
+app
+  .route("/user/:id")
+  .get(middlewares.findUserById)
+  .put(middlewares.updateUser);
 
 app.use(middlewares.error);
 
