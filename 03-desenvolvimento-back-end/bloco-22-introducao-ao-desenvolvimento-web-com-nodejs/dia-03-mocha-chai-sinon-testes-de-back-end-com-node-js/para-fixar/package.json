@@ -1,0 +1,19 @@
+{
+  "name": "para-fixar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exemploTesteDeIntegracao.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [],
+  "author": "Carolina P da Costa",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.0"
+  }
+}
