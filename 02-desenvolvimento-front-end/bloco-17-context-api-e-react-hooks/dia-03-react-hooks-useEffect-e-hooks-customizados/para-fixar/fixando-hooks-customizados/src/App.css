@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+}
+
+button {
+  margin-left: 5vh;
+}
+
+ul {
+  margin-top: 10vh;
+}
+
+ul li {
+  list-style: none;
+}
+
+.App {
+  align-items: center;
+  background-color: #6d006d;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 20px;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
