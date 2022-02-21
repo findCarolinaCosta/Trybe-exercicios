@@ -8,10 +8,11 @@ const headers = new fetch.Headers({
   Authorization: API_TOKEN,
 });
 
-// Para aquecer, vamos começar com uma requisição do tipo `GET`
-fetch("https://postman-echo.com/get?param1=teste", {
+// Mudar requisição do tipo `POST`
+fetch("https://postman-echo.com/post?param1=teste", {
   // Passamos o objeto de headers como parâmetro para o fetch
   headers,
+  method: "POST",
 })
   .then((response) => {
     // Ao receber a resposta, verificamos se correu tudo bem
