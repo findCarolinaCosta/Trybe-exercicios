@@ -20,12 +20,11 @@ class App extends Component {
   sendForm = () => { this.setState({ submitted: true }) };
 
   render() {
-    const { name, email, cpf, address, city, state, addresstype, curriculumsummary, office, descriptionjob, submitted } = this.state;
+    const { name, email, cpf, address, city, state, addresstype, curriculumsummary, office, descriptionjob } = this.state;
     const stateData = { name, email, cpf, address, city, state, addresstype, curriculumsummary, office, descriptionjob };
     return (
       <main>
         < Form handleChange={this.handleChange} stateData={stateData} sendForm={this.sendForm} { ...this.state } cleanForm={this.cleanForm}/>
-        {submitted && <FilledInfo currentState={this.state} />}
       </main >
     );
   }

@@ -7,17 +7,17 @@ class DetailsLastJob extends Component {
       <fieldset className='container-info details-last-job'>
         <legend>Dados do último emprego: </legend>
 
-        <div className='div-internal'>
+        <div className='div-internal div-textarea-jobs'>
           <label htmlFor='curriculum-summary'>
-            Resumo do currículo :
-            <textarea id='curriculum-summary' name='curriculumsummary' placeholder='Digite...' maxLength='1000' rows="5" cols="33" value={curriculumsummary} onChange={handleChange} required='required' />
+            <p>Resumo do currículo:</p>
+            <textarea id='curriculum-summary' name='curriculumsummary' placeholder='Digite...' maxLength='1000' rows="7" cols="37" value={curriculumsummary} onChange={handleChange} required='required' />
           </label>
         </div>
 
-        <div className='div-internal'>
+        <div className='div-internal div-textarea-jobs'>
           <label htmlFor='office'>
-            Cargo:
-            <textarea id='office' name='office' maxLength='40' rows="5" cols="33" required='required' placeholder=' Digite...' value={office} onChange={handleChange} remember={console.log(`Quando o mouse passar por cima deste campo (evento onMouseEnter ), exibir um alerta dizendo "Preencha com cuidado esta informação". Exiba essa mensagem apenas uma vez.`)} />
+            <p>Cargo:</p>
+            <textarea id='office' name='office' maxLength='40' rows="3" cols="37" required='required' placeholder=' Digite...' value={office} onChange={handleChange} remember={console.log(`Quando o mouse passar por cima deste campo (evento onMouseEnter ), exibir um alerta dizendo "Preencha com cuidado esta informação". Exiba essa mensagem apenas uma vez.`)} />
           </label>
         </div>
 

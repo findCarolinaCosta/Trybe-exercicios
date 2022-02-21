@@ -7,16 +7,7 @@ input {
   margin: 5%;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  width: auto;
-}
-
 .container-info {
-  max-width: 300px;
   text-align: center;
 }
 
@@ -34,4 +25,43 @@ input {
 
 .text {
   width: 90%;
+}
+
+.div-return-infos {
+  border: 2px solid gray;
+}
+
+@media (max-width: 600px) {
+  .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: auto;
+}
+
+  .container-info {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 600px) {
+  main .column {
+    float: left;
+    width: 40%;
+    margin: 5%;
+  }
+  
+  .container-info {
+    text-align: center;
+    width: 100%;
+  }
+  
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }

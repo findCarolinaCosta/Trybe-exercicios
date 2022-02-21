@@ -1,0 +1,16 @@
+{
+  "name": "parte-01",
+  "version": "1.0.0",
+  "main": "service.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.3.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
