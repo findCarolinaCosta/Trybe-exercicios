@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const sinon = require("sinon");
 
 const connection = require("../../models/connection");
-const MovieModel = require("../../models/movie");
+const MovieModel = require("../../models/movies");
 
 describe("Insere um novo filme no BD", () => {
   const payloadMovie = {
