@@ -36,3 +36,58 @@ describe("Insere um novo filme no BD", () => {
     });
   });
 });
+
+describe("Busca apenas um filme no BD por seu ID", () => {
+  before(async () => {
+    const execute = [[], []];
+    sinon.stub(connection, "execute").resolves(execute);
+  });
+
+  after(async () => {
+    connection.execute.restore();
+  });
+
+  describe("quando não existe um filme com o ID informado", () => {
+    it("retornar null", async () => {
+      const response = await MovieModel.findById();
+      expect(response).to.be.equal(null);
+    });
+  });
+
+  describe("quando existe um filme com ID passado", () => {
+    const payloadMovie = {
+      id: 1,
+      title: "Example Movie",
+      directedBy: "Jane Dow",
+      releaseYear: 1999,
+    };
+
+    before(() => {
+      sinon.stub(MovieModel, "findById").resolves(payloadMovie);
+    });
+
+    after(() => {
+      MovieModel.findById.restore();
+    });
+
+    it("retorna um objeto", async () => {
+      const response = await MovieModel.findById(1);
+      expect(response).to.be.an("object");
+    });
+
+    it("objeto não é vazio", async () => {
+      const response = await MovieModel.findById(1);
+      expect(response).to.be.not.empty;
+    });
+
+    it('objeto possui as chaves: "id", "title", "releaseYear" e "directedBy"', async () => {
+      const response = await MovieModel.findById(1);
+      expect(response).to.include.all.keys(
+        "id",
+        "title",
+        "directedBy",
+        "releaseYear"
+      );
+    });
+  });
+});
