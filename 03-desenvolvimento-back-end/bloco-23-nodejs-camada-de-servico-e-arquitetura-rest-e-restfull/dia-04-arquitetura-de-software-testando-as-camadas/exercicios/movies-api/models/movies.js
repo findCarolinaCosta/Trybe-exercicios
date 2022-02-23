@@ -11,6 +11,16 @@ const create = async ({ title, directedBy, releaseYear }) => {
   };
 };
 
+const findById = async (id) => {
+  const query = "SELECT * FROM model_example.movies WHERE id = ?;";
+  const [result] = await connection.execute(query, [id]);
+
+  if (result.length === 0) return null;
+
+  return result;
+};
+
 module.exports = {
   create,
+  findById,
 };
