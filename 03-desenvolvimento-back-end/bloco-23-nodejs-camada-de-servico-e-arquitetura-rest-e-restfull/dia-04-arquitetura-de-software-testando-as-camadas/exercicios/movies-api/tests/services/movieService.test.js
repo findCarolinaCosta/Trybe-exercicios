@@ -4,6 +4,8 @@ const sinon = require("sinon");
 const MoviesService = require("../../services/movies");
 const MoviesModel = require("../../models/movies");
 
+const connection = require("../../models/connection");
+
 describe("Insere um novo filme no BD", () => {
   describe("quando o payload informado não é válido", () => {
     const payloadMovie = {};
