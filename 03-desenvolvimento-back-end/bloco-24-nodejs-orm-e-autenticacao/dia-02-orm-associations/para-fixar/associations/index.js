@@ -23,6 +23,7 @@ app.get('/employees/:id', async (req, res) => {
     const { id } = req.params;
     const employee = await Employee.findOne({
         where: { id },
+        // Eager Loading↴
         include: [{
           model: Address, as: 'addresses', attributes: { exclude: ['number'] },
         }],
