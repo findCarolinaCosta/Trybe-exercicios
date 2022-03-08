@@ -11,8 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true,
   });
 
+  // hasMany indicates that each employee can have many addresses
   Employee.associate = (models) => {
-    Employee.hasOne(models.Address,
+    Employee.hasMany(models.Address,
       { foreignKey: 'employee_id', as: 'addresses' });
   };
 
