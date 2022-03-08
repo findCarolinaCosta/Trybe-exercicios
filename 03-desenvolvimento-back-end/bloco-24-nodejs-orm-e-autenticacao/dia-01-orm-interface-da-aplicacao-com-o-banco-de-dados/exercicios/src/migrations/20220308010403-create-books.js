@@ -21,6 +21,7 @@ module.exports = {
       pageQuantity: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        field: 'page_quantity'
       },
 
       createdAt: {
