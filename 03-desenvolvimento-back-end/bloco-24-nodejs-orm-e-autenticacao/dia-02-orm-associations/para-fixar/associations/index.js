@@ -34,13 +34,16 @@ app.get('/employees/:id', async (req, res) => {
     if (!employee)
       return res.status(404).json({ message: 'Funcionário não encontrado' });
 
-    // // Eager Loading↴
-    if (req.query.includeAddresses === 'true') {
-      const addresses = await Address.findAll({ where: { employeeId: id } });
-      return res.status(200).json({ employee, addresses });
-    }
+    // // Lazy Loading↴
+    // if (req.query.includeAddresses === 'true') {
+    //   const addresses = await Address.findAll({ where: { employeeId: id } });
+    //   return res.status(200).json({ employee, addresses });
+    // }
 
-    return res.status(200).json(employee);
+    if (!req.query.includeAddresses) return res.status(200).json(employee);
+
+    const addresses = await employee.getAddresses(); //getter
+    return res.status(200).json({ ...employee.dataValues, addresses})
   } catch (e) {
     console.log(e.message);
     res.status(500).json({ message: 'Algo deu errado' });
