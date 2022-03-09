@@ -1,5 +1,8 @@
 // ./auth/validateJWT.js
 const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const { User } = require('../models');
 
@@ -8,7 +11,7 @@ const { User } = require('../models');
    Numa aplicação real, essa chave jamais ficaria hardcoded no código assim,
    e muitos menos de forma duplicada, mas aqui só estamos interessados em
    ilustrar seu uso ;) */
-const segredo = 'seusecretdetoken';
+const segredo = process.env.SECRET_KEY;
 
 module.exports = async (req, res, next) => {
   /* Aquele token gerado anteriormente virá na requisição através do
@@ -30,8 +33,7 @@ module.exports = async (req, res, next) => {
       {
         data: {
           id: '3',
-          username: 'italssodj',
-          password: 'senha123'
+          username: 'italssodj'
         },
         iat: 1582587327,
         exp: 1584774714908
