@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
+require('dotenv').config();
 
 const { Address, Employee } = require('./src/models');
 const { Book, User } = require('./src/models');
