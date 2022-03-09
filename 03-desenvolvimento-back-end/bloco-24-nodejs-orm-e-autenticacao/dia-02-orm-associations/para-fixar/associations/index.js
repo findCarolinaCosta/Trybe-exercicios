@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const Sequilize = require('sequelize');
+const Sequelize = require('sequelize');
 
 const { Address, Employee } = require('./src/models');
 const { Book, User } = require('./src/models');
@@ -8,8 +8,13 @@ const config = require('./src/config/config')
 const app = express();
 
 app.use(bodyParser.json());
-
-const sequelize = new Sequilize(config.development);
+/*
+  Essa linha será importante para que consigamos isolar nosso teste
+  utilizando a configuração `test` do seu `config.{js | json}`
+*/
+const sequelize = new Sequelize(
+  process.env.NODE_ENV === 'test' ? config.test : config.development
+);
 
 //para diminuir a complexidade 🠖 sem arquitetura MSC
 app.get('/employees', async (_req, res) => {
@@ -39,7 +44,10 @@ app.post('/employees', async (req, res) => {
         city, street, number, employeeId: employee.id
       }, { transaction: t });
 
-      return res.status(201).json({ message: 'Cadastrado com sucesso' });
+      return res.status(201).json({
+        id: employee.id, // esse dado será nossa referência para validar a transação
+        message: 'Cadastrado com sucesso'
+      });
     });
     
     // Se chegou até aqui é porque as operações foram concluídas com sucesso,
