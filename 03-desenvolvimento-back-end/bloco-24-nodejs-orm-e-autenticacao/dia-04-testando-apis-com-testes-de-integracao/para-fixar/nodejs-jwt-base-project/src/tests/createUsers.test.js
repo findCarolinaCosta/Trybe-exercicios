@@ -1,6 +1,8 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
+const server = require('../api/app');
+
 chai.use(chaiHttp);
 
 const { expect } = chai;
@@ -10,8 +12,10 @@ describe('Rota /api/users', () => {
         let response;
 
         before(async () => {
-            response = await minhaRequisicao();
-        });
+          response = await chai
+              .request(server)
+              .get('/api/users');
+      });
 
         it(
             'A requisição GET para a rota traz uma lista inicial ' +
