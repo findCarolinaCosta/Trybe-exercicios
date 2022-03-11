@@ -1,8 +1,8 @@
-require('dotenv').config();
-const jwt = require('jsonwebtoken');
+require("dotenv").config();
+const jwt = require("jsonwebtoken");
 const { JWT_KEY } = process.env;
 
-const { User } = require('../models');
+const { User } = require("../models");
 
 module.exports = async (req, res, next) => {
   try {
@@ -12,26 +12,28 @@ module.exports = async (req, res, next) => {
     }
     const { authorization } = req.headers;
 
-if (!authorization) return res
-.status(400)
-.json({
-  message: 'Token não encontrado ou informado',
-});
+    if (!authorization)
+      return res.status(400).json({
+        message: "Token não encontrado ou informado",
+      });
 
-    const { username } = jwt.verify(authorization, JWT_KEY);
+    const { id } = jwt.verify(authorization, JWT_KEY);
 
-    const user = await User.findOne({ where: { username } });
+    const user = await User.findOne({ where: { id } });
 
-    if (!authorization || !username || !user) throw Error;
+    if (!authorization || !id || !user) throw Error;
+
+    if (req.param && req.params.id && Number(id) !== Number(req.params.id))
+      return res.status(401).json({
+        message: "Acesso negado",
+      });
 
     next();
   } catch (err) {
     console.error(err);
-    res
-      .status(500)
-      .json({
-        message: 'Erro ao acessar o endpoint',
-        error: 'É necessário um token válido para acessar esse endpoint'
-      });
+    res.status(500).json({
+      message: "Erro ao acessar o endpoint",
+      error: "É necessário um token válido para acessar esse endpoint",
+    });
   }
-}
+};

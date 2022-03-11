@@ -38,7 +38,8 @@ module.exports = async (req, res) => {
         .json({ message: 'Usuário não existe ou senha inválida' });
     }
 
-    const token = jwt.sign({ username }, JWT_KEY);
+    const token = jwt
+      .sign({ id: user.id, username }, JWT_KEY);
 
     return res
       .status(200)
