@@ -1,67 +1,37 @@
-// ./auth/validateJWT.js
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const dotenv = require('dotenv');
-
-dotenv.config();
+const { JWT_KEY } = process.env;
 
 const { User } = require('../models');
 
-/* Mesma chave privada que usamos para criptografar o token.
-   Agora, vamos usá-la para descriptografá-lo.
-   Numa aplicação real, essa chave jamais ficaria hardcoded no código assim,
-   e muitos menos de forma duplicada, mas aqui só estamos interessados em
-   ilustrar seu uso ;) */
-const segredo = process.env.SECRET_KEY;
-
 module.exports = async (req, res, next) => {
-  /* Aquele token gerado anteriormente virá na requisição através do
-     header Authorization em todas as rotas que queremos que
-     sejam autenticadas. */
-  const token = req.headers['authorization'];
-
-  /* Caso o token não seja informado, simplesmente retornamos
-     o código de status 401 - não autorizado. */
-  if (!token) {
-    return res.status(401).json({ error: 'Token não encontrado' });
-  }
-
   try {
-    /* Através o método verify, podemos validar e decodificar o nosso JWT. */
-    const decoded = jwt.verify(token, segredo);
-    /*
-      A variável decoded será um objeto equivalente ao seguinte:
-      {
-        data: {
-          id: '3',
-          username: 'italssodj'
-        },
-        iat: 1582587327,
-        exp: 1584774714908
-      }
-    */
-
-    /* Caso o token esteja expirado, a própria biblioteca irá retornar um erro,
-       por isso não é necessário fazer validação do tempo.
-       Caso esteja tudo certo, nós então buscamos o usuário na base para obter seus dados atualizados */
-
-    const user = await User.findOne({ where: { username: decoded.data.username } });
-
-    /* Não existe um usuário na nossa base com o id informado no token. */
-    if (!user) {
-      return res
-        .status(401)
-        .json({ message: 'Erro ao procurar usuário do token.' });
+    if (!JWT_KEY) {
+      console.error("JWT_KEY não foi definido no .env");
+      throw Error;
     }
+    const { authorization } = req.headers;
 
-    /* O usuário existe! Colocamos ele em um campo no objeto req.
-       Dessa forma, o usuário estará disponível para outros middlewares que
-       executem em sequência */
-    req.user = user;
+if (!authorization) return res
+.status(400)
+.json({
+  message: 'Token não encontrado ou informado',
+});
 
-    /* Por fim, chamamos o próximo middleware que, no nosso caso,
-       é a própria callback da rota. */
+    const { username } = jwt.verify(authorization, JWT_KEY);
+
+    const user = await User.findOne({ where: { username } });
+
+    if (!authorization || !username || !user) throw Error;
+
     next();
   } catch (err) {
-    return res.status(401).json({ message: err.message });
+    console.error(err);
+    res
+      .status(500)
+      .json({
+        message: 'Erro ao acessar o endpoint',
+        error: 'É necessário um token válido para acessar esse endpoint'
+      });
   }
-};
+}

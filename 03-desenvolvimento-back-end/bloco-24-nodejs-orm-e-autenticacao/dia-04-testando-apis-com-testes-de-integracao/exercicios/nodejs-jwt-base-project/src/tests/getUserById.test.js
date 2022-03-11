@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe("Rota GET /api/users/:userId", () => {
+describe("Rota GET /api/users/:id", () => {
   describe('Sucesso em fazer requisição com token', () => {
     let response;
   before(() => {
@@ -31,9 +31,9 @@ describe("Rota GET /api/users/:userId", () => {
       username: userDBFake[0].username,
       password: userDBFake[0].password
     });
-    
-      expect(response).to.have.status(200);
-      expect(response.body).to.have.property("token");
+
+  expect(response).to.have.status(200);
+  expect(response.body).to.have.property("token");
   });
 
   it("requisição com token retorna o esperado", async () => {
@@ -48,7 +48,7 @@ describe("Rota GET /api/users/:userId", () => {
   });
   })
   describe('Falha ao fazer requisição sem token', () => {
-    it('Esperado status 400 e message "Token não' + 
+    it('Esperado status 400 e message "Token não ' + 
     'encontrado ou informado" ao fazer requisição sem token', async () => {
       const userResponse = await chai
         .request(server)
