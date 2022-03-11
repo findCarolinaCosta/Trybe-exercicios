@@ -1,0 +1,11 @@
+{
+  "all": true,
+  "include": [
+    "src/**/*.js"
+  ],
+  "exclude": [
+    "**/tests/**"
+  ],
+  "report-dir": "./temp-dir/coverage",
+  "temp-directory": "./temp-dir/.nyc_output"
+}
