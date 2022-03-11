@@ -1,0 +1,9 @@
+A rota GET /api/users/:userId:
+Sucesso:
+- Requer autenticação com token;
+- Quando autenticado, deve retornar um status http 200 - OK;
+- Quando autenticado, deve retornar um objeto contendo o item esperado
+
+Falha:
+- Quando não-autenticado, deve retornar um status http `400 - Not Found`;
+- Quando não-autenticado, deve retornar uma mensagem `Token não encontrado ou informado`;
