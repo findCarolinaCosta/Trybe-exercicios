@@ -1,3 +1,6 @@
 [submodule "03-desenvolvimento-back-end/bloco-25-deployment/dia-02-deploy-docker-e-heroku/para-fixar/CI-application-test"]
 	path = 03-desenvolvimento-back-end/bloco-25-deployment/dia-02-deploy-docker-e-heroku/para-fixar/CI-application-test
 	url = git@github.com:findCarolinaCosta/CI-application-test.git
+[submodule "03-desenvolvimento-back-end/bloco-25-deployment/dia-02-deploy-docker-e-heroku/exercicios/herocker-exercise-backend"]
+	path = 03-desenvolvimento-back-end/bloco-25-deployment/dia-02-deploy-docker-e-heroku/exercicios/herocker-exercise-backend
+	url = git@github.com:findCarolinaCosta/herocker-exercise-backend.git
