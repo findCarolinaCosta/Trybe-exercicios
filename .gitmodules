@@ -1,0 +1,3 @@
+[submodule "03-desenvolvimento-back-end/bloco-25-deployment/dia-02-deploy-docker-e-heroku/para-fixar/CI-application-test"]
+	path = 03-desenvolvimento-back-end/bloco-25-deployment/dia-02-deploy-docker-e-heroku/para-fixar/CI-application-test
+	url = git@github.com:findCarolinaCosta/CI-application-test.git
