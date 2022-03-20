@@ -9,5 +9,11 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'Plans',
     underscored: true,
   });
+
+  Plan.associate = (models) => {
+    Plan.hasMany(models.Patient,
+    { as: 'patients', foreignKey: 'patientId' });
+  };
+
   return Plan;
 };
