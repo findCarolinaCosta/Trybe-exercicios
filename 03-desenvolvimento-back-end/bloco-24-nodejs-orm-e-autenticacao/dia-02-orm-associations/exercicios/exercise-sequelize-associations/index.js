@@ -11,12 +11,10 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
 app.use('/patients', Routes.patient);
 app.use('/plan', Routes.plan);
-
-const PORT = 3000;
+app.use('/surgeries', Routes.doctor);
 
 app.listen(PORT, () => {
   console.log(`Port: ${PORT}`);
