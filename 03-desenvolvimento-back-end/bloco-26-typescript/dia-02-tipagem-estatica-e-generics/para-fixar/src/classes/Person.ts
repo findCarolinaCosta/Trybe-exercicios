@@ -11,12 +11,12 @@ enum EyeColor {
 class Person {
   name: string
   birthDate: Date // o tipo Date está presente no TypeScript assim como no JavaScript
-  eyeColor: EyeColor // na cor dos olhos usamos uma Enum com valores pré definidos
+  eyeColor?: EyeColor // na cor dos olhos usamos uma Enum com valores pré definidos
 
   // aprenderemos mais sobre o construtor no próximo bloco
   // considere-o como uma função utilizada para construir um objeto a partir da classe
   // nele recebemos todos os dados necessários para construir um objeto de pessoa
-  constructor(name: string, birthDate: Date, eyeColor: EyeColor) {
+  constructor(name: string, birthDate: Date, eyeColor?: EyeColor) {
       // usamos o this para acessar as propriedades da instância da classe
       // ele representa a própria instância que estamos criando
       // atribuimos o valor do parâmetro recebido a propriedade da instância da classe
@@ -38,10 +38,12 @@ class Person {
   }
 }
 
-const person1 = new Person("Jane Doe", new Date("1986-01-01"), EyeColor.Brown)
+const person1 = new Person("Jane Doe", new Date("1986-01-01"))
 const person2 = new Person("Jon Doe", new Date("1980-08-05"), EyeColor.Black)
 
 person1.speak()
+console.log(person1)
+person1.eyeColor = EyeColor.Brown
 console.log(person1)
 
 person2.walk()
