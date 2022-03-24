@@ -13,5 +13,3 @@ let employee: Employee = {
       return this.firstName + " " + this.lastName; // usamos o "this" para acessar as propriedades da interface
   }
 }
-
-employee.firstName = 10;  // Error: Type "number" is not assignable to type "string"
