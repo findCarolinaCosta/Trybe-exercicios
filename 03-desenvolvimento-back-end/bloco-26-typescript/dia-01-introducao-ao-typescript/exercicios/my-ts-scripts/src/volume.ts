@@ -1,15 +1,5 @@
-import {makeError} from './length'
+import utils from './utils'
 
 const units = ["km³", "hm³", "dam³", "m³", "dm³", "cm³", "mm³"]
 
-function convert(value: number, forUnity: string, toUnity: string): number {
-
-    if (!units.includes(forUnity)) makeError(forUnity)
-    if (!units.includes(toUnity)) makeError(toUnity)
-
-    const forIndex = units.indexOf(forUnity)
-    const toIndex = units.indexOf(toUnity)
-    const exponent = (toIndex - forIndex)
-
-    return value * Math.pow(10, exponent)
-}
+const convert = (value: number, forUnity: string, toUnity: string): number =>  utils.convert(units, value, forUnity, toUnity)
