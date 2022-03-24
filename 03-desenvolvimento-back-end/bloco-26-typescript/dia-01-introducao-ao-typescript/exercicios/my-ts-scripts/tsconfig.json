@@ -98,6 +98,6 @@
     // "skipDefaultLibCheck": true,                 
     "skipLibCheck": true                            
   },
-  "include":["src/**/*", "types"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include":["src/**/*"],
+  "exclude": ["node_modules"]
 }                                                   
