@@ -1,6 +1,6 @@
 let units = ["km", "hm", "dam", "m", "dm", "cm", "mm"];
 
-function makeError(unity: string) {
+export function makeError(unity: string) {
     throw new Error(`A unidade ${unity} não é uma unidade válida.`)
 }
 
