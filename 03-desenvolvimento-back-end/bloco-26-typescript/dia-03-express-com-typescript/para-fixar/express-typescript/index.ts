@@ -3,6 +3,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import 'express-async-errors';
 import { config } from 'dotenv';
+import BooksRoutes from './src/routes/booksRoutes';
 
 config();
 
@@ -15,6 +16,8 @@ const PORT = process.env.PORT || 8000;
 app.get('/', (_req, res) => {
     res.status(StatusCodes.OK).send('Express + TypeScript')
 });
+
+app.use(BooksRoutes);
 
 app.use((err: Error , _req: Request, res: Response, next: NextFunction) => {
   const { name, message, details } = err as any;
