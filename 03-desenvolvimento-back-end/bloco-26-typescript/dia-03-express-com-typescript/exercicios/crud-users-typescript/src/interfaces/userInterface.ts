@@ -1,9 +1,9 @@
 // propriedades id , nome, email e senha;
-interface USER {
+interface IUSER {
   id?: number;
   name: string,
   password: string,
   email: string,
 }
 
-export default USER;
+export default IUSER;
