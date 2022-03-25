@@ -1,11 +1,11 @@
 {
-  "name": "crud-login",
+  "name": "crud-users",
   "version": "1.0.0",
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build && node ./dist/index.js",
-    "dev": "tsnd index.ts",
+    "start": "npm run build && node ./dist/server.js",
+    "dev": "tsnd server.ts",
     "build": "tsc"
   },
   "dependencies": {

@@ -3,6 +3,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import 'express-async-errors';
 import { config } from 'dotenv';
+import UsersRoutes from './src/routes/usersRoutes';
 
 config();
 
@@ -13,10 +14,11 @@ app.use(express.json());
 const PORT = process.env.PORT || 8000;
 
 app.get('/', (_req, res) => {
-    return res.status(StatusCodes.OK).send('Login')
+    return res.status(StatusCodes.OK).send('OK');
 });
 
 //rotas
+app.use(UsersRoutes);
 
 app.use((err: Error , _req: Request, res: Response, next: NextFunction) => {
   const { name, message, details } = err as any;
