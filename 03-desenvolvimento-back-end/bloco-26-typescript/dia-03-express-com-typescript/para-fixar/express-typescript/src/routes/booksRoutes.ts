@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import BooksController from '../controllers/books.controller';
+import BooksController from '../controllers/booksController';
 import validationBook from '../middlewares/booksValidate';
 
 const router = Router();
