@@ -2,18 +2,20 @@ import Colors from "./Colors"
 import Doors from "./Doors"
 import Directions from './Directions'
 
+type DOORS  = 2 | 4
+
 interface ICar {
   _brand: string
   _color: Colors
-  _doors: number
+  _doors: DOORS
 }
 
 class Car implements ICar {
   _brand: string
   _color: Colors
-  _doors: number
+  _doors: DOORS
 
-  constructor(brand: string, color: Colors, doors: number) {
+  constructor(brand: string, color: Colors, doors: DOORS) {
     this._brand = brand
     this._color = color
     this._doors = doors
@@ -48,16 +50,10 @@ class Car implements ICar {
   }
 
   openTheDoor(door: Doors): void {
-    if (this._doors !== 2 && this._doors !== 4) {
-      throw Error('Escolha quantidade de portas válidas 2 ou 4');
-    }
     console.log(`Abrindo a porta: ${door}.`)
   }
 
   closeTheDoor(door: Doors): void {
-    if (this._doors !== 2 && this._doors !== 4) {
-      throw Error('Escolha quantidade de portas válidas 2 ou 4');
-    }
     console.log(`Fechando a porta: ${door}.`)
   }
 
