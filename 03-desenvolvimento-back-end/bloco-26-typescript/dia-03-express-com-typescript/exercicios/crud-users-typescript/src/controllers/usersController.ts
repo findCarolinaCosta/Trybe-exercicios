@@ -22,4 +22,14 @@ export default class UserController {
 
     return res.status(StatusCodes.OK).json(user);
   }
+
+  public create = async (req: Request, res: Response) => {
+    const user = req.body;
+
+    const userCreated = await this.userService.create(user);
+
+    if (!userCreated) return res.status(StatusCodes.NOT_ACCEPTABLE).json({ error: 'There is already a registration with this email' })
+
+    return res.status(StatusCodes.CREATED).json(userCreated);
+  };
 }

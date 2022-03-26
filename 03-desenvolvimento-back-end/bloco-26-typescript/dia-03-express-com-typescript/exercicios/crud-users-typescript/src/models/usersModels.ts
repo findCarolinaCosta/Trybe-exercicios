@@ -1,23 +1,36 @@
-import { Pool } from 'mysql2/promise';
-import User from '../interfaces/userInterface';
+import { Pool, ResultSetHeader } from 'mysql2/promise';
+import IUser from '../interfaces/userInterface';
 
 export default class UserModel {
   constructor(public connection: Pool) {
     this.connection = connection;
   }
 
-  public async getAll(): Promise<User[]> {
+  public async getAll(): Promise<IUser[]> {
     const [users] = await this.connection
-      .execute('SELECT * FROM Users.user');
-
-    return users as User[];
+      .execute('SELECT * FROM Users.user;');
+    return users as IUser[];
   }
 
-  public async getById(id: number): Promise<User> {
+  public async getById(id: number): Promise<IUser> {
     const [result] = await this.connection
-      .execute('SELECT * FROM books_api.books WHERE id=?', [id]);
+      .execute('SELECT * FROM Users.user WHERE id=?;', [id]);
       
-    const [user] = result as User[];
+    const [user] = result as IUser[];
     return user;
+  }
+
+  public async create(user: IUser): Promise<IUser | null> {
+    const { name, password, email } = user;
+    const SELECTBYEMAIL = 'SELECT email FROM Users.user WHERE email = ?';
+    const [checkEmail] = await this.connection.execute(SELECTBYEMAIL, [email]);
+    
+
+    if (!checkEmail) return null;
+
+    const INSERTUSER = 'INSERT INTO Users.user ( name, password, email) VALUES (?, ?, ?);'
+    const [result] = await this.connection.execute<ResultSetHeader>(INSERTUSER, [ name, password, email]);
+    const { insertId } = result;
+    return { id: insertId, ...user };
   }
 }
