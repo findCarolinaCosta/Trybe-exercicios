@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
+import { number } from 'joi';
 import IUSER from '../interfaces/userInterface';
 import userSchema from '../schemas/userSchema';
 
@@ -28,8 +29,7 @@ function validateValues(user: IUSER): [boolean, string | null] {
 function validationUser(req: Request, res: Response, next: NextFunction) {
   const user: IUSER = req.body;
   let [valid, property] = validateProperties(user);
-  const { email } = req.body;
-  const {error} = userSchema.validate({email});
+  const {error} = userSchema.validate(user);
 
   if (!valid) {
     return res.status(StatusCodes.BAD_REQUEST).send(
@@ -46,9 +46,8 @@ function validationUser(req: Request, res: Response, next: NextFunction) {
   }
 
   if (error) {
-    return res.status(StatusCodes.BAD_REQUEST).json({
-     message: 'O email deve possuir um formato de email válido: email@email.com',
-    });
+    const [code, message] = error.message.split('|');
+    return res.status(Number(code)).json({ message });
   }
 
   next();
