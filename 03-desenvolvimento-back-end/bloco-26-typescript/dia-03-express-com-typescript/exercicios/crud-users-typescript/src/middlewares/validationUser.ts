@@ -29,7 +29,7 @@ function validationUser(req: Request, res: Response, next: NextFunction) {
   const user: IUSER = req.body;
   let [valid, property] = validateProperties(user);
   const { email } = req.body;
-  const {error} = userSchema.validate(email);
+  const {error} = userSchema.validate({email});
 
   if (!valid) {
     return res.status(StatusCodes.BAD_REQUEST).send(

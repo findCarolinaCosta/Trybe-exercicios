@@ -10,5 +10,6 @@ const userSlashId = '/user/:id'
 router.get('/users', userController.getAll);
 router.get(userSlashId, userController.getById);
 router.post('/users/', validationUser, userController.create);
+router.put(userSlashId, validationUser, userController.update)
 
 export default router;

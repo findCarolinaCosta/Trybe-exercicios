@@ -32,4 +32,12 @@ export default class UserController {
 
     return res.status(StatusCodes.CREATED).json(userCreated);
   };
+
+  public update = async (req: Request, res: Response) => {
+    const id = Number(req.params.id);
+    const user = req.body;
+    await this.userService.update(id, user);
+
+    res.status(StatusCodes.NO_CONTENT).end();
+  };
 }

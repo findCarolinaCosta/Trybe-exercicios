@@ -28,9 +28,17 @@ export default class UserModel {
 
     if (!checkEmail) return null;
 
-    const INSERTUSER = 'INSERT INTO Users.user ( name, password, email) VALUES (?, ?, ?);'
+    const INSERTUSER = 'INSERT INTO Users.user (name, password, email) VALUES (?, ?, ?);'
     const [result] = await this.connection.execute<ResultSetHeader>(INSERTUSER, [ name, password, email]);
     const { insertId } = result;
     return { id: insertId, ...user };
+  }
+
+  public async update(id: number, user: IUser) {
+    const { name, password, email } = user;
+    await this.connection.execute(
+      'UPDATE Users.user SET name=?, password=?, email=? WHERE id=?;',
+      [name, password, email, id]
+    );
   }
 }
