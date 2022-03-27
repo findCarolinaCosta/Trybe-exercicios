@@ -33,4 +33,16 @@ export default class UserService {
 
     return this.model.update(id, user);
   }
+
+  public async destroy(id: number): Promise<void> {
+    const userFound = await this.model.getById(id);
+    console.log(userFound);
+    
+
+    if (!userFound) {
+      throw new NotFoundError('NotFoundError');
+    }
+
+    this.model.destroy(id);
+  }
 }

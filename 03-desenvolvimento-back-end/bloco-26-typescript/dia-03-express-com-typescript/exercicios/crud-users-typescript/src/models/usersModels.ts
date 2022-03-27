@@ -41,4 +41,11 @@ export default class UserModel {
       [name, password, email, id]
     );
   }
+  
+  public async destroy(id: number) {
+    await this.connection.execute(
+      'DELETE FROM Users.user WHERE id=?',
+      [id],
+    );
+  }
 }

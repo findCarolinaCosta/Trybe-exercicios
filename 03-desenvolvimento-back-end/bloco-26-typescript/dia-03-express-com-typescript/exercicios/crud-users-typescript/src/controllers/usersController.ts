@@ -40,4 +40,12 @@ export default class UserController {
 
     res.status(StatusCodes.NO_CONTENT).end();
   };
+
+  public destroy = async (req: Request, res: Response) => {
+    const id = Number(req.params.id);
+
+    await this.userService.destroy(id);
+
+    res.status(StatusCodes.OK).json({ message: 'User deleted successfully' });
+  };
 }
