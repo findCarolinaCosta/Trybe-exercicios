@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import 'express-async-errors';
 import { config } from 'dotenv';
+import postRoutes from './src/routes/postRoutes';
 
 config();
 
@@ -16,6 +17,7 @@ app.get('/', (_req, res) => {
 });
 
 //rotas
+app.use(postRoutes);
 
 app.use((err: Error , _req: Request, res: Response, next: NextFunction) => {
   const { name, message, details } = err as any;
