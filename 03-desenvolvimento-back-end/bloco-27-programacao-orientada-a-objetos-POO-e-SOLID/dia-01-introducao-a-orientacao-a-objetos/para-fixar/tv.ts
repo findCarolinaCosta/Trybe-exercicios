@@ -4,7 +4,7 @@ class Tv {
   size: number;
   resolution: string;
   connections: string[];
-  // connectedTo: string; //conexão atual Este atributo não precisa ser inicializado no construtor 
+  connectedTo: string; //conexão atual Este atributo não precisa ser inicializado no construtor 
 
   constructor(brand: string, size: number, resolution: string, connections: string[]) {
     this.brand = brand;
