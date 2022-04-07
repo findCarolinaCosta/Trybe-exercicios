@@ -112,7 +112,7 @@
     - A pontuação não pode ser negativa
     - A pontuação não pode ser maior que a pontuação da avaliação.
 
-# `Class`: Student
+# `Class`: Student (Refatoração)
 
 ### `Extends`: Person
 
@@ -135,7 +135,7 @@
     - A matrícula deve possuir no mínimo 16 caracteres
 
 
-`Abstract Class`: Evaluation
+# `Abstract Class`: Evaluation
 
 ### `Attributes`:
 
@@ -199,7 +199,7 @@
     - O preço não pode ser negativo
 
 
-`Class`: Order
+# `Class`: Order
 
 ### `Attributes`:
 
@@ -225,7 +225,7 @@
     - O disconto não pode ser negativo
 
 
-`Class`: OrderRepository
+# `Class`: OrderRepository
 
 ### `Attributes`:
     - orders: lista de pedidos
@@ -239,7 +239,7 @@
       lista de pedidos ordenada do maior valor para o menor ou vice-versa
 
 
-# `Class`: Order
+# `Class`: Order (Refatoração)
 
 ### `Attributes`:
 
