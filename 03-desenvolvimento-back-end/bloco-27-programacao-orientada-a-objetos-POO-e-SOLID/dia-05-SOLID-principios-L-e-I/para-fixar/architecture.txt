@@ -1,0 +1,19 @@
+Projeto
+|   docker-compose.yml
+|   package-lock.json
+|   package.json
+|   
+\---src
+    |   Connector.ts (exemplo anterior sem os principíos aplicados)
+    |   index.ts
+    |   
+    \---Connectors
+        |   Connector.ts
+        |   index.ts
+        |   
+        +---mysql
+        |       MySQLConnector.ts
+        |       
+        \---redis
+                ReadOnlyRedisConnector.ts
+                RedisConnector.ts
