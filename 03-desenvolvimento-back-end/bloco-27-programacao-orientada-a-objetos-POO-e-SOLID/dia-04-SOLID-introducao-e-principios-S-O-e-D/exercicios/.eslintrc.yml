@@ -13,3 +13,5 @@ plugins:
 rules:
   class-methods-use-this: 0
   "@typescript-eslint/no-unused-vars": "error"
+  import/no-unresolved: 0
+  import/extensions: 0
