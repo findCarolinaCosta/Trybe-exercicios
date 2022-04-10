@@ -13,10 +13,13 @@ class ReadingTracker {
   trackReadings(readsCount: number) {
     this.booksRead += readsCount;
     if (this.booksRead >= this.readingGoal) {
-      progressNotification('Congratulations! You\'ve reached your reading goal!');
+      progressNotification(
+        'Congratulations! You\'ve reached your reading goal!',
+        'Console',
+      );
       return;
     }
-    progressNotification('There are still some books to go!');
+    progressNotification('There are still some books to go!', 'Console');
   }
 }
 
