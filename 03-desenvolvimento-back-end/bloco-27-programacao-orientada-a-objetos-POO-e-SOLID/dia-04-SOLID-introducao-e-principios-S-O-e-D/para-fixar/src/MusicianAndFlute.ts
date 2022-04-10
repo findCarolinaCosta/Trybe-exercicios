@@ -6,11 +6,12 @@ class Flute {
 }
 
 class Musician {
-  flute: Flute // objeto como dependência
-
-  constructor(public name: string) {
-    this.flute = new Flute('minha flauta');
-  }
+  // Agora a flauta é recebida como parâmetro
+  // com um valor padrão caso nenhuma seja passada
+  constructor(
+    public name: string,
+    public flute: Flute = new Flute('Minha flauta')
+  ) { } // cria a posibilidade de passar parâmtro "mockado"
 
   play() {
     this.flute.play();
@@ -20,5 +21,6 @@ class Musician {
   }
 }
 
-const musician = new Musician('Márcia');
+const flute = new Flute('Minha flauta');
+const musician = new Musician('Márcia', flute);
 musician.play();
