@@ -14,6 +14,9 @@
     "breed": "Orquidea",
     "size": 99,
     "needsSun": true,
-    "origin": "Brazil"
+    "origin": "Brazil",
+    "specialCare": {
+      "waterFrequency": null
+    }
   }
 ]

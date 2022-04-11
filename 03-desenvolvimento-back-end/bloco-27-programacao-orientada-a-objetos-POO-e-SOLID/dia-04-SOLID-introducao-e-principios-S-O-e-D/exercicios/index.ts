@@ -1,57 +1,29 @@
-import express from 'express';
-import { IPlant } from './src/interface';
-import Plants from './src/Plants';
+import 'express-async-errors';
+import express, { Request, Response } from 'express';
+import PlantController from './src/controllers/Plant';
+import PlantModel from './src/models/Plant';
+import { IError } from './src/interface/interfaces';
 
 const app = express();
-const notFoundMessage = 'Plant not found';
+const plantController = new PlantController(new PlantModel());
 
 app.use(express.json());
 
-app.get('/plants', async (_req, res) => {
-  const plants = await (new Plants().getPlants());
+app.get('/plants', plantController.getPlants);
 
-  return res.status(200).json(plants);
-});
+app.get('/plants/:id', plantController.getPlantById);
 
-app.get('/plants/:id', async (req, res) => {
-  const { id } = req.params;
-  const plant: IPlant | null = await (new Plants().getPlantById(id));
+app.delete('/plants/:id', plantController.removePlantById);
 
-  if (!plant) return res.status(404).json({ message: notFoundMessage });
+app.put('/plant/:id', plantController.editPlant);
 
-  return res.status(200).json(plant);
-});
+app.post('/plant', plantController.savePlant);
 
-app.delete('/plants/:id', async (req, res) => {
-  const { id } = req.params;
-  const plant: IPlant | null = await (new Plants().removePlantById(id));
+app.get('/sunny/:id', plantController.getPlantsThatNeedsSunWithId);
 
-  if (!plant) return res.status(404).json({ message: notFoundMessage });
-
-  return res.status(204).end();
-});
-
-app.put('/plant/:id', async (req, res) => {
-  const { id } = req.params;
-  const newPlant = req.body;
-  const plant = await (new Plants().editPlant(id, newPlant));
-
-  if (!plant) return res.status(404).json({ message: notFoundMessage });
-
-  return res.status(200).json(plant);
-});
-
-app.post('/plant', async (req, res) => {
-  const newPlant = req.body;
-
-  const plant: IPlant = await (new Plants().savePlant(newPlant));
-  return res.status(201).json(plant);
-});
-
-app.get('/sunny/:id', async (req, res) => {
-  const { id } = req.params;
-  const plant = await (new Plants().getPlantsThatNeedsSunWithId(id));
-  return res.status(200).json(plant);
+app.use((err: IError, _req: Request, res: Response) => {
+   console.log(err);
+  return res.status(500).json({ error: err.message });
 });
 
 const PORT = 3030;

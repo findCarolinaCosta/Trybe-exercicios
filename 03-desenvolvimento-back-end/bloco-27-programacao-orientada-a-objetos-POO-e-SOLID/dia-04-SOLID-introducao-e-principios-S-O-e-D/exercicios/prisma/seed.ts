@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import fs from 'fs/promises';
-import { IOpsInfo, IPlant } from '../src/interface';
+import { IOpsInfo, IPlant } from '../src/interface/interfaces';
 
 const prisma = new PrismaClient();
 
@@ -10,17 +10,17 @@ const seedIt = async () => {
   const plants: IPlant[] = await read('plants.json');
   const opsInfo: IOpsInfo = await read('opsInfo.json');
   await prisma.ops_info.create({ data: { createdPlants: opsInfo.createdPlants } });
-   Promise.all(plants.map(async (plant) => {
-    const care = await prisma.special_care.create({
+  Promise.all(plants.map(async (plant) => {
+    const care = plant.specialCare !== null 
+      && plant.specialCare.waterFrequency && await prisma.special_care.create({
       data: { waterFrequency: plant.specialCare?.waterFrequency },
     });
-    await prisma.plant.create({
-      data: {
+    await prisma.plant.create({ data: {
         breed: plant.breed,
         size: plant.size,
         needsSun: plant.needsSun,
         origin: plant.origin,
-        specialCareId: care.id,
+        specialCareId: (care && care.id) || null,
       },
     });
   }));

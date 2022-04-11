@@ -23,8 +23,8 @@ model Plant {
 }
 
 model Special_care {
-  id             String   @id @default(uuid())
-  waterFrequency Int?     @map("water_frequency")
+  id             String  @id @default(uuid())
+  waterFrequency Float?  @map("water_frequency")
   Plants         Plant[]
 }
 
