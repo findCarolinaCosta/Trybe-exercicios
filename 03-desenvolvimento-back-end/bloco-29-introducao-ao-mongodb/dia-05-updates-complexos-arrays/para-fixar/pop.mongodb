@@ -1,0 +1,34 @@
+// $pop
+db.supplies.insertOne(
+  {
+    _id: 1,
+    items: [
+      {
+        "name" : "notepad",
+        "price" : 35.29,
+        "quantity" : 2,
+      },
+      {
+        "name": "envelopes",
+        "price": 19.95,
+        "quantity": 8,
+      },
+      {
+        "name": "pens",
+        "price": 56.12,
+        "quantity": 5,
+      },
+    ],
+  }
+)
+
+// Removendo o primeiro item de um array
+db.supplies.updateOne({ _id: 1 }, { $pop: { items: -1 } });
+
+//Removendo o último item de um array
+db.supplies.updateOne({ _id: 1 }, { $pop: { items: 1 } });
+
+db.supplies.findOne({ _id: 1 })
+
+// reset
+db.supplies.remove({ _id: 1 })

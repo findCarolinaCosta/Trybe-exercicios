@@ -1,0 +1,74 @@
+// $push
+use sales;
+
+// _id seja igual a 1 na coleção supplies, opção upsert: true para já adicionar o elemento ao mesmo tempo que usamos o operador $push
+db.supplies.updateOne(
+  { _id: 1 },
+  {
+  $push: {
+        items: {
+          "name": "notepad",
+          "price":  35.29,
+          "quantity": 2,
+        },
+      },
+    },
+  { upsert: true },
+);
+
+// Adicionando múltiplos valores a um array
+db.supplies.updateOne(
+  {},
+  {
+  $push: {
+    items: {
+      $each: [
+            {
+              "name": "pens",
+              "price": 56.12,
+              "quantity": 5,
+            },
+            {
+              "name": "envelopes",
+              "price": 19.95,
+              "quantity": 8,
+            },
+          ],
+        },
+      },
+    },
+  { upsert: true },
+);
+
+// Múltiplos modificadores
+db.supplies.updateOne(
+  { _id: 1 },
+  {
+  $push: {
+    items: {
+      //$each para adicionar múltiplos documentos ao array items
+      $each: [
+              {
+                "name" : "notepad",
+                "price" : 35.29,
+                "quantity" : 2,
+              },
+              {
+                "name": "pens",
+                "price": 56.12,
+                "quantity": 5,
+              },
+            ],
+    //$sort para ordenar todos os elementos alterados no array items pelo campo quantity em ordem decrescente
+    $sort: { quantity: -1 },
+    // $slice para manter apenas os dois primeiros elementos ordenados no array items
+    $slice: 2,
+        },
+      },
+    },
+  { upsert: true },
+);
+
+db.supplies.remove({ _id: 1 });
+
+db.supplies.find();
