@@ -1,5 +1,6 @@
 import express from "express";
 import { routes as BookRotes } from "./routes/book";
+import { routes as MovieRotes } from "./routes/movie";
 
 import { connection } from "./models/connection";
 
@@ -20,6 +21,7 @@ class App {
 
   private routes() {
     this.express.use(BookRotes);
+    this.express.use(MovieRotes);
   }
 }
 
