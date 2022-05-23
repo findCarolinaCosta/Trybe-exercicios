@@ -1,6 +1,7 @@
 import express from "express";
-import routes from "./routes";
-import createConnection from "./models/connection";
+import { routes as BookRotes } from "./routes/book";
+
+import { connection } from "./models/connection";
 
 class App {
   public express: express.Application;
@@ -10,7 +11,7 @@ class App {
     this.middlewares();
     this.routes();
 
-    createConnection();
+    connection();
   }
 
   private middlewares(): void {
@@ -18,7 +19,7 @@ class App {
   }
 
   private routes() {
-    this.express.use(routes);
+    this.express.use(BookRotes);
   }
 }
 
