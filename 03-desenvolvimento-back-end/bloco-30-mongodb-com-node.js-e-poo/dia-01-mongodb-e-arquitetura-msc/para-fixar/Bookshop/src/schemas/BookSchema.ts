@@ -7,9 +7,14 @@ export interface IBook {
   weight?: string;
 }
 
-export const BookSchema = new Schema<IBook>({
-  title: { type: String, required: true },
-  author: { type: String, required: true },
-  publishedYear: { type: Number, required: false },
-  weight: { type: String, required: false },
-});
+export const BookSchema = new Schema<IBook>(
+  {
+    title: { type: String, required: true },
+    author: { type: String, required: true },
+    publishedYear: { type: Number, required: false },
+    weight: { type: String, required: false },
+  },
+  {
+    versionKey: false, //_v: refere-se à propriedade version key, do Mongoose; false
+  }
+);
