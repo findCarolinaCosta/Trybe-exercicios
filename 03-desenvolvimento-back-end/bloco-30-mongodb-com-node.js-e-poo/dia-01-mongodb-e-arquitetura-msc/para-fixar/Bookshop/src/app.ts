@@ -1,6 +1,6 @@
 import express from "express";
-import { routes as BookRotes } from "./routes/book";
-import { routes as MovieRotes } from "./routes/movie";
+import { routes as BookRotes } from "./routes/bookRoute";
+import { routes as MovieRotes } from "./routes/movieRoute";
 
 import { connection } from "./models/connection";
 
